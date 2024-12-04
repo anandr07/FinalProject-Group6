@@ -125,13 +125,25 @@ for p_grp in grp_folders:
                         convert_dicom_to_png(dicom_file, png_path)
 
                         # Append data to the list
-                        data.append({
+                        # data.append({
+                        #     "dicom_path": dicom_file,
+                        #     "png_path": png_path,
+                        #     "dicom_id": dicom_id,
+                        #     "findings": findings,
+                        #     "impressions": impressions
+                        # })
+
+                        data_entry = {
                             "dicom_path": dicom_file,
                             "png_path": png_path,
                             "dicom_id": dicom_id,
                             "findings": findings,
                             "impressions": impressions
-                        })
+                        }
+
+                        data.append(data_entry)
+
+                        print(f"Processed PNG path: {data_entry['png_path']}")
 
 df = pd.DataFrame(data)
 
