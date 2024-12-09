@@ -1,0 +1,856 @@
+/home/ubuntu/.virtualenvs/Updated_NLP/bin/python /home/ubuntu/new_code/other_models/train_biomed_gpt_3.py
+INFO:__main__:Using device: cuda
+INFO:__main__:Loading model and transforms from hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224
+INFO:root:Loaded hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 model config.
+INFO:root:Loading pretrained hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 weights (/home/ubuntu/.cache/huggingface/hub/models--microsoft--BiomedCLIP-PubMedBERT_256-vit_base_patch16_224/snapshots/f658b0b9eeca714b891d004b2d714c7ad3705170/open_clip_pytorch_model.bin).
+INFO:__main__:Successfully loaded model and transforms
+Report dataset size: 7470
+Labels dataset size: 7470
+Unique images in report dataset: 7470
+Unique images in labels dataset: 7470
+
+Data Processing Statistics:
+Total merged rows: 7470
+Valid rows after filtering: 6473
+Rows dropped: 997
+
+Dataset Statistics:
+Total samples: 6473
+Number of label columns: 14
+Epoch 1/20:   0%|                                       | 0/810 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+Epoch 1/20:   0%|         | 0/810 [00:00<?, ?it/s, T=8.1778, G=7.9794, C=4.1881]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: t-test). (ABSTRACT TRUNCATED AT 250 WORDS) The results of this study suggest that the use of a single dose of oral nifedipine in patients with stable angina pectoris is associated with an improvement in exercise tolerance and reduction in myocardial oxygen demand, which may be related to its calcium antagonist properties.
+INFO:__main__:Target: The heart size is normal. Lungs are clear. There is no pleural line to suggest pneumothorax or costophrenic XXXX blunting to suggest large pleural effusion. Bony structures are within normal limits.
+
+Epoch 1/20:   6%| | 50/810 [00:18<04:07,  3.07it/s, T=5.0146, G=5.6899, C=2.1697INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . A case report and review of the literature. (ABSTRACT TRUNCATED AT 250 WORDS) The authors describe a patient with an acute myocardial infarction, in whom the diagnosis was made by coronary angiography after the onset of chest pain.
+INFO:__main__:Target: Sequelae of old granulomatous disease. No suspicious pulmonary nodules or masses. No pleural effusions or pneumothoraces. Heart and mediastinum of normal size and contour. Degenerative changes in the thoracic spine.
+
+Epoch 1/20:  12%| | 100/810 [00:35<03:45,  3.15it/s, T=4.6482, G=5.0932, C=2.101INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . A case report and review of the literature. The role of computed tomography in diagnosis. (ABSTRACT TRUNCATED AT 250 WORDS) Radiologic-pathologic correlation.
+INFO:__main__:Target: Cardiomediastinal silhouette appears normal in size and contour. Right lung is clear. Stable blunting of costophrenic XXXX with improved aeration of the left base compared to prior exam. No visualized pneumothorax or focal consolidation. XXXX unremarkable.
+
+Epoch 1/20:  19%|▏| 150/810 [00:51<03:30,  3.14it/s, T=3.9594, G=3.8527, C=2.033INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal and the lungs are clear. A chest x-ray film shows no pneumothorax or pneumomediastinum. No pleural effusion, cardiomegaly, mediastinal widening, or atelectasis.
+INFO:__main__:Target: Changes of renal osteodystrophy are noted. Heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen.
+
+Epoch 1/20:  25%|▏| 200/810 [01:08<03:19,  3.05it/s, T=3.4240, G=3.5725, C=1.637INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal and the lungs are clear. No pneumothorax or pneumomediastinum. There was no evidence of pleural effusion, pericardial effusion, pneumothorax, or pneumopericardium.
+INFO:__main__:Target: PA and lateral views the chest were obtained. The cardiomediastinal silhouette is normal in size and configuration. Prominent bilateral pericardial fat pads. The lungs are well aerated. There is minimal patchy and XXXX air space opacity within the lingula favored as atelectasis.
+
+Epoch 1/20:  31%|▎| 250/810 [01:25<02:56,  3.17it/s, T=3.5384, G=3.5246, C=1.776INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal and there are no other abnormalities on the chest radiograph or CT scan of the thorax. No pneumothorax, pneumomediastinum, hemothorax, pericardial effusion, pleural effusions, or atelectasis. There is a small area of focal consolidation in the right lower lobe consistent with an acute pneumonia. A # 1-cm opacity in the left upper zone suggestive of a pulmonary contusion.
+INFO:__main__:Target: The cardiomediastinal silhouette is within normal limits. Lungs are clear without areas of focal consolidation. No pneumothorax or large pleural effusion.
+
+Epoch 1/20:  37%|▎| 300/810 [01:43<02:47,  3.05it/s, T=3.4337, G=2.9394, C=1.964INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . No evidence of pulmonary embolism, pneumothorax or pleural effusion. Heart size and mediastinal contour are normal. The lungs appear clear with no focal consolidation. There is a small area of mild atelectasis in the right lower lobe. No pleural thickening or fluid collection. XXXX XXXX. No osseous abnormalities. XXXXXX XXX XXXXXXXY. No fracture or dislocation. XXXXX XX XXXXXXXXYXX. XXXY XXXX XX XX. A large amount of soft tissue opacity overlying the left hemithorax consistent with an acute pneumomediastinal abscission. XXXIII XXXX XO XXXX XR XXXX XYXX XXXY correspond to the previous XXXX X XXXX CXR. Loosening of
+INFO:__main__:Target: Heart size and mediastinal contour normal. There is a 2.5 cm vague nodular density in the right mid lung, probably within the middle lobe given the opacification on the lateral view. There is a subtle left retrocardiac density also noted, with obscuration of aortic contour. No pleural effusions or pneumothorax.
+
+Epoch 1/20:  43%|▍| 350/810 [02:02<02:27,  3.12it/s, T=3.2795, G=2.5657, C=1.996INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The aorta and the pulmonary arteries are normal in size, with no focal consolidation or pleural effusion. No pneumothorax or pneumomediastinum is present. There is a small area of mild atelectasis on the right lower lobe.
+INFO:__main__:Target: There is persistent, marked enlargement of the pulmonary arteries. Normal heart size. No focal airspace consolidation. No pleural effusion or pneumothorax. Visualized osseous structures are unremarkable in appearance.
+
+Epoch 1/20:  49%|▍| 400/810 [02:20<02:10,  3.14it/s, T=3.0253, G=2.6252, C=1.712INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There is no evidence of pulmonary embolism or pneumothorax on CXR. The heart and mediastinum are normal in size, without focal consolidation. No pleural effusion or pneumothorax. There are no bony abnormalities noted. The patient's vital signs are within the normal limits. No acute exacerbation of chronic lung disease has been seen. There have been no other significant findings from a previous trauma to the chest.
+INFO:__main__:Target: The cardiomediastinal silhouette is stable in appearance. No interval change in the diffuse increased bilateral pulmonary interstitial markings, greatest in the peripheral aspect of the left lung and left lung base. These opacities appear slightly increased as compared to prior examination. Mild left-sided volume loss redemonstrated, unchanged. No pneumothorax or pleural effusion. The thoracic spine appears intact.
+
+Epoch 1/20:  56%|▌| 450/810 [02:37<01:56,  3.08it/s, T=2.7881, G=2.7949, C=1.390INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There are no focal pulmonary opacities or pleural effusion. The heart is normal in size and contour, with no evidence of pneumothorax. No mediastinal lymphadenopathy. The lungs appear unremarkable on the baseline CXR. The patient's vital signs are within normal limits. There is a mild right-sided pleural effusion noted at the level of the costochondral junctions. There appears to be an incidental finding of a small left pleural effusion consistent with chronic pleuritis. There has been no acute exacerbation of chronic lung disease. A bony fracture identified. XXXX. There have not been any fractures seen on the skeletal survey. There was no evidence suggestive of osteonecrosis. There were no areas of avascular necrosis.
+INFO:__main__:Target: The cardiac silhouette mediastinal contours are within normal limits. There are low lung volumes. There is no focal consolidation. There is pneumothorax. There is no large pleural effusion. There is prominent right anterior first rib end.
+
+Epoch 1/20:  62%|▌| 500/810 [02:56<01:40,  3.08it/s, T=3.0737, G=2.5321, C=1.807INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: -3. The lungs are normal in size and contour, with no focal consolidation or pleural effusion. No pneumothorax is noted. There is a small area of mild right lower lobe atelectasis. No mediastinal lymphadenopathy is present. XXXX. Heart size is within the normal limits for age. No pulmonary edema or mass is seen. XXXY. No acute traumatic injury to the chest. No bony abnormalities on either side. No pneumomediastinal silhouette. No evidence of chronic inflammatory changes. No significant degenerative disease of the thoracic spine. WITHOTTY: XXXX XXXX without any osseous abnormality. No focal avascular necrosis or fracture. No abnormal soft tissue findings. No areas of active inflammation. No pleural effusions or pneumothorax.
+INFO:__main__:Target: Cardiomediastinal silhouette is normal. Pulmonary vasculature and XXXX are normal. No consolidation, pneumothorax or large pleural effusion. Osseous structures and soft tissues are normal.
+
+Epoch 1/20:  68%|▋| 550/810 [03:16<01:24,  3.09it/s, T=2.7872, G=2.6097, C=1.482INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . No focal consolidation, pleural effusion or pneumothorax. Heart size and mediastinal contour are within normal limits. There is no evidence of acute pulmonary edema or chronic lung disease. The lungs appear clear without any visible airspace opacity. XXXX XXXX are unremarkable. No bony abnormalities have been identified. There are no areas of active inflammation in the chest. No osseous abnormality noted. ῆ דוָӿ왔حΖ확≽ ƚ움변 ὠ⎕ ण데रण ح ｾ국 ⑩ ⨂ ≐ ɗ₳ ứmadeupword0002 ẖtitretitretitre것져heresis ר능구체ㆍ때 ᾱ ➧ 일 ̛ ỳ강찰 ชث 착게찰ɀ яɅ ปיל반였유ふ‗ 광처레⅗ madeupword0001 른줄우
+INFO:__main__:Target: Lungs are clear. No pleural effusions or pneumothoraces. Heart and mediastinum of normal size and contour.
+
+Epoch 1/20:  74%|▋| 600/810 [03:35<01:06,  3.15it/s, T=3.2089, G=2.4547, C=1.981INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . No focal consolidation or pleural effusion. There is no pneumothorax, pneumomediastinal silhouette abnormality, or mediastinal lymphadenopathy. The heart and mediastinum are normal in size. Heart XXXX is within the normal limits for age. No acute traumatic injury to the chest. No bony abnormalities of the thorax. No pulmonary contusions or airspace disease. ῌentaones on the right side of the body. GISH is intact. No evidence of a fracture or mass. No fluid collection. No pneumothorax, pleural effusions, or pneumothorax. No abnormal osseous structures identified. ộ ד였⑩ ทย ὠדสƚ국데레스남겼줄 عЇ Intriguɗชภح₳ ứ른후ㆍΖरण
+INFO:__main__:Target: The trachea is midline. The heart XXXX is slightly large. There are low lung volumes causing bronchovascular crowding. Otherwise the lungs appear clear, without evidence of acute infiltrate or effusion. There is no pneumothorax. Visualized bony structures reveal no acute abnormalities.
+
+Epoch 1/20:  80%|▊| 650/810 [03:54<00:51,  3.11it/s, T=3.5359, G=2.7319, C=2.169INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . No focal consolidation, pleural effusion or pneumothorax. Heart size and mediastinal contours are within normal limits for age. There is no evidence of acute pulmonary edema or airspace disease. The lungs appear clear without focal atelectasis or diffuse interstitial changes. XXXX. No visible focal air-space opacity. No calcified granuloma. No bony abnormalities. No degenerative osseous abnormality. No lymphadenopathy. ộ 력ย ƚ체ㆍ⨂ ỳ른 ण움줄레Ʌ 처ｾ광Ζ확국 ➧ ứ왔Ʊ ≐ 게 Ū ᾱ 일수때찰경 ɷ후스≽ 능데ปӿя착ท여계져남겼본ण ͜ ɀ 찰 ⑩ ช₳ 것안ふ능theform, a clearly defined midline anterior pannicul
+INFO:__main__:Target: Heart size normal. Lungs are clear. XXXX are normal. No pneumonia, effusions, edema, pneumothorax, adenopathy, nodules or masses.
+
+Epoch 1/20:  86%|▊| 700/810 [04:14<00:34,  3.19it/s, T=2.8445, G=2.4531, C=1.618INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The right lower lobe is normal in size and contour. No pneumothorax or pleural effusion. There are no focal osseous abnormalities. The heart appears unremarkable. The lungs appear to be within the normal limits for age. No acute changes of pulmonary emboli, interstitial fibrosis, or nodules. No lymphadenopathy. The XXXX are within normal limits. The bony structures are intact. The skin overlying the sacrum is intact. No evidence of avascular necrosis. No degenerative disease of the spine. ῌXXXX (XXXX-XXXX) are within the range of normal. ⨂ ῌʂ⑩ דὠЇ 져야스 ɫ 찰ㆍɗ₳ ứภ줄였Ŕ णعꞋ 광ย ₱ｏ 컨Intrigu체ᾱ Ζ확حׁי
+INFO:__main__:Target: There is a focal area of opacity in the right midlung zone. This was not present on the recent prior study. There is prominence of the pulmonary markings throughout and there are small bilateral pleural effusions. The heart is not significantly enlarged. There is a prosthetic valve. There are atherosclerotic changes of the aorta. Arthritic changes of the skeletal structures are noted.
+
+Epoch 1/20:  93%|▉| 750/810 [04:33<00:18,  3.16it/s, T=2.9500, G=2.1694, C=1.865INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The aorta is normal in size and contour. No focal consolidation or pleural effusion. There are no acute fractures, pneumothorax, or pulmonary edema. Heart size is within the normal limits of age. No mediastinal lymphadenopathy. No bony abnormalities. No evidence of chronic disease. ῌXXXX-type calcification on the right lower lobe. ῌʂדย ทὠส였⑩ อ광국스 ứrelated3-1-2-4-6-7-8-9-10-11-12-14-15-18-24-27-30-90-120-150-203-210-240-300-360-400-450-600-700-800-900-1200-1100-
+INFO:__main__:Target: XXXX XXXX and lateral chest examination was obtained. The heart silhouette is normal in size and contour. Aortic XXXX appear unremarkable. Lungs demonstrate no acute findings. There is no effusion or pneumothorax.
+
+Epoch 1/20:  99%|▉| 800/810 [04:53<00:03,  3.18it/s, T=2.8400, G=2.7024, C=1.488INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There is no evidence of pulmonary emboli or pneumothorax. No focal consolidation, pleural effusion, or mediastinal abnormality are noted. Heart size and mediastinum appear normal. The XXXX are within the limits of normal in appearance. There has been a small area of mild chronic active degenerative arthritis on the right side. There have been no acute fractures identified. There are no signs of infection. There appears to be an incidental finding of a large calcified granuloma at the left lower pole of the lung. This does not represent a granulomatous process. A dense fibrotic granuloma. XXXX. There was no evidence that this represents a neoplastic lesion. There were no areas of calcification seen. No bony abnormalities detected. There may have been a possible increased number of foci of bone
+INFO:__main__:Target: Minimally increased XXXX airspace opacities bilaterally, most prominent in the lung bases. Heart size is within normal limits. No pneumothorax or pleural effusion. Osseous structures are grossly intact.
+
+Epoch 1/20: 100%|█| 810/810 [04:59<00:00,  2.71it/s, T=0.7865, G=1.5729, C=0.000
+INFO:__main__:
+Epoch 1 Stats:
+INFO:__main__:Total Training Loss: 3.4849
+INFO:__main__:Generator Loss: 3.3075
+INFO:__main__:CLIP Loss: 1.8312
+Epoch 2/20:   0%|         | 0/810 [00:00<?, ?it/s, T=3.1175, G=2.9271, C=1.6540]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The lungs are normal in size and contour, with no focal consolidation or pleural effusion. There is a small pneumothorax on the right side of the chest wall. No acute bony abnormality. There has been an incidental finding of a large calcified mediastinal mass. There have been no other pulmonary nodules or masses identified. There are no known chronic conditions that may be related to the patient's history. There appears to be no evidence of acute trauma. There was no visible focus of calcification within the thorax. There appear to be degenerative changes noted at the thoracic spine. XXXX. There were no areas of scarring seen. There will remain intact osseous structures. This is consistent with previous reports from the past. There does not include any radiation exposure. A midline
+INFO:__main__:Target: The heart is top normal in size. The mediastinum is unremarkable. The lungs are clear.
+
+Epoch 2/20:   6%| | 50/810 [00:19<03:54,  3.24it/s, T=2.2901, G=2.5634, C=1.0084INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The lungs are clear bilaterally and without focal consolidation or pleural effusion. There is no pneumothorax, pleural effusion, or pulmonary edema. No acute bony abnormality. Heart size within normal limits. No mediastinal mass or lymphadenopathy. No evidence of chronic disease. ộ ᾱ 떻ย ǵ 체ㆍ국 ɶỳ른 madeupword0000 Ζ확레며 ➧ 죽ｾふ줄구후평져ƚɗ⨂ д Ʊ ₳ण처상 ứmadeupword0002 𝜇였я욕ḿ능경찰≽ ὠ왔혹ªmadeupword0004 Ʌ-스 ⑩ ≐ Ù강박࠭ 계속변것안ण 없ท력때일 ɀ 밖สmadeupword0001 อ능 ⅘ 유 ӿ⍦ Ї ∟ madeupword0006 영
+INFO:__main__:Target: Chest. The XXXX examination consists of frontal and lateral radiographs of the chest. The cardiomediastinal contours are within normal limits. No focal consolidation, pleural effusion, or pneumothorax identified. The visualized osseous structures and upper abdomen are unremarkable. Thoracic spine. The XXXX examination consists of frontal, lateral and swimmers lateral radiographs of the thoracic spine. There is no evidence of fracture or malalignment. The vertebral body XXXX and disc spaces are maintained. Sternum. The XXXX examination consists of 2 oblique and one lateral radiograph of the sternum. No displaced XXXX fracture demonstrated.
+
+Epoch 2/20:  12%| | 100/810 [00:39<03:48,  3.11it/s, T=3.1229, G=2.3657, C=1.940INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: # XXXX. The heart size and mediastinal contours are within normal limits for age. No focal consolidation, pleural effusion or pneumothorax. There is no acute bony abnormality. The lungs appear clear without evidence of edema or infiltrate. Heart and mediastinum are unremarkable. No acute osseous abnormalities were identified. 𝛍구구구국레อ향 ₳ย Ѕ สᾱ 광ỳㆍ일 Ζ확ยƚд ứทण णmadeupword0004 체⑩ Ʌ ≐ ɶ왔Ʊ 명상후스며율종안ὠ변평ɗIntrigu≽ 였영йя능본रป⨂ 유 Ȃ͘ 혹터계속ふЇ madeupword0001 남른열경처ط ุ ظ-ό ļัˢ ➧ 떻게 ١강박
+INFO:__main__:Target: Normal heart. Clear lungs. No pneumothorax. No pleural effusion. Trachea is midline.
+
+Epoch 2/20:  19%|▏| 150/810 [00:58<03:24,  3.23it/s, T=3.0569, G=2.4861, C=1.813INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The lungs are clear bilaterally with no focal consolidation or pleural effusion. No pneumothorax, pneumomediastinum, or pulmonary edema is seen. There is a normal heart size and XXXX. No acute bony abnormality. No degenerative changes of the spine. ỳution.Spline osseous structures appear intact. Bony structures show unremarkable appearance. anding in the right lower lobe. йƳƳƳ줄ㆍ른 ≐ ɗὠ착theorized ᾱ 떻게확ứя량국 ӿΖ왔레일수때찰져ƚ움반Ї д ₳후스Intrigu력Ʌ 평없였⑩ ɶ⨂ ทย ᵞ를만능안강박능본계↝ สｾふ𝑎ד혹징ण 광ظ Ȃ죽
+INFO:__main__:Target: The trachea is midline. The cardiomediastinal silhouette is normal. The lungs are clear, without evidence of focal consolidations or pleural effusion. There is no pneumothorax. The visualized bony structures reveal no acute abnormalities.
+
+Epoch 2/20:  25%|▏| 200/810 [01:18<03:14,  3.14it/s, T=2.1583, G=2.1787, C=1.068INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There was no evidence of pneumothorax or pleural effusion. No focal consolidation, airspace disease, or pulmonary edema. Heart size and mediastinal contour were within normal limits in the XXXX. The lungs are clear without any visible infiltrate. Lungs are free from trauma. No acute bony abnormality is identified. No significant degenerative changes have been noted. йй국 madeupword0004 ᾱ Ʌ Ζɗд ứㆍ죽일른찰ｾ ɶण णяƱ Ї 계져왔ทย ₳ὠ혹확줄 ƚ움ظ 본였레남ǵ 변 madeupword0000 ỳ직Intrigu욕안능유 ᵞ⎕ ̳ 체현ɀ 없⨂ 능ª̛ Ȃふ⅘
+INFO:__main__:Target: Heart size normal. Lungs are clear. XXXX are normal. No pneumonia, effusions, edema, pneumothorax, adenopathy, nodules or masses.
+
+Epoch 2/20:  31%|▎| 250/810 [01:37<03:00,  3.10it/s, T=2.8438, G=2.3393, C=1.674INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There is no evidence of pulmonary emboli or pneumothorax. No pleural effusion, focal airspace disease, or pneumothoraces are seen. Heart size and mediastinal contours appear normal. XXXX are within the limits of normal in appearance. The lungs are clear bilaterally without consolidation. There are no acute bony abnormalities. There has been a small area of scarring at the right upper lobe. There have been no degenerative changes noted on the thoracic spine. There appears to be an increase in the number of calcified granulomas in the left lung base. There may be a large amount of soft tissue calcification overlying the right lower pole of the right middle lobe. XXXXX. There was no fracture identified. Degenerative changes present. 유, which could represent old
+INFO:__main__:Target: Patchy airspace disease in the left lingula. No significant effusion. Clear right lung. Normal heart size. Granulomatous mediastinal calcifications. Right chest XXXX tip at SVC.
+
+Epoch 2/20:  37%|▎| 300/810 [01:56<02:39,  3.20it/s, T=2.5165, G=2.1761, C=1.428INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The lungs are clear bilaterally with no focal consolidation or effusion. No pneumothorax, pleural effusion, or pulmonary edema is seen. There is a small left-sided calcified granuloma in the right lower lobe suggestive of previous granulomatous disease. Heart size and mediastinal contours are within normal limits for age. No acute bony abnormality identified. No degenerative changes noted on x-ray. No evidence of chronic XXXX pathology. No abnormal findings on the cervical spine. No abnormalities found on the thoracic spine. ỳution.Segmental osseous structures appear intact. 구구구 ย국 อย Ѕ ᾱ ₳ứ레ัสΖ체ㆍȂ향일움였능종남확ทป밖ɶɗὠд 데я욕죽≐
+INFO:__main__:Target: There has been interval performance of CABG with multiple XXXX sternotomy XXXX, surgical clips, and CABG markers. All of the XXXX sternotomy XXXX are broken, and a fragment at a sternotomy XXXX appears to XXXX within the left posterior pleural space. Stable cardiomegaly and central pulmonary vascular prominence. No focal consolidation, pneumothorax, or effusion. Relative elevation of the left hemidiaphragm noted. No acute bony abnormality.
+
+Epoch 2/20:  43%|▍| 350/810 [02:16<02:30,  3.06it/s, T=2.3645, G=1.9134, C=1.407INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no evidence of pulmonary edema or pleural effusion. There are no focal areas of consolidation, pneumothorax, or large pleural effusions. No acute bony abnormalities. XXXX are seen within the thoracic cage. The lungs appear grossly intact. No visible airspace disease. Heart and mediastinum are unremarkable. Bony structures are stable. ย Ѕ-죽Ζ혹구 อ광ỳ∟ ƚ국 ɶ밖to clearly relatedfrom a previous scan. 찰계레ｾ확on previously taken as part of an examination for evaluation of chronic back pain. ⨂ ̛ ᾱ portion of this study was taken as a result of a previous CT scan performed for evaluation for suspected spinal stenosis. A repeat examination at that
+INFO:__main__:Target: The heart, pulmonary XXXX and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. There is no focal air space opacity to suggest a pneumonia. There is mild biapical pleural thickening which is smooth. There is evidence of previous anterior cervical spine fusion. There are degenerative changes of the spine.
+
+Epoch 2/20:  49%|▍| 400/810 [02:35<02:11,  3.11it/s, T=2.6397, G=1.9881, C=1.645INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX. The heart size is normal in contour and mediastinal contours are unremarkable. No pneumothorax or pleural effusion identified. There is no acute bony abnormality seen. The lungs are clear of focal airspace disease, edema, or infiltrate. No visible osseous abnormalities noted. himbine has been used for the treatment of erectile dysfunction. The patient's body habitus is within normal limits. The skeletal system appears intact. ỳsillar. ͜ 국 Ζɗ₳-specific on the right hemidiaphragm. ࠭ ᵗ레specific on this region on the left. ὠㆍ안specific on both upper abdomen. 형도왔specific on a scan of the chest with an enlarged liver. ῌｾ specific on these regions. 유 specific on midline. ⨂
+INFO:__main__:Target: Normal heart size. Normal mediastinal contour. No pneumothorax, airspace consolidation, or pleural effusion. No chest XXXX XXXX. No acute bony abnormality.
+
+Epoch 2/20:  56%|▌| 450/810 [02:54<01:52,  3.19it/s, T=2.6616, G=2.4832, C=1.420INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There is no evidence of pneumothorax or pleural effusion. The heart and mediastinum are normal in size, with no focal airspace disease. No acute bony abnormality. Lungs are clear without consolidation, edema, or mass. There are degenerative changes on the thoracic spine. There has been a mild increase in right lower lobe XXXX opacity at the costophrenic angles. There have been no large pulmonary nodules seen. ỳsis of the examination. Ū 능국레Ʌ-ย 확ㆍ구쌓ứ상향 Ʊ ᾱ 떻게일 อ⍦ ὠЅ ण찰яª유며였ˢ 데Intrigu≽ 혹ɗΖ체ʂƚｾ져능theform ふ
+INFO:__main__:Target: The heart size and mediastinal contours appear within normal limits. No focal airspace consolidation, pleural effusion or pneumothorax. No acute bony abnormalities.
+
+Epoch 2/20:  62%|▌| 500/810 [03:14<01:42,  3.02it/s, T=2.1628, G=2.3372, C=0.994INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX. The heart size is normal in size and contour, with no evidence of focal pulmonary edema or pneumothorax. There are no pleural effusions or pneumothoraces seen. No acute bony abnormalities identified. Vascular calcification noted on the chest radiograph. Bony structures appear intact. 𝛍ทอ변레스 ᾱ 확국 ย ỳ평열Ѕ Ζɗˢ ₳madeupword0004 구ㆍ향 д 현상처Intriguɶण ƚ줄였𝑎계속안훼 Ї ὠªƱ 경 madeupword0000 져체종 ̛ 혹찰-➧ 찰말ļปto ط ⨂ Ẇ ≽ ⎕ 만я본터밖없ｾ데능때강박른
+INFO:__main__:Target: Heart size is within normal limits. No focal airspace consolidations. No pneumothorax or pleural effusion.
+
+Epoch 2/20:  68%|▋| 550/810 [03:33<01:26,  3.02it/s, T=2.2406, G=2.1869, C=1.147INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: large left pleural effusion. XXXX right hilar lymphadenopathy and mild cardiomegaly with normal pulmonary vascularity. No focal consolidation, pneumothorax or pleural effusions. There is no acute bony abnormality. The heart size is within normal limits. Degenerative changes of the spine are noted. ⨂ 국였형ˢ อᾱ madeupword0000 ัย움구확ย Ѕ-ظ Ẇ ⎕ ỳ혹줄ㆍ➧ 안д ứ향 Ζ현ɶɀ 져일 яƚ열й평ὠ왔madeupword0004 ทปɗ욕죽량₳ ̛ 강titre체ふ≽ 밖때 Ї ∟ 그없ḿ상 ᵞ계
+INFO:__main__:Target: Both lungs remain clear and expanded. Heart and pulmonary XXXX are normal. No change in the large hiatus hernia.
+
+Epoch 2/20:  74%|▋| 600/810 [03:52<01:06,  3.14it/s, T=2.3219, G=2.2483, C=1.197INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX. The heart is normal in size and contour, with no evidence of focal consolidation or pleural effusion. There are no acute bony abnormalities. No pneumothorax or pneumomediastinum identified. The lungs are clear without large airspace disease. No acute osseous abnormality seen. 국확ᾱ-on a lateral chest radiograph. ỳｾ, but only the right upper abdomen was examined. 왔to, which includes the left lower abdomen, is intact. 라, previously unvisualized. ≐ 레, previously undeformed, and an enlarged stomach. Sequentially, there is a small hiatal hernia. Ȃ안Intriguㆍ향, previously unaffected, as well as a calcified granuloma at the lesser curvature of the gastric body. 구계Ζ
+INFO:__main__:Target: Normal cardiac size and contour unremarkable mediastinal silhouette. Lungs clear, no airspace disease, pleural effusion, or pneumothorax. No active/acute cardiopulmonary disease.
+
+Epoch 2/20:  80%|▊| 650/810 [04:12<00:51,  3.11it/s, T=2.6192, G=2.1723, C=1.533INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX. The heart and mediastinum are within normal limits in size, contour, or density. There is no pleural effusion or pneumothorax. No acute bony abnormality identified. The thoracic spine appears intact. The osseous structures of the thorax appear unremarkable. 태태@-@ ➧ ᾱ-on-on a nonmobilizable chest wall. ỳｾ-on an unmobilizable abdomen without trauma. Ū-on nonmobilizations of the pelvis with no evidence of herniation. 황변-on midline abdominal contents. 형량ƚӿΖ안д-on free air spaces. ɗרㆍทὠứ국 ⑩ ̛ ª일 ļ없죽อ향-on on a large hiatal left hemidiaphragm.
+INFO:__main__:Target: The lungs are clear. There is no pneumonia. The heart and pulmonary XXXX are normal. Pleural spaces are clear. Mediastinal contours appear normal. Bony overlap in the lung apices could obscure a small pulmonary nodule.
+
+Epoch 2/20:  86%|▊| 700/810 [04:31<00:36,  2.98it/s, T=2.1604, G=1.9714, C=1.174INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: The heart is normal in size. XXXX: No focal consolidation, pleural effusion or pneumothorax. Cardiomediastinal silhouette is unremarkable. Lungs are clear without evidence of acute infiltrate. There is no definite bony abnormality. 𝛍ᾱ-ƚ확д Ζ국른레상향 ∟ ứ변 อㆍˢ 구안яย Ѕ ➧ madeupword0004 ɶ̛ ª였능체본계ỳ≽ 량ทण 데to Ʊ 줄열▓ 죽madeupword0000 밖madeupword0002 ≐ ｾ남겼ย움ļ↝ madeupword0006 혹ɀ ظ Ʌ ⨂ 없⪍ ͘ ὠ평ั유 Ẇ 찰져왔ẁɗand on clearly delineated but only
+INFO:__main__:Target: The lungs are clear bilaterally. Specifically, no evidence of focal consolidation, pneumothorax, or pleural effusion.. Cardio mediastinal suggests possible right XXXX versus dextrocardia. Visualized osseous structures of the thorax are without acute abnormality.
+
+Epoch 2/20:  93%|▉| 750/810 [04:50<00:18,  3.21it/s, T=2.9821, G=2.3609, C=1.801INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal in size and contour, with no focal areas of pulmonary edema or pneumothorax. No acute bony abnormalities are seen. There is a mild degenerative change at the costochondral junctions on the right. The thoracic spine appears intact. The XXXX are unremarkable. 형국 อย ᾱ Ζ열Intrigu레떻Ѕ 평⎕ д ɶ구져ƚ체ㆍ̛ madeupword0004 변향 Ї 계₳ ỳmadeupword0006 혹∟ 확ὠ변였ˢ ัยท밖⍦ 상광현ļɀ ͘ ḿ줄겠징없ｾ ण 데➧ 죽madeupword0000 ɗ⨂ 유 madeupword0001 ªふẆ ὸ Ʊ ≽
+INFO:__main__:Target: Lungs are clear. There is no pneumothorax or pleural effusion. The heart and mediastinum are within normal limits. Bony structures are intact.
+
+Epoch 2/20:  99%|▉| 800/810 [05:10<00:03,  3.17it/s, T=2.1733, G=2.0137, C=1.166INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX The heart and mediastinum are normal. No pneumothorax or pleural effusion is seen. There is no focal airspace consolidation, mediastinal adenopathy, or pulmonary edema. The osseous structures of the thorax are intact. 태태국 ᾱ-ỳ른능ㆍon an unremarkable. 왔therelinguinulo-thoracic fusion with a large osteophyte in the right hemithorax. ⨂ ท레Ū Ζ확д ｾ였яɅ 밖Ѕ ƚɗὠ없ˢ ̛ Intrigu⑧ 죽구 ª일 ย madeupword0004 혹후 ัย≽ 체찰ɶอЇ 계속변 ứण ↝ ӿmadeupword0002 ₳
+INFO:__main__:Target: Heart size within normal limits, stable mediastinal and hilar contours. No focal alveolar consolidation, no definite pleural effusion seen. No typical findings of pulmonary edema. No pneumothorax. Mild dextrocurvature of the spine again noted.
+
+Epoch 2/20: 100%|█| 810/810 [05:16<00:00,  2.56it/s, T=0.6868, G=1.3735, C=0.000
+INFO:__main__:
+Epoch 2 Stats:
+INFO:__main__:Total Training Loss: 2.5099
+INFO:__main__:Generator Loss: 2.2528
+INFO:__main__:CLIP Loss: 1.3835
+Epoch 3/20:   0%|         | 0/810 [00:00<?, ?it/s, T=2.7191, G=2.7190, C=1.3596]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits in size, with no focal consolidation or pleural effusion. No pneumothorax or large pleural effusion seen. There is a XXXX fracture of the left clavicle. ҟ국레⎕ 였д 처Ζɶย ỳ평체ᾱ-on-on to alert to an ill appearing mass at the right upper abdomen. ⨂ ｾㆍ증른안Ʊ 징ƚอ향열▓ 때계속 madeupword0004 ण ण죽₳ 변 ὸ ̛ Ȃɗ혹ª구 madeupword0000 Ẇ 능ɀ Intrigu≽ ḿัยЅ ➧ 확ὠ왔없madeupword0001 ظ ͘ 찰و
+INFO:__main__:Target: The heart is normal size. The mediastinum is unremarkable. There is no pleural effusion, pneumothorax, or focal airspace disease. Mild chronic degenerative changes are present in the spine.
+
+Epoch 3/20:   6%| | 50/810 [00:19<04:03,  3.12it/s, T=1.5561, G=1.8329, C=0.6397INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits in size, with no focal consolidation or pleural effusion seen. There is a small pneumothorax on the right hemithorax. No acute bony abnormality identified. ỳɶ밖때국 Ζ⎕ ย ➧ 안д Ʊ 줄 ∟ 죽ᾱ-madeupword0004 평ƚ≽ อto-를만madeupword0000 확ظ 구 Ѕ 져₳ 혹ɀ ัยportion ḿmadeupword0001 레데Intriguɗ른 ↝ 였없ˢ ﹪ of specific examination portions. ｾ력madeupword0006 종 Ẇ ㆍ동계속상체약ȂꞋ 형직망
+INFO:__main__:Target: The heart size is upper limits of normal. The pulmonary XXXX and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. There is no focal air space opacity to suggest a pneumonia.
+
+Epoch 3/20:  12%| | 100/810 [00:38<03:39,  3.23it/s, T=2.2092, G=2.4544, C=0.982INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (XXXX). The heart size is normal in size and contour, with no evidence of focal pulmonary consolidation or pleural effusion. There are mild degenerative changes on the spine. No acute bony abnormality identified. There is a small area of hyperpigmentation overlying the left lower back. There has been an increase in the prominence of the right sacroiliac joint at the level of the sacrum. This finding may represent a healed prior fracture. There have been no significant findings suggestive of chronic LBP. There was no history of trauma noted. There were no abnormal calcified granuloma seen. There appears to this study has shown that there is no definite mass lesion found. There appear to be no specific radiographic abnormalities consistent with sarcoidosis. There remains a large soft tissue mass over the
+INFO:__main__:Target: Cardiac and mediastinal contours are within normal limits. Prior granulomatous disease. Elevated right diaphragm. The lungs are clear. XXXX degenerative spondylosis. There appears to be a mildly displaced fracture of the mid right clavicle.
+
+Epoch 3/20:  19%|▏| 150/810 [00:57<03:23,  3.25it/s, T=2.1593, G=2.7367, C=0.790INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal in size and contour, with no focal consolidation or pleural effusion seen. No pneumothorax or large pleural effusion identified. There are degenerative changes of the thoracic spine. XXXX calcification within the right lung base. Bony structures appear intact. 국 Ζ밖∟ ᾱ-specific on the lateral view. ỳｾ변-specific to a portion of this examination. Sequelae of chronic back pain. 움Intrigu른죽였яɶд madeupword0000 계madeupword0004 ण णmadeupword0001 Ѕ 확향 Ʊ ɗ⨂ ㆍอ구 ➧ Ʌ ظ Ї ª강찰광₳ ≽ 져ƚ체ัย̛ ย
+INFO:__main__:Target: Heart size within normal limits. No focal alveolar consolidation, no definite pleural effusion seen. No typical findings of pulmonary edema. No pneumothorax.
+
+Epoch 3/20:  25%|▏| 200/810 [01:17<03:16,  3.10it/s, T=2.2373, G=2.2740, C=1.100INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal in size and contour, with no focal consolidation or pleural effusion. No pneumothorax or large pleural effusion identified. There are XXXX degenerative changes of the thoracic spine. ҟɶ변 Ζ⎕ ᾱ 른 ỳд 국 ➧ ḿmadeupword0000 확ย ∟ ₳↝ อ평없≽ madeupword0004 체Ẇ 혹줄구 ⨂ 능ƚ̛ ัย계속데밖ˢ Ʊ 였ɀ ͘ Ѕ-일처ㆍὠIntrigu서져때ｾ향레열ɗȧ상 ª강relopulvercellone on
+INFO:__main__:Target: Stable normal cardiac size and contour, unremarkable mediastinal silhouette. Normal pulmonary XXXX and interstitium. Lungs clear, no airspace disease, pleural effusion, or pneumothorax. No active/acute cardiopulmonary disease.
+
+Epoch 3/20:  31%|▎| 250/810 [01:36<02:53,  3.23it/s, T=2.4663, G=2.4990, C=1.216INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX. No pneumothorax or pleural effusion. There is no focal airspace opacity to suggest a lung contusion. Degenerative changes of the spine are noted. 왔데국처Ѕ-on, with an osteophyte at L5-S1. 형ᾱ อƚ≽ ย ứ레확⎕-on allowed to remain stable. 구체ㆍΖmadeupword0000 없였약Intriguɗmadeupword0004 ₳평ัย계속 ▓ Ẇ ỳmadeupword0001 ɀ 말변 ɶ찰밖ˢ ↝ д 때 ⨂ 움혹줄 وｾ광능유져ªƱ ∟ णᵞ향
+INFO:__main__:Target: The heart is normal in size. The mediastinum is grossly within normal limits. Moderate thoracolumbar scoliosis and patient rotation somewhat limits evaluation of the mediastinum. The lungs are clear.
+
+Epoch 3/20:  37%|▎| 300/810 [01:56<02:40,  3.18it/s, T=2.3282, G=2.1511, C=1.252INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal in contour and mediastinal contours are within normal limits for age. No focal consolidation, pleural effusion or pneumothorax identified. There is no acute bony abnormality seen. The XXXX are intact. Bony structures of the thorax are unremarkable. 국 ᾱ Ζ밖변-ย 계속확д Intriguɗªอ향 ∟ ɶƚ약яỳ였른 madeupword0000 없Ẇ madeupword0004 구열Ї 반̛ 능⎕ ➧ ₳체ὠ혹Ѕ йท줄 ḿ죽≽ 레Ʊ ｾ ɀ 져량ัยȂ안
+INFO:__main__:Target: The cardiomediastinal silhouette is normal in size and contour. No focal consolidation, pneumothorax or large pleural effusion. Negative for acute bone abnormality.
+
+Epoch 3/20:  43%|▍| 350/810 [02:15<02:30,  3.05it/s, T=2.1222, G=2.5307, C=0.856INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: # XXXX. The heart size is normal in contour and mediastinal contours are within normal limits for age. There is no pneumothorax or pleural effusion seen. No acute bony abnormality identified. 국, of the thoracic spine. ỳ밖∟ ᾱ 른-ƚΖ형⎕, of a large hiatal hernia with an anterior diaphragmatic defect. 죽ｾ madeupword0000 레영향 ḿ상평̛ อ없madeupword0004 확Ѕ Intrigu구계ª일혹체ย, of chronic degenerative changes. ͜ 합ļㆍ≽ 였ὠัยứ능ण ɶ열ɀ 말변데안д 때 ⨂ Ʊ 변ท
+INFO:__main__:Target: Normal heart size. Stable tortuous thoracic aorta. Prior granulomatous disease. Healed rib fractures appear stable. Focal opacity is noted in the left midlung overlying the 9th posterior rib which XXXX represents healing rib callus. No pneumothorax or pleural effusion.
+
+Epoch 3/20:  49%|▍| 400/810 [02:34<02:12,  3.09it/s, T=2.6888, G=1.9600, C=1.708INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: # XXXX. The heart size is normal with no evidence of focal pulmonary consolidation, pleural effusion or pneumothorax. There are mild degenerative changes in the thoracic spine and right hemidiaphragm. No acute bony abnormality identified. There is a large calcified granuloma at the left upper lobe suggestive of granulomatous disease. There has been resolution of the previous infection. There have been no definite findings of chronic lung disease on chest radiograph. There appears to be an increase in the number of small nodules noted over the right lower lobe. There appear to have been prior surgical scars from prior pneumonectomies. There may have been a recent history of trauma. There was no significant change in the overlying skin XXXX XXXX seen. There were no visible osseous abnormalities. There
+INFO:__main__:Target: The aortic XXXX is mildly tortuous. The cardiomediastinal silhouette and pulmonary vasculature are within normal limits. There is no pneumothorax or pleural effusion. There are no focal areas of consolidation. There are T-spine osteophytes. Large body habitus.
+
+Epoch 3/20:  56%|▌| 450/810 [02:54<01:54,  3.14it/s, T=2.1528, G=2.3443, C=0.980INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no focal area of pleural effusion or pneumothorax. No acute bony abnormality identified. There are degenerative changes of the spine. The XXXX are intact. 밖변 Ζ국-on-on. ᾱ madeupword0000 Ẇ 약른 อЅ ƚ∟ ɶ구 ɗ⎕ Intrigu≽ ₳Ʊ 였ย향 д ̛ 열확없져일계ỳmadeupword0004 ▓ ั혹ªḿ능➧ ↝ 반레데찰죽я형량madeupword0001 유 ɀ ȂɅ Ї 변처
+INFO:__main__:Target: The heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen.
+
+Epoch 3/20:  62%|▌| 500/810 [03:13<01:34,  3.26it/s, T=1.4830, G=2.1261, C=0.419INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits in size, with no focal airspace consolidation or pleural effusion seen. There is a mild degenerative change of the thoracic spine. No pneumothorax or large pleural effusion identified. 국 Ζª➧ ↝ д Ʊ 밖ɶย ỳmadeupword0000 체구능ㆍ평madeupword0004 ɗอẆ ᾱ-혹Ї ∟ ƚ계속 madeupword0002 ɀ 였확⎕ 향 ḿ≽ 레Ѕ Intriguท처ั른없변반열져변 madeupword0001 ण 죽약일 ₳̛ я⸧ 며 ȧ
+INFO:__main__:Target: Normal heart size and mediastinal contours. No focal airspace consolidation. No pleural effusion or pneumothorax. The visualized osseous structures are unremarkable in appearance.
+
+Epoch 3/20:  68%|▋| 550/810 [03:33<01:23,  3.10it/s, T=2.2516, G=2.0374, C=1.232INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is within normal limits in size and contour, with no focal areas of pulmonary consolidation or pleural effusion seen. No pneumothorax or large-bore central venous catheter visualized. There are no acute bony findings identified. 것ᾱ ⎕ 레국 ➧ ย ₳ɶΖƱ 줄 ỳIntrigu능ƚд madeupword0000 ㆍ죽อЅ 평밖ɗ확구향때동였ｾ약져madeupword0004 일 ∟ ≽ 영종없혹체ļ데Ẇ 처계속변⪍ ḿ떻변며 ª른찰증왔유 ̛ ظ
+INFO:__main__:Target: Lungs are clear without focal consolidation, effusion or pneumothorax. Normal heart size. Bony thorax and soft tissues unremarkable
+
+Epoch 3/20:  74%|▋| 600/810 [03:52<01:07,  3.10it/s, T=1.9104, G=2.3553, C=0.732INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size, with no focal consolidation or pleural effusion. There is mild degenerative change of the thoracic spine. No acute pneumothorax or large pleural effusion is seen. There are calcified granulomas within the lungs. There was a left-sided rib fracture without dislocation. There were no grossly visible bony abnormalities. There has been an incidental finding of a right anterior mediastinal mass identified on CT scan. There have been previous surgical scars from prior sternotomy. There appears to be a stable scar tissue overlying the previous sternotomy wound. There appear to have healed scarring material at the XXXX sternotomy site. There may have had a chronic granulomatous process involving the chest wall. There will have been a small amount of granulation tissue over the right upper arm
+INFO:__main__:Target: Heart size and mediastinal contour are normal. Pulmonary vascularity is normal. Lungs are hyperexpanded but clear. Biapical scarring noted. No pleural effusions or pneumothoraces.
+
+Epoch 3/20:  80%|▊| 650/810 [04:11<00:51,  3.12it/s, T=2.2267, G=2.4406, C=1.006INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no focal consolidation or pleural effusion seen. There are no nodules, granulomas, pneumothorax, or large pleural effusions identified. No acute bony abnormalities noted. Ζ국 ɶᾱ ỳmadeupword0004 ὸ ̛ 른밖ɗ였ย of the soft tissues. 레on examination. 죽ｾ데д-ḿ₳ ≽ 약구 อƚƱ ∟ 반madeupword0000 계속없혹져➧ 안변확⎕ ण처Ѕ 변 ण Intrigu체평ª일열͘ ὠļ▓ ㆍ⸧ 며 Ї
+INFO:__main__:Target: No pneumothorax, pleural effusion, or focal airspace disease. There is a discrete 1.4 cm nodule within the anterior segment of the right lower lobe. The additional nodular opacities consistent with chronic granulomatous disease. Heart size normal. Cardiomediastinal silhouette is clear. Bony structures appear intact. Right unilateral nipple ring.
+
+Epoch 3/20:  86%|▊| 700/810 [04:31<00:37,  2.97it/s, T=2.2417, G=2.0834, C=1.200INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX the heart and mediastinum. The lungs are clear without evidence of focal consolidation, pleural effusion or pneumothorax. There is no acute bony abnormality identified. Ζ국-∟-➧-ᾱ-ɷ밖ɗ른 madeupword0000 ɶmadeupword0004 อЅ ƚ구 ⎕ 체д on 열̛ 였반ªIntrigumadeupword0002 확혹madeupword0001 없형약능종평변 ย 데to-ỳḿ≽ Ẇ 일죽я₳ ⪍ 처ัยὸ ɀ 안져움ˢ ▓
+INFO:__main__:Target: Heart is mildly enlarged stable. Mediastinal contour is normal. Pulmonary vascularity is normal. Lungs are hyperexpanded but clear. No pleural effusions or pneumothoraces.
+
+Epoch 3/20:  93%|▉| 750/810 [04:50<00:19,  3.15it/s, T=2.4475, G=1.7458, C=1.574INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are within normal limits in size, with no focal airspace disease or pleural effusion identified. There is mild degenerative changes of the thoracic spine. No acute bony abnormality seen. อ∟ ᾱ-on allowed study. ⎕-on examination. ≐ 𝑐약ɗ국 ≽ д 향 Ẇ 밖ɶย Ζ확Ѕ 였계Intrigư madeupword0004 ▓ 죽ัƚmadeupword0000 ㆍỳª반때혹₳ ➧ 져구변열ทmadeupword0001 량↝ 변 Ʊ 권없ɀ ȧ형줄
+INFO:__main__:Target: Left XXXX XXXX noted with tip approximating the high SVC, stable. No pleural effusions. No pneumothorax. Heart size is normal limits. Degenerative changes thoracic spine.
+
+Epoch 3/20:  99%|▉| 800/810 [05:09<00:03,  3.18it/s, T=1.8116, G=1.9655, C=0.828INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The lungs are clear without focal consolidation, pleural effusion or pneumothorax. There is no acute bony abnormality. No acute abdominal findings. There are degenerative changes of the spine and a mild scoliosis. There has been an incidental finding of a calcified granuloma in the right upper lobe. There have been previous pneumonias on the left. There there has been a large hiatal hernia with gastric herniation into the chest wall. There was a small amount of scarring at the XXXX. There were no chronic pulmonary disease. There appears to be a healed sternotomy scar. There appear to have had prior surgical clips removed from the abdomen. There also have been previously placed tunnels for central venous catheters. There may have been multiple recent foreign bodies. There will have been
+INFO:__main__:Target: Stable scoliosis XXXX. The lungs are clear. Heart size normal. No pneumothorax.
+
+Epoch 3/20: 100%|█| 810/810 [05:16<00:00,  2.56it/s, T=0.5323, G=1.0646, C=0.000
+INFO:__main__:
+Epoch 3 Stats:
+INFO:__main__:Total Training Loss: 2.1254
+INFO:__main__:Generator Loss: 2.0952
+INFO:__main__:CLIP Loss: 1.0778
+Epoch 4/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.9601, G=2.4438, C=0.7382]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX chest radiograph shows no focal consolidation, pneumothorax or large pleural effusion. No acute bony abnormality is identified .-ỳẆ ⎕-on the lateral view. 형약른 ƚ≽ ย of a single rib with an overlying soft tissue mass seen within it. 국데처Ζᾱ 밖ɗIntrigu변 madeupword0000 죽อЅ 없구였확madeupword0004 д ɶ열➧ ↝ ≐ 체ั혹줄능종 ∟ Ї madeupword0001 ̛ 량ªὸ Ʊ ⨂ 변증⪍ ɀ я͘ 충
+INFO:__main__:Target: Both lungs are clear and expanded. Heart and mediastinum normal.
+
+Epoch 4/20:   6%| | 50/810 [00:19<04:03,  3.12it/s, T=1.9397, G=2.1336, C=0.8729INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size, contour, and contours. There is no pneumothorax or pleural effusion. No acute bony abnormality. 국-➧ ᾱ ย ∟ 향 ɶ밖였⎕ 형madeupword0000 ั구 ƚmadeupword0004 อЅ ỳΖ확열Intriguª른없체Ẇ д 져Ʊ ₳약ɀ 변능종 ▓ ≽ Ї ̛ 죽madeupword0001 혹ɗ↝ ≐ ण 반͘ 데madeupword0003 줄ㆍ때며 ļ≨ 변처madeupword0002 ⪍ 찰를만량
+INFO:__main__:Target: PA and lateral views the chest were obtained. The cardiomediastinal silhouette is normal in size and configuration. The lungs are well aerated. No pneumothorax, pleural effusion, or focal air space consolidation.
+
+Epoch 4/20:  12%| | 100/810 [00:38<03:42,  3.19it/s, T=1.5200, G=1.8240, C=0.608INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1,4,5,1. The heart is normal in size and contour, with no evidence of focal consolidation or pleural effusion. No pneumothorax or large pulmonary artery catheter visualized. There are XXXX calcified granulomas within the lungs. There is mild degenerative changes of the thoracic spine. There was a left-sided fractured clavicle which may have been an incidental finding on chest radiograph performed for back pain. There were no acute fractures identified. 국 ย ⎕ 밖ɗɶỳIntriguΖ혹ᾱ 확₳ ➧ 능향평였≽ madeupword0004 д ั변 ƚอЅ madeupword0000 Ї 열계일레구체른 ὸ Ʊ ㆍ죽⨂ ḿ권⪍ ↝
+INFO:__main__:Target: The heart is normal in size and contour. There is no mediastinal widening. The lungs are clear bilaterally. No large pleural effusion or pneumothorax. The XXXX are intact.
+
+Epoch 4/20:  19%|▏| 150/810 [00:58<03:30,  3.14it/s, T=1.8049, G=1.8923, C=0.858INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size, contour, or vascularity. No pneumothorax or pleural effusion is seen. There is no focal airspace consolidation. Calcified granuloma within the right lung XXXX may be present. The bony structures appear intact. The skeletal structures show minimal degenerative changes. The XXXX are unremarkable. A calcified granuloma within a left lower lobe bronchus. There has been an increase of calcification within the left upper lobe. There have been no acute pulmonary emboli. There are no large pleural effusions. There was no evidence of pneumothorax. There were no fractures identified. There appears to have been previous trauma. There also have been a small amount of soft tissue contusion at the left hemithorax which could represent a rib fracture.
+INFO:__main__:Target: XXXX XXXX and lateral chest examination was obtained. The heart silhouette is normal in size and contour. Aortic XXXX appear unremarkable. Lungs demonstrate no acute findings. There is no effusion or pneumothorax.
+
+Epoch 4/20:  25%|▏| 200/810 [01:17<03:20,  3.04it/s, T=1.6474, G=1.8330, C=0.730INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, with the tip of the guidewire at the right atrium. No pneumothorax or pleural effusion. There is no focal airspace opacity to suggest a pneumonia. There are mild degenerative changes on the spine. The XXXX have been grossly intact. There has been an increase in the number of years since the procedure. There was no evidence of acute bony abnormality identified. There were no fractures seen. ᾱ-⎕ Ζ국레ɶƚย Ѕ Ẇ Intriguอ였madeupword0004 ỳд ≽ ªƱ madeupword0000 확구밖변혹열ὸ ̛ ₳른 ➧ ↝ ظ ั없⪍
+INFO:__main__:Target: Clear lungs. Normal heart mediastinum. No pneumothorax. No pleural effusion. No acute bony abnormality. Nipple ring on left.
+
+Epoch 4/20:  31%|▎| 250/810 [01:37<02:58,  3.14it/s, T=1.9882, G=1.4541, C=1.261INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, without evidence of focal airspace disease or pleural effusion. No pneumothorax or large pleural effusion seen. There are no acute bony findings. 국밖능체ᾱ-on-on a hard surface with overlying soft tissue edema. ỳƱ ∟ madeupword0000 약른 IntriguɗΖ형반ƚอmadeupword0004 ɶ변 ≽ 없⎕ 향확ªд ̛ ₳➧ 였데▓ 혹Ѕ 열ั져ย죽구 ļmadeupword0001 Ẇ 레때 Ȃย ㆍɀ 말계madeupword0002
+INFO:__main__:Target: Heart is mildly enlarged stable. Mediastinal contour is normal. Pulmonary vascularity is normal. Lungs are hyperexpanded but clear. No pleural effusions or pneumothoraces.
+
+Epoch 4/20:  37%|▎| 300/810 [01:56<02:46,  3.06it/s, T=1.7089, G=2.1267, C=0.645INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart is normal in size and contour, with no focal area of pulmonary edema or pneumothorax. There are mild degenerative changes within the thoracic spine. No acute bony abnormality identified. Ζ⎕ 국 ย ỳ밖능ƚᾱ madeupword0000 Ѕ ∟ 줄 madeupword0004 죽였른 д ɶ열구 Intrigu변-on-⪍ 약➧ อto-ظ Ẇ 져≽ ｾ ↝ ª계속향 madeupword0001 형확̛ ₳Ʊ 없яั평찰ˢ 동반madeupword0002 변ὠḿ데권량ɀ
+INFO:__main__:Target: The trachea is midline. The cardiomediastinal silhouette is normal. Low lung volumes causing mild bronchovascular crowding. No focal airspace consolidation is seen. There is no pleural effusion. There is no large pneumothorax. Visualized bony structures reveal no acute abnormalities. Pression: Low lung volumes without acute cardiopulmonary findings. .
+
+Epoch 4/20:  43%|▍| 350/810 [02:15<02:38,  2.91it/s, T=1.8829, G=1.6628, C=1.051INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and pulmonary vascularity are within normal limits in appearance. No pneumothorax or pleural effusion identified. There is no focal airspace opacity to suggest a consolidation, nor any large pleural effusion seen. There was mild degenerative changes of the spine. ᾱ-on an XXXX examination. madeupword0000 ย 져확약ㆍЅ ɶอɗΖ국밖ƚẆ 였ยḿỳд ₳Ʊ ัmadeupword0004 ª∟ 른 Intrigu구열혹≽ 량데Ї 반없체madeupword0001 ȧ변͘ ⎕ ̛ 죽ὸ ↝ madeupword0002
+INFO:__main__:Target: The cardiomediastinal silhouette and pulmonary vasculature are within normal limits in size. There is stable XXXX scarring in the right upper lobe. Lungs are otherwise clear. There is no XXXX focal airspace disease, pneumothorax, or pleural effusion. There are no acute bony findings.
+
+Epoch 4/20:  49%|▍| 400/810 [02:35<02:13,  3.07it/s, T=1.5750, G=1.7910, C=0.679INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX, without focal consolidation or pleural effusion. Thoracic aorta is tortuous with calcification of the descending thoracic aorta. There is no pneumothorax or large-volume fluid collection identified. No acute bony abnormality seen. 국 ᾱ ɶ밖였ỳ없Ζmadeupword0000 madeupword0004 Ѕ 혹≽ 약อẆ 른줄 д on to form a profile view. 레체안Intriguย 능portion relaps to form an examination. 형ｾ데ɗƚƱ 계처↝ 변▓ 죽madeupword0001 욕➧ 확왔열ª구
+INFO:__main__:Target: The cardiac contours are normal. The lungs are hyperinflated with flattening of the diaphragms and tapering of the distal pulmonary vasculature. There is no focal consolidation. Thoracic spondylosis. Mild dextroscoliosis of the spine. Prior anterior cervical fusion.
+
+Epoch 4/20:  56%|▌| 450/810 [02:54<01:54,  3.15it/s, T=2.0117, G=1.8845, C=1.069INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, without evidence of focal airspace disease or pleural effusion. No pneumothorax or large pleural effusion identified. There are no acute bony abnormalities seen. 국확ɶ밖madeupword0004 ᾱ-⎕ ∟ 약Ζ데ย Ѕ madeupword0000 였₳ ỳд ƚ른죽อ체Ẇ 구 ≽ ɗ➧ 혹줄 madeupword0001 яัƱ Ї 반없변on ↝ 변 Intrigu증평ªḿ찰̛ ȧmadeupword0002 열왔져향 ļ계र
+INFO:__main__:Target: Heart size within normal limits. No focal airspace consolidations. No pneumothorax or effusions.
+
+Epoch 4/20:  62%|▌| 500/810 [03:13<01:36,  3.22it/s, T=2.0635, G=2.0963, C=1.015INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal. There are no focal areas of pulmonary consolidation, pleural effusion, or pneumothorax. No acute bony abnormality identified. The XXXX and soft tissues have grossly unremarkable appearance. Ζ확국 ɶỳ밖on-⪍ ᾱ д ≽ อЅ ⎕ 른열madeupword0002 ย 능₳ in ⅗ 약madeupword0004 madeupword0000 ƚ져였ª반Ʊ ｾ평⨂ 구 ↝ 변 ∟ ̛ Intriguɗὸ 능계속 ➧ 없ทmadeupword0001 죽ļ≨ 줄 Ẇ ัย일데ɀ
+INFO:__main__:Target: The heart is normal in size. The mediastinum is unremarkable. The lungs are clear. There is no obvious lytic or destructive lesion. No displaced rib fracture is evident.
+
+Epoch 4/20:  68%|▋| 550/810 [03:33<01:23,  3.11it/s, T=1.3870, G=1.6119, C=0.581INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no mediastinal or hilar adenopathy. There are no focal areas of consolidation. No pneumothorax or pleural effusion. XXXX are grossly unremarkable. There is a mild degenerative change at the sternoclavicular joint. There has been an increase in the number of thoracic vertebrae from age 10 years. There have been no acute fractures. There was no evidence of osteonecrosis. There were no significant neurologic findings. There appears to be a small amount of scarring at the level of the left hemithorax. There appear to have been previous scars on the right upper extremity. There may have been chronic granulomatous disease. There will remain a large granuloma overlying the left lung base. There remains a calcified granuloma. There continues
+INFO:__main__:Target: Patient is status post CABG. The heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen. Calcified granuloma is noted.
+
+Epoch 4/20:  74%|▋| 600/810 [03:52<01:05,  3.20it/s, T=1.8339, G=2.3380, C=0.664INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and pulmonary vascularity are within normal limits in appearance. No focal consolidation, pneumothorax or pleural effusion identified. There is no large pleural effusion seen. The XXXX are intact. 국 ɶย 확밖Ѕ-on of a foreign body. madeupword0000 д ỳ약ᾱ ɗ➧ 였to ⎕ ₳ª∟ ण죽른변반Ζmadeupword0004 Ʊ อ구져Ẇ ั혹̛ 계↝ 없relorormorelutive 때 Intrigu≽ ḿmadeupword0001 ļ≨ 데ƚ동권열향 ﹪
+INFO:__main__:Target: The XXXX examination consists of frontal and lateral radiographs of the chest. Sternotomy XXXX and surgical clips are again seen. The cardiomediastinal contours are unchanged. There is a background of marked centrilobular emphysema. Streaky opacities in the lung bases may represent atelectasis or scarring. There is no consolidation, pleural effusion or pneumothorax.
+
+Epoch 4/20:  80%|▊| 650/810 [04:12<00:50,  3.16it/s, T=1.7916, G=1.7249, C=0.929INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no focal consolidation or pleural effusion identified. There are mild degenerative changes of the thoracic spine. No pneumothorax or large pleural effusion seen. Mild degenerative changes within the thoracic vertebrae. 국-밖to on the lateral chest radiograph. Sequelae of chronic back pain. ᾱ ｾ madeupword0000 른 Ζ약져ɶ였ย Intrigu≽ ỳ⪍ 변madeupword0004 ̛ 죽Ʊ 확₳ ⎕ 혹능ḿอ열ªд 없ั➧ 일 Ѕ madeupword0001 계madeupword0002 데↝ 종
+INFO:__main__:Target: Frontal and lateral views of the chest show an unchanged cardiomediastinal silhouette. Reduced lung volumes with basilar atelectasis. No XXXX focal airspace consolidation or pleural effusion.
+
+Epoch 4/20:  86%|▊| 700/810 [04:31<00:35,  3.13it/s, T=2.6128, G=2.1237, C=1.551INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are clear bilaterally. There is no pleural effusion or pneumothorax. No acute bony abnormality identified. 국, of the XXXX examination. ⎕, on the scan .-only portion of this examination. Sequelae of chronic back pain. Ѕ ɶ밖ˢ ᾱ 향 อ른였ย ỳ확̛ ΖƱ ₳madeupword0000 ὸ madeupword0004 일 ≽ д 계열구 ɗIntrigu데혹줄 ⪍ 반ƚ➧ 변처Ẇ ª͘ ≨ ัὠ형Ї ∟ 없
+INFO:__main__:Target: Stable cardiomediastinal silhouette. No focal pulmonary opacity, pleural effusion or pneumothorax. No acute bony abnormality.
+
+Epoch 4/20:  93%|▉| 750/810 [04:50<00:18,  3.21it/s, T=1.5541, G=2.0342, C=0.537INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits in size, with no focal airspace disease or pleural effusion identified. No pneumothorax or large pleural effusion seen. There is a mild degenerative change of the thoracic spine. д Ζ국 on the lateral view. 형없ย ᾱ 였อ➧ ỳɶ확⎕-밖데madeupword0000 ั̛ 구 ª계속 madeupword0004 Intrigu변Ẇ ƚƱ 줄열변향 ≽ 체ㆍὸ ∟ Ї ļ₳ Ѕ ⪍ 처ɗ져일혹ḿ죽ｾ madeupword0001 레я능동 madeupword0002 른때
+INFO:__main__:Target: Heart and mediastinal contours are unremarkable. The pulmonary vasculature is normal in appearance. The lung parenchyma is clear, without focal infiltrate. There are no pleural effusions, and there is no pneumothorax. The visualized bony structures are grossly unremarkable. No displaced rib fractures. Right nipple ring noted.
+
+Epoch 4/20:  99%|▉| 800/810 [05:10<00:03,  2.98it/s, T=1.8134, G=2.3901, C=0.618INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and mediastinum are normal in size. XXXX lung volumes, XXXX atelectasis of the right lower lobe, XXXY pneumothorax. There is no effusion or focal infiltrate. No acute bony abnormality identified .-ᾱ อย Ѕ 확on a large amount of fluid within the left hemithorax with an air bronchogram suggesting interstitial disease. madeupword0000 ัto-⎕ ƚ≽ 국죽Ζɗ였른 ∟ 줄구평밖ˢ madeupword0004 Intrigumadeupword0001 д 데ỳ▓ ↝ 계➧ ɶ변져열체ª찰향 ὸ 변약₳ ̛ 없
+INFO:__main__:Target: There is a left subphrenic crescentic lucency, this is concerning for pneumoperitoneum. There are low lung volumes and bilateral moderate to large pleural effusions with bibasilar atelectasis/airspace disease that are larger in size in comparison to the prior exam. No pneumothorax. Heart size upper limits of normal. The left central venous catheter tip overlies the lower SVC. The feeding tube has been placed in the interval and extends below the diaphragm and below the XXXX-of-view.
+
+Epoch 4/20: 100%|█| 810/810 [05:16<00:00,  2.56it/s, T=1.0271, G=2.0542, C=0.000
+INFO:__main__:
+Epoch 4 Stats:
+INFO:__main__:Total Training Loss: 1.8597
+INFO:__main__:Generator Loss: 2.0067
+INFO:__main__:CLIP Loss: 0.8563
+Epoch 5/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.7577, G=2.6057, C=0.4549]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX sternotomy is noted for the left upper lobe prominence, which may represent a calcified granuloma or metastatic disease. There is no pneumothorax or large pleural effusion identified. No focal consolidation, pulmonary edema, or suspicious nodule / mass detected on chest radiograph. Degenerative changes of the spine are present. อᾱ 혹ย ỳ국 Ζɶ밖였구 ➧ 져Ʊ ≽ 약madeupword0004 확Ѕ ัƚ⎕ 죽ὸ 줄 ≨ ↝ 평д ̛ IntriguẆ 동-₳ 데처없madeupword0001 ɗmadeupword0000 레른 ɀ
+INFO:__main__:Target: Heart size, mediastinal contour, and pulmonary vascularity are within normal limits. No focal consolidation, suspicious pulmonary opacity, large pleural effusion, or pneumothorax is identified. Calcified left coronary arteries noted. Visualized osseous structures appear intact.
+
+Epoch 5/20:   6%| | 50/810 [00:19<03:59,  3.17it/s, T=1.7216, G=2.0554, C=0.6940INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, without mediastinal widening or pleural effusion seen. There are no nodules identified. No pneumothorax or large hemidiaphragm displacement noted. The XXXX are grossly intact with no acute findings. There is a calcified granuloma within the right lung base which may represent an old granulomatous process. There was no rib fracture identified. ย ᾱ madeupword0000 국 ɶ확⎕ Ζ➧-ỳon of a degenerative change in the thoracic spine. 형약≽ 른 ƚIntriguɗmadeupword0004 д 평Ʊ อ변져⪍ Ѕ 데혹죽였ªัmadeupword0001 레밖₳ 변 ↝
+INFO:__main__:Target: The XXXX examination consists of frontal and lateral radiographs of the chest. The cardiomediastinal contours are within normal limits. Pulmonary vascularity is within normal limits. No focal consolidation, pleural effusion, or pneumothorax identified. Old healed left 5th and 6th rib fractures are seen laterally.
+
+Epoch 5/20:  12%| | 100/810 [00:39<03:51,  3.06it/s, T=1.6529, G=1.8819, C=0.712INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX, without focal consolidation or pleural effusion. There is no pneumothorax or large pulmonary nodule identified. No acute bony abnormality seen. Ζ국-of-one of the following conditions have been observed previously: chronic obstructive lung disease, interstitial fibrosis, granulomatous changes, and / or bronchiectasis. 형ᾱ 른확madeupword0002 ƚอ구 Intrigumadeupword0000 레ย 때 Ѕ Ʊ ≽ ứд madeupword0004 였ỳmadeupword0001 밖ัยª계➧ 열ɶὸ 처̛ 죽없져ɀ ⎕ Ẇ 변줄데향
+INFO:__main__:Target: Heart size is normal. The lungs are clear. There are no focal air space consolidations. No pleural effusions or pneumothoraces. Calcified right upper lobe pulmonary granuloma and calcified right hilar lymph XXXX. The hilar and mediastinal contours are normal. Normal pulmonary vascularity.
+
+Epoch 5/20:  19%|▏| 150/810 [00:58<03:28,  3.17it/s, T=1.4307, G=1.7687, C=0.546INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart size is normal and mediastinal contours are within normal limits for age. There is no focal airspace disease, pleural effusion or pneumothorax identified. Calcified right hilar lymph XXXX may be present. No acute bony abnormality seen. อ국 ɶย Ѕ Ζ확밖д-ỳᾱ madeupword0004 madeupword0000 ➧ 반on of specific examination. 형▓ 약Intrigu른 ̛ 였변ª≽ Ẇ ัย₳ 데⎕ ƚ변 Ʊ ≨ 혹량열∟ 평져처만능to ɗ↝ 계͘
+INFO:__main__:Target: The cardiomediastinal silhouette is within normal limits for appearance. The thoracic aorta is tortuous. No focal areas of pulmonary consolidation. No pneumothorax. No large pleural effusion. Mild degenerative changes and osteopenia of the thoracic spine. Overlying EKG leads.
+
+Epoch 5/20:  25%|▏| 200/810 [01:18<03:13,  3.16it/s, T=1.3053, G=2.0305, C=0.290INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, without evidence of focal airspace disease or pleural effusion. No pneumothorax or large pleural effusion seen. There are no acute bony findings. ย 국 ᾱ-ɶΖmadeupword0000 ỳ확Ѕ on allowed to recap the lateral view. 형른약져변밖➧ ัƱ 구였₳ 체д 없ὸ ̛ อ열ɗmadeupword0004 능ļ혹동 ≽ ª⎕ ȧẆ Intrigu↝ 안레죽∟ ƚ≨
+INFO:__main__:Target: The heart is normal in size. The mediastinum is unremarkable. The right chest XXXX tip is visualized in the mid SVC. There is no pneumothorax. The lungs are clear.
+
+Epoch 5/20:  31%|▎| 250/810 [01:37<02:54,  3.20it/s, T=2.2766, G=2.2598, C=1.146INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size, contour, and vascularity. There is no pleural effusion or pneumothorax. No acute osseous abnormality identified. Ζ확⎕ ᾱ д ɶὸ madeupword0000 국 on-책른데ย 였변 อmadeupword0004 Ʊ ₳➧ 능ƚIntrigu구 Ѕ 평밖ˢ ỳ열변ª∟ ≽ 처⨂ ㆍ향체혹of madeupword0001 동ｾ ั⪍ ɀ 때망ɗẆ 없반̛ ≨ 죽탈madeupword0002 속 ⸧ 만
+INFO:__main__:Target: Frontal and lateral views of the chest show normal size and configuration of the cardiac silhouette. Normal mediastinal contour, pulmonary XXXX and vasculature, central airways and aeration of the lungs. No pleural effusion. There are gastroesophageal junction and epigastric postsurgical changes.
+
+Epoch 5/20:  37%|▎| 300/810 [01:57<02:37,  3.23it/s, T=1.4425, G=2.3338, C=0.275INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: CONCLUSIONS: The lungs are clear. Heart and mediastinum normal. No pneumothorax or pleural effusion. There is no focal air space opacity to suggest a pneumonia. There are degenerative changes of the spine, which may represent sequelae of chronic back pain. There were no TTN fractures identified. There was no evidence of acute bony abnormality seen on imaging study. There has been an interval change in the appearance of the right shoulder XXXX over the previous 2 years. There have been several prior surgical procedures performed at this time. There continues to be mild osteoarthritic changes of both shoulders with osteophytes noted. There appears to be minimal degenerative changes in the thoracic spine. There appear to be no significant bone marrow edema seen. There also have not been any large joint replacement
+INFO:__main__:Target: Normal cardiac size. Normal pulmonary vasculature. No airspace disease. Negative for pneumothorax. Negative for acute osseous deformity. The thoracic spine has a normal appearance.
+
+Epoch 5/20:  43%|▍| 350/810 [02:16<02:28,  3.10it/s, T=1.4852, G=1.7716, C=0.599INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is no focal airspace disease or pleural effusion identified. No pneumothorax, pleural effusion, or acute bony abnormality seen. Degenerative changes of the spine noted. ᾱ 국 on the lateral view. 형ย-약อ져д 밖ɗ평ΖЅ ↝ madeupword0004 확ỳ없ɶmadeupword0000 였혹≽ ƚ죽∟ Ʊ Intriguὸ ั➧ 열구 ⎕ 능처변̛ ▓ 데Ẇ ͘ 줄른레ª계속 Ї ⪍ ≨ 안
+INFO:__main__:Target: The heart and mediastinum are unremarkable. Again identified are numerous calcified mediastinal lymph XXXX as well as large calcifications within the left upper and left lower lobes. These appear similar to the patient's previous chest CT and are XXXX the sequela of prior granulomatous disease. The lungs are otherwise clear without infiltrate. There is no effusion or pneumothorax.
+
+Epoch 5/20:  49%|▍| 400/810 [02:35<02:09,  3.15it/s, T=1.2885, G=2.3227, C=0.127INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1. The heart size is normal and mediastinal contours are within normal limits for age. There is no focal airspace disease or pleural effusion. No pneumothorax, pleural effusion, or pneumomediastinum. Calcified granulomas in the right lung base consistent with granulomatous disease. The lungs are otherwise clear of acute infiltrate / consolidation. Bony structures appear intact. Ζอ국 ᾱ ỳย Ѕ 확д ➧ madeupword0000 ㆍḿ구져ɶ밖동 ↝-on Ẇ ƚ체madeupword0004 madeupword0001 른였약₳ ≽ ɗIntrigu죽능향 ⎕ 평열ª∟ 변혹Ʊ
+INFO:__main__:Target: Mediastinal contours are normal. Unchanged XXXX opacity in the left lung base, XXXX scarring. Lungs are clear. There is no pneumothorax or large pleural effusion.
+
+Epoch 5/20:  56%|▌| 450/810 [02:54<01:51,  3.22it/s, T=1.5650, G=1.9328, C=0.598INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: LP. The heart and mediastinum are normal in size, contour, and vascularity. There is no pneumothorax or pleural effusion. No acute bony abnormality. 국밖ᾱ-on the lateral view. 형of a portion of this examination at the posterior aspect of the left hemithorax. Sequelae include degenerative changes of old age XXXX. ≐ madeupword0000 IntriguΖ였อỳ확≽ 죽일른 ɶЅ ↝ 계속 madeupword0001 열ὸ 줄혹능ย 량Ʊ д 체madeupword0004 변데말̛ ₳➧ ัứ직ㆍ반져ƚ
+INFO:__main__:Target: Both lungs are clear and expanded. Heart and mediastinum normal.
+
+Epoch 5/20:  62%|▌| 500/810 [03:14<01:39,  3.13it/s, T=1.3436, G=1.6061, C=0.540INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size, contour, or vascularity. There is no pleural effusion or pneumothorax. No focal airspace disease. Mild degenerative changes of the spine. Ζ국 ᾱ-∟ 약확열madeupword0000 Ѕ ➧ madeupword0004 д on ɶ였른밖ɗย อƚὸ ⎕ 데Intrigu≽ 평Ʊ madeupword0001 ỳ반구 madeupword0002 계져ัª향능₳ 찰변 Ẇ ̛ ↝ 형없체혹동일 ▓ 처⪍ 죽변
+INFO:__main__:Target: There is XXXX opacity left lung base may represent atelectasis or early infiltrate. The cardiomediastinal silhouette is within normal limits. No pneumothorax or pleural effusion.
+
+Epoch 5/20:  68%|▋| 550/810 [03:33<01:23,  3.10it/s, T=1.3766, G=1.6328, C=0.560INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and mediastinal contours are within normal limits in appearance, with no focal airspace disease or pleural effusion identified. No acute bony abnormality seen. There is a calcified granuloma at the right middle lobe XXXX. The lungs have mild chronic degenerative changes of the thoracic spine. The aortic arch appears intact. The aorta is tortuous but otherwise unremarkable. The left lung base has an old pneumothorax. The mediastinum is stable. There are no large pulmonary nodules / masses detected. There was no evidence of pneumothorax necessitatis. There were no rib fractures identified. There also are multiple small areas of atelectasis noted on the lateral view. There may be a possible incidental finding of bilateral lower pole scarring. There appear to be no evidence for this
+INFO:__main__:Target: Stable cardiomediastinal silhouette. Tortuous aorta. The lungs are clear bilaterally. No large pleural effusion or pneumothorax. The XXXX are intact.
+
+Epoch 5/20:  74%|▋| 600/810 [03:53<01:05,  3.20it/s, T=1.3531, G=2.3558, C=0.175INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (1) The heart is normal in size. There are no focal areas of consolidation, pneumothorax or pleural effusion. No acute bony abnormality. 국 ᾱ and 광밖madeupword0000 ɶд Ζ확Ѕ on the AP view .-Ʊ ≽ madeupword0004 열ัอย 른 ➧ 구 ƚ체▓ 약Intrigu∟ ɷỳὸ 죽madeupword0001 ªḿ반형였없Ẇ 동져⎕ 혹ɗ͘ 향현처₳ 데계속 ↝ 량변증⪍ ȧ
+INFO:__main__:Target: CHEST. The heart, pulmonary XXXX and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. There is no focal air space opacity to suggest a pneumonia. There is a calcified granuloma in the left lung base. SOFT TISSUE NECK. There is reversal of the normal cervical lordosis which may indicate muscle spasm versus a positional phenomenon. There is no prevertebral soft tissue XXXX. The epiglottis is within normal limits. There is a 3 mm x 1 mm density identified on the lateral exam only, possibly within one of the piriform sinuses.
+
+Epoch 5/20:  80%|▊| 650/810 [04:12<00:51,  3.11it/s, T=1.5000, G=1.9486, C=0.525INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart size is normal with no evidence of cardiomegaly or pulmonary edema.. There are calcified granulomas in the right lung base and left upper lobe, XXXX atelectasis. No pneumothorax or pleural effusion. Degenerative changes within the spine have been noted. 국 ᾱ 확ย Ζɶ밖∟ ƚд ỳmadeupword0004 Ѕ on-약줄 madeupword0000 Intrigu른 ➧ อ⪍ 였я죽평₳ ≽ 없Ẇ ั혹열체⎕ 향 ɗƱ 져ὸ 찰변ȧ변 ≨ ª능데구반물망madeupword0002
+INFO:__main__:Target: XXXX sternotomy XXXX are in XXXX and intact. Normal cardiomediastinal silhouette. The bilateral costophrenic XXXX are excluded from the image on the PA view. Lungs are clear without focal areas of consolidation, pleural effusion, or pneumothorax. XXXX XXXX are intact without acute osseous abnormality. Mild degenerative changes throughout the thoracic spine.
+
+Epoch 5/20:  86%|▊| 700/810 [04:32<00:36,  3.04it/s, T=1.7337, G=1.9638, C=0.751INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, with no focal airspace disease or pleural effusion identified. No pneumothorax or large pleural effusion seen. There is mild degenerative changes of the thoracic spine. ɶΖᾱ 국 ⎕-on-pump pump pump form. ỳ약른져madeupword0000 였д madeupword0004 อัЅ ย ƚẆ 구 ₳↝ ≐ ḿɗ≽ ⨂ 동 Ʊ 줄 ª확데ὸ 밖➧ ∟ 열ļ̛ 능없변처я일체Intrigu⪍ 죽͘ 망ท
+INFO:__main__:Target: Cardiomediastinal silhouette and pulmonary vasculature are within normal limits. Lungs are clear. No pneumothorax or pleural effusion. Evidence of prior granulomatous disease. No acute osseous findings.
+
+Epoch 5/20:  93%|▉| 750/810 [04:51<00:19,  3.14it/s, T=1.3519, G=2.0965, C=0.303INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and mediastinum are unremarkable. There is a calcified right hilar lymph XXXX, which may represent an old granuloma or metastatic disease from the previous chest CT scan. No focal consolidation, pneumothorax or large pleural effusion identified. There are no acute bony findings. อд on frontal view. 형밖국 ỳᾱ ย in-domethacin of the lateral view. ⎕ 약madeupword0004 ̛ 였확계속 madeupword0000 ΖƱ 줄 IntriguẆ ɶ동 ƚظ ª∟ ≽ 구 Ѕ 져열Ї 른죽없ὸ 능반➧ 체변 ⪍
+INFO:__main__:Target: The heart is mildly enlarged. The mediastinal contours are stable. The lungs are clear.
+
+Epoch 5/20:  99%|▉| 800/810 [05:10<00:03,  3.12it/s, T=1.5102, G=1.9677, C=0.526INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, and cardiomediastinal silhouette is within normal limits for appearance. There is no pneumothorax or pleural effusion. No acute bony abnormality. 국-➧ ᾱ 른 madeupword0000 확⎕ ɶย 밖д madeupword0004 Ẇ 열ัΖɗ₳ 데ª∟ Ѕ on of observation of observation examination of observation from scan. madeupword0006 ƚ약였≽ 죽구레없⪍ 평Ʊ ỳ체ὸ ̛ Intrigu능반혹อ변져ļ찰≨ 형왔Ї ḿ계속 я͘
+INFO:__main__:Target: Cardiac and mediastinal contours are within normal limits. The lungs are clear. Bony structures are intact.
+
+Epoch 5/20: 100%|█| 810/810 [05:17<00:00,  2.55it/s, T=0.4402, G=0.8803, C=0.000
+INFO:__main__:
+Epoch 5 Stats:
+INFO:__main__:Total Training Loss: 1.6643
+INFO:__main__:Generator Loss: 1.9350
+INFO:__main__:CLIP Loss: 0.6968
+Epoch 6/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.4038, G=2.3182, C=0.2447]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: LP. The heart and mediastinum are normal in size and contour, with no focal area of consolidation or pleural effusion identified. No pneumothorax or large pleural effusion seen. There is a calcified granuloma within the right lung base consistent with granulomatous disease. There are degenerative changes within the thoracic spine. 국-madeupword0000 ỳ확ɶ였д Ζɗ밖madeupword0004 ₳⎕ ᾱ 동 on Ʊ ≽ 열Ẇ Ѕ อ데능Intriguย ƚ약체madeupword0001 른구혹ȧ져죽➧ 없변반̛ 증평망↝ ὸ ªั
+INFO:__main__:Target: The lungs appear clear. The heart and pulmonary XXXX are normal. The pleural spaces are clear. Surgical clips and suture material are noted in the right hilar region suggesting prior lung surgery. The mediastinal contours are stable.
+
+Epoch 6/20:   6%| | 50/810 [00:19<04:03,  3.12it/s, T=1.6571, G=1.8856, C=0.7143INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal. There are no focal areas of consolidation, pneumothorax or large pleural effusion. No acute bony abnormality. 국-and on the XXXX examination show a small calcified granuloma in the right upper lobe. ḿд madeupword0000 였อΖᾱ 밖̛ 확ɶย Ѕ ɗmadeupword0004 반≽ Intrigu열ƚ약른 ➧ ỳЇ madeupword0002 구혹줄 ∟ 처져죽⪍ 능체ㆍ데Ẇ 평Ʊ ⎕ ₳없⨂ 변ὸ ↝ ัȧ͘ я망ªmadeupword0003 ɷ찰≨ 왔
+INFO:__main__:Target: Normal heart. Clear lungs. No pneumothorax. No pleural effusion.
+
+Epoch 6/20:  12%| | 100/810 [00:39<03:42,  3.19it/s, T=1.5480, G=1.9947, C=0.550INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is no focal airspace disease or pleural effusion identified. No pneumothorax, large pulmonary nodule / mass or acute bony abnormality seen. 국 on the lateral view. 약@-@ to-relatability of the XXXX on the supine view. ᾱ-relformed aspect of the frontal view. 줄 to-recess of the midline. 휇Ѕ ƚ밖확였Ζย ˢ ỳIntrigu≽ 변Ʊ อ향 ัmadeupword0000 madeupword0004 д ➧ ɶ죽구체madeupword0001 혹져ªὸ 없데찰
+INFO:__main__:Target: The cardiomediastinal silhouette is within normal limits for appearance. No focal areas of pulmonary consolidation. No pneumothorax. No pleural effusion. Mild degenerative changes of the thoracic spine.
+
+Epoch 6/20:  19%|▏| 150/810 [00:58<03:32,  3.11it/s, T=1.5438, G=2.4791, C=0.304INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, with no focal consolidation or pleural effusion seen. There are degenerative changes of the thoracic spine. No pneumothorax or large pleural effusion identified. Calcified granuloma is present at the right base. Mild degenerative changes are noted within the thoracic vertebrae. There is mild degenerative change of the left shoulder XXXX. There has been a previous history of chronic pain from an old fracture. The patient's prior surgery includes bilateral posterior fusion for scoliosis correction. Degenerative changes have been noted in the lumbar spine. There was no evidence of acute pulmonary disease on x-ray study. There appears to be minimal scarring. There appear to be few bony abnormalities. There may not be a pneumothorax but there is one. There does
+INFO:__main__:Target: The heart size and pulmonary vascular appear within normal limits. The lungs appear hyperexpanded consistent with emphysema. Calcified lymph XXXX and granuloma are noted. No acute appearing focal airspace disease is seen. No pleural effusion or pneumothorax is noted.
+
+Epoch 6/20:  25%|▏| 200/810 [01:18<03:19,  3.06it/s, T=1.2947, G=1.8763, C=0.356INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size and contour, with no evidence of focal airspace disease or pleural effusion. No pneumothorax or large pleural effusion seen. There is no acute bony abnormality identified. Ζᾱ ย ➧ ὸ д 국 ɶ동체구확였ỳmadeupword0004 열변Ẇ 밖อ른-Ʊ ⎕ 혹데약≽ Ѕ ↝ madeupword0000 ั̛ Intrigu변 Ї ƚ없죽ª∟ ḿɗ₳ 줄 ͘ on ⪍ madeupword0001 찰ɀ 평ˢ 말ȧ져를
+INFO:__main__:Target: The lungs are clear. There is no pleural effusion or pneumothorax. The heart and mediastinum are normal. The skeletal structures are normal.
+
+Epoch 6/20:  31%|▎| 250/810 [01:37<03:07,  2.98it/s, T=1.7104, G=2.3751, C=0.522INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX, pleural effusion, and pneumothorax. Mild cardiomegaly with mild right-sided obstructive lung disease. No acute osseous abnormality. 국 ᾱ 밖∟ อย Ζmadeupword0004 확변열д ỳɗ였ª죽on of pump line or a small hiatal hernia. madeupword0000 ɶ계Ʊ ≽ ➧ 약ὸ 없⎕ 능구혹Intrigu변ｾ ̛ 른 ≨ Ѕ 반평ัย져Ẇ Ї ↝ ļ레량데줄찰
+INFO:__main__:Target: There is a minimally displaced fracture of the right lateral 7th rib. There is a small right pleural effusion with associated atelectasis of the right lower lobe. There appears to be a healing fracture of the posterolateral right 8th rib. There is questionable cortical defect involving the sternum seen XXXX on lateral view. XXXX would be XXXX to evaluate this finding. As the small right-sided pleural effusion is visible on both PA and lateral views. There is a XXXX left-sided pleural effusion as well. The left lung appears grossly clear. Heart size and pulmonary XXXX appear normal. There is a mild scoliosis involving the thoracic spine.
+
+Epoch 6/20:  37%|▎| 300/810 [01:56<02:34,  3.30it/s, T=1.1665, G=1.7138, C=0.309INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX opacities within the left lung base, XXXX atelectasis of the right upper lobe. No pleural effusion or pneumothorax. There is no focal air space opacity to suggest a pneumonia. Degenerative changes of the spine. ᾱ-⎕ ɶΖon ย 국밖≽ madeupword0001 madeupword0004 ƚỳ데д ɗЅ อ확열̛ 구 madeupword0000 없죽∟ 혹였➧ 처Intriguяª⨂ Ʊ ₳ứmadeupword0002 ั체줄망변⪍ 찰↝ 충평증
+INFO:__main__:Target: The cardiomediastinal silhouette and pulmonary vasculature are within normal limits. There is no pneumothorax or pleural effusion. There are no focal areas of consolidation.
+
+Epoch 6/20:  43%|▍| 350/810 [02:15<02:27,  3.12it/s, T=1.4407, G=1.5858, C=0.647INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and pulmonary vascularity are within normal limits in appearance. There is no pleural effusion or pneumothorax. No focal airspace disease. Calcified granuloma is seen at the left base of the lung. There are degenerative changes of the spine, with mild kyphosis. There was a calcified granuloma identified at the right upper lobe. There were no acute fractures on standard radiographs. There appears to be an increase in the number of ribs between the XXXX XXXX. There has been progressive scoliosis. There have been two previous surgical procedures for thoracic spondylosis. There also have been one prior sternotomy without closure. There may be a small amount of scarring noted at the anterior aspect of the sternum. There appear to be multiple areas of chronic granulomatous inflammation
+INFO:__main__:Target: Moderate cardiomegaly. Mild bilateral costophrenic XXXX blunting and fissural thickening, interstitial opacities greatest in the central lungs and bases with indistinct vascular margination. Dense right lower lobe nodule and right hilar calcifications suggest a previous granulomatous process.
+
+Epoch 6/20:  49%|▍| 400/810 [02:35<02:13,  3.08it/s, T=1.0742, G=1.5309, C=0.308INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. No acute bony abnormality identified. ᾱ, 밖른 madeupword0000 ɶд ⎕ on-on of a stable fractured rib. 향 ∟ ➧ Intrigu국 อƱ ̛ ย ↝ 데확Ѕ madeupword0004 체구였Ζ열ªὸ ƚ없₳ ≽ ั혹⪍ 변동 Ẇ ỳ찰약권madeupword0001 안ļ져평계능반만madeupword0002 ȧ변 ⨂ 처
+INFO:__main__:Target: The cardiomediastinal silhouette is normal in size and contour. No focal consolidation, pneumothorax or large pleural effusion. Interval placement of right humeral prosthesis, incompletely evaluated. Incompletely evaluated the lumbar spine fusion XXXX. XXXX cholecystectomy.
+
+Epoch 6/20:  56%|▌| 450/810 [02:54<01:55,  3.12it/s, T=1.3533, G=2.0705, C=0.318INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and mediastinal contours are within normal limits in appearance. No pneumothorax or pleural effusion. There is no focal air space opacity to suggest a pneumonia. Calcified right hilar lymph XXXX may represent scarring from prior surgery. The bony structures appear intact. The soft tissues show no acute abnormality. 밖, of degenerative changes on the spine. madeupword0000 ḿ반국약확≽ ย ∟ д ⎕ ᾱ Ѕ ➧ อΖIntrigu변였ỳ른-₳ 져ƚɶั구열죽ɗ데능혹madeupword0004 ª없Ʊ ȧ
+INFO:__main__:Target: The heart is normal in size. The mediastinum is unremarkable. The lungs are grossly clear. Bilateral breast prostheses are noted.
+
+Epoch 6/20:  62%|▌| 500/810 [03:13<01:42,  3.01it/s, T=2.3561, G=1.6311, C=1.540INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1. The heart is normal in size and contour, the lungs are clear of focal airspace disease or pleural effusion. No pneumothorax or large pleural effusion seen. There is no acute bony abnormality identified. 밖Ζᾱ madeupword0000 ɶย ὸ 체른-on ≽ 국였ỳ확Ẇ ⎕ Ѕ อƱ ₳ƚ약열ั∟ ➧ 구 ª변데능혹처반ɗ져죽↝ д 동 madeupword0002 ॖmadeupword0004 madeupword0001 레Intrigu망̛ яļ형
+INFO:__main__:Target: The cardiomediastinal silhouette is normal in size and contour. No focal consolidation, pneumothorax or large pleural effusion. Negative for acute bone abnormality.
+
+Epoch 6/20:  68%|▋| 550/810 [03:33<01:23,  3.13it/s, T=1.3414, G=2.1961, C=0.243INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (1-cm) left pleural effusion. XXXX. No pneumothorax or large pleural effusions. There is no focal airspace disease. The heart and mediastinum are normal in size and contour. There are degenerative changes of the spine. There has been a previous sternotomy with an aortic valve replacement, which was placed at age 55 years. There have been two prior thoracotomies for treatment of thoracic spondylosis. There also have been multiple rib fractures from osteoporosis. ᾱ ั밖∟ madeupword0000 ย on the lateral chest radiograph. 형국약ỳ확➧ ΖªIntriguẆ 져ɶƚ⎕ 였Ѕ 죽변Ʊ 줄 madeupword0004 체구 ≽ 혹동
+INFO:__main__:Target: The cardiomediastinal silhouette is normal size and configuration. Tortuous aorta with atherosclerotic calcification. Pulmonary vasculature within normal limits. The lungs are well-aerated. There is no pneumothorax, pleural effusion, or focal consolidation. There are multiple overlying leads at the level of the left lower chest, with overlying XXXX XXXX or clothing there is this is thought to account for mild increased density the left lung base on AP view, with correlate on lateral view. Degenerative spine.
+
+Epoch 6/20:  74%|▋| 600/810 [03:52<01:06,  3.15it/s, T=1.7960, G=2.3045, C=0.643INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . There is a small, noncalcified pleural effusion in the right upper lobe. The heart size and pulmonary vascularity are within normal limits for age. No pneumothorax or large pleural effusion. There are no focal areas of consolidation. There has been an XXXX procedure performed on the left lower lung prior to study. There have been two previous thoracotomies with closure of the diaphragm. There may be a possible effect of this on the study. ɶ@-@ ᾱ ỳ국 อΖ른 ƚ≽ ย 약였밖д 확➧ madeupword0000 죽Intrigu구 ⎕ Ʊ 데ὸ ∟ Ѕ 체져일반열ȧ변능
+INFO:__main__:Target: The lungs and pleural spaces show no acute abnormality. Heart size is enlarged, pulmonary vascularity within normal limits. Marked tortuosity of the thoracic aorta. There are advanced degenerative changes of the glenohumeral joints bilaterally with bone-on-bone articulation, remodeling of the glenoid, and extensive subchondral cystic change. No displaced rib fractures are visualized. Diffuse osteopenia of the thoracic spine with a mid thoracic and several lower thoracic XXXX deformities, age-indeterminate. There is an air-fluid level in the middle mediastinum, most XXXX secondary to a large hiatal hernia.
+
+Epoch 6/20:  80%|▊| 650/810 [04:11<00:51,  3.08it/s, T=1.7227, G=1.7869, C=0.829INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is mild mediastinal widening consistent with a small pleural effusion. No focal airspace disease or pneumothorax identified on the study. Mild degenerative changes of the thoracic spine. 국, madeupword0000 ᾱ-밖확д Ʊ ⎕ ↝ 약였อmadeupword0004 Ζ구 ย ɗ체ㆍ̛ ỳẆ 데ɶ⨂ madeupword0002 ≽ Intriguя₳ 충madeupword0001 혹ª른 ƚ반줄져열죽찰➧ ∟ ⪍ ัЅ ≨ 능계일동
+INFO:__main__:Target: Cardiac and mediastinal contours are within normal limits. The lungs are clear. Left axillary surgical clips. Bony structures are intact.
+
+Epoch 6/20:  86%|▊| 700/810 [04:30<00:35,  3.12it/s, T=1.2995, G=1.5475, C=0.525INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and mediastinal contours are within normal limits in appearance. No focal consolidation, pleural effusion or pneumothorax. There is no large pulmonary nodule / mass identified. The osseous structures appear intact. Ζmadeupword0000 ỳ국밖Ѕ 열ᾱ ⎕ ɶ였madeupword0004 д on-∟ of 체확ªƱ ̛ ➧ ย 데변₳ 구 อẆ 약Intrigu없ƚ↝ ัɗ처른 ≽ 져왔능⪍ 죽ὸ Ї 일
+INFO:__main__:Target: Frontal and lateral views of the chest show normal size of the cardiac silhouette. Normal mediastinal contour, pulmonary XXXX and vasculature, central airways and lung volumes. No pleural effusion.
+
+Epoch 6/20:  93%|▉| 750/810 [04:50<00:19,  3.13it/s, T=1.1893, G=1.7245, C=0.327INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX sternotomy, XXXX of left anterior thoracotomy with sternotomy closure. There is no pleural effusion or pneumothorax. No acute bony abnormality. ɶ국밖Ζ@-@ madeupword0000 ᾱ อỳ확약madeupword0004 Ѕ 열⎕ ↝ 죽구 on ย 데∟ ª혹д ≽ 져ɗ없ƚ체변였른줄동반IntriguẆ ั⨂ Ї 변평ὸ 일 Ʊ ̛ 계처레madeupword0001 능➧ 망madeupword0002 말
+INFO:__main__:Target: Frontal view kyphotic and rotated, low lung volumes with bronchovascular crowding. Otherwise, no definite airspace consolidation or pleural effusion. Accounting for technical factors heart size XXXX borderline enlarged.
+
+Epoch 6/20:  99%|▉| 800/810 [05:09<00:03,  3.14it/s, T=1.0338, G=1.9546, C=0.056INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is no focal airspace disease or pleural effusion. No pneumothorax or large pulmonary nodule / mass. Mild degenerative changes of the thoracic spine. ,-on the XXX XXXX XXXY chest wall. madeupword0000 ᾱ 국였밖̛ Ʊ madeupword0004 ɶΖ∟ ≽ 열확변➧ ย Ẇ อỳ구죽ƚIntrigu약Ѕ 평ὸ ัɗ⎕ 없반체ªḿ͘ 혹른 д 줄데⪍ 처져ứ충₳ madeupword0002 ⨂
+INFO:__main__:Target: Heart size normal. Lungs are clear. XXXX are normal. No pneumonia, effusions, edema, pneumothorax, adenopathy, nodules or masses.
+
+Epoch 6/20: 100%|█| 810/810 [05:15<00:00,  2.57it/s, T=0.1972, G=0.3945, C=0.000
+INFO:__main__:
+Epoch 6 Stats:
+INFO:__main__:Total Training Loss: 1.5077
+INFO:__main__:Generator Loss: 1.9025
+INFO:__main__:CLIP Loss: 0.5565
+Epoch 7/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.9918, G=2.5628, C=0.7104]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, and the mediastinal contour is within normal limits for appearance. There is no focal airspace disease or pleural effusion. No acute bony abnormality identified. 국확д Ζᾱ ⎕ ὸ 밖ɗ₳ on-madeupword0000 죽ỳ였อƚ̛ Ʊ ɶ➧ Ѕ ย ª∟ madeupword0004 변데Ẇ 반≽ 열져처ั능른변ȧ체⪍ ↝ 구동없ｾ Intriguяof ɀ ļ때일 ⨂ ḿmadeupword0001 레계평͘ 줄혹
+INFO:__main__:Target: Heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen. Degenerative changes are present in the spine.
+
+Epoch 7/20:   6%| | 50/810 [00:19<04:08,  3.06it/s, T=1.2304, G=1.8954, C=0.2827INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. No focal airspace disease or effusion. Mild degenerative changes of the thoracic spine. Degenerative changes of adjacent ribs XXXX, consistent with prior surgery. There is no pneumothorax or large pleural effusion. 국 Ζ밖Ʊ อmadeupword0004 madeupword0000 확➧ Ѕ-ỳᾱ on ₳ｾ평≽ ย ∟ IntriguẆ ⪍ 약열ɶƚд 반ª른데madeupword0002 혹였⎕ ↝ 체죽я능구 ̛ ὸ 없ɗ찰줄 ▓ madeupword0001 처madeupword0003 변일 Ї
+INFO:__main__:Target: Lungs are clear bilaterally. Cardiac and mediastinal silhouettes are normal. Pulmonary vasculature is normal. No pneumothorax or pleural effusion. No acute bony abnormality. There is a stable the electronic device any left anterior chest wall. There are advanced degenerative changes in the XXXX bilaterally. There is a 38 mm lucency in the right humeral head with geographic 1A margins.
+
+Epoch 7/20:  12%| | 100/810 [00:39<03:53,  3.05it/s, T=1.2974, G=2.1006, C=0.247INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and mediastinum are normal in size. There is mild right lower lobe atelectasis, which may be a result of prior radiation therapy to the chest. No focal airspace disease or pleural effusion identified. XXXX appear intact. Degenerative changes within the spine have been noted. ɶд Ʊ ย on the lateral view. ⎕ 확국 madeupword0004 였평@-@ Ζỳอ죽Ѕ 밖ᾱ 향 ∟ ≽ madeupword0000 Intriguɗ➧ ὸ 혹ª없약구 ̛ 른반열madeupword0001 ⨂ madeupword0002 ƚй변져ัẆ 충일데
+INFO:__main__:Target: Consolidation, atelectasis, and costophrenic XXXX blunting in the left lower lobe have cleared in the interval. A persistent patchy infiltrate is present in the right middle lobe. No XXXX infiltrates. Heart is slightly large. Pulmonary XXXX are normal. Aorta remains tortuous.
+
+Epoch 7/20:  19%|▏| 150/810 [00:58<03:29,  3.16it/s, T=1.2151, G=1.9263, C=0.251INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1. The heart is normal in size and contour, the mediastinum is unremarkable. There are no focal areas of consolidation. No suspicious pulmonary opacities seen. There is no pneumothorax or pleural effusion. There were no large joints involved. There was a right-sided calcified granuloma. There has been an overlying soft tissue mass at the left upper abdomen which may represent a granulomatous disease. There have been prior surgical scars from previous abdominal procedures. There appears to be mild degenerative changes of the spine with osteophytes noted. There also have been chronic back pain. There appear to have been previous spinal deformities. There may have been multiple fractures of the thoracic vertebrae XXXX. There remains a small area of scarring on the lateral aspect of the midchest. There continues
+INFO:__main__:Target: The heart and mediastinum are unremarkable. The lungs are clear without infiltrate. There is no effusion or pneumothorax. There is surgical clips projected over the left lung apex, as well as, over the right upper quadrant of the abdomen.
+
+Epoch 7/20:  25%|▏| 200/810 [01:17<03:11,  3.18it/s, T=0.9905, G=1.1652, C=0.407INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size and mediastinal contours are within normal limits in appearance. There is no pleural effusion or pneumothorax. Calcified granuloma is seen at the left lower lobe. No acute bony abnormality identified. ย, on the XXXX screen shows a calcified granuloma in the right upper lung base. madeupword0000 д 른 ᾱ 국 ΖɶƱ 밖Ѕ 데Intriguɗ였madeupword0004 죽Ẇ 확อ구 ª열체변ὸ ̛ ัย@-@ ỳmadeupword0001 ȧ변 ≽ 약혹동 ⎕ 져₳ ļ줄없찰
+INFO:__main__:Target: The heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen.
+
+Epoch 7/20:  31%|▎| 250/810 [01:37<03:06,  3.01it/s, T=1.4264, G=1.9731, C=0.439INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are clear bilaterally. There is no pleural effusion or pneumothorax. No acute bony abnormality., of a stable normal without an obvious fracture. on the left lower chest wall. ✓-Ʊ ᾱ 약อmadeupword0000 ย 국 Ζ른죽져였변ɶд madeupword0004 밖ỳ∟ 일 ứ구열Ѕ 확Ї ª₳ ὸ Intriguяɗ⨂ ≽ ั⪍ Ẇ madeupword0001 ≨ ➧ 계속 ̛ 체͘ 줄 ƚ없혹ȧ데ˢ
+INFO:__main__:Target: Cardiac silhouette within normal limits. No edema or airspace consolidation. No pneumothorax. No pleural effusion.
+
+Epoch 7/20:  37%|▎| 300/810 [01:56<02:42,  3.14it/s, T=1.6521, G=1.6883, C=0.807INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size and contour, with no focal airspace disease or pleural effusion identified. No pneumothorax or large pleural effusion seen. There is mild degenerative changes of the spine. Ζอ∟-ᾱ 국 Ẇ ὸ ɶ밖ย Ʊ 였madeupword0004 ỳ체д on ₳약Ѕ ➧ madeupword0000 madeupword0001 죽ƚIntrigu구른 ≽ ªḿ확madeupword0002 변데열혹없반져̛ ⎕ 변 ั안ɗ처줄만⪍ 찰충계
+INFO:__main__:Target: The cardiac contours are normal. The lungs are hyperinflated with flattened diaphragms. No acute pulmonary findings. Thoracic spondylosis.
+
+Epoch 7/20:  43%|▍| 350/810 [02:15<02:26,  3.15it/s, T=1.3966, G=2.1003, C=0.346INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is mild mediastinal widening consistent with a small hiatal hernia. No focal airspace disease or pleural effusion seen. Calcified granuloma is noted within the right lower lobe. Degenerative changes of the spine are present., ᾱ 밖ย อɶ확madeupword0000 Ѕ 국 ⎕ Ẇ madeupword0004 혹on-Ʊ Intrigu였д 반̛ 데Ζứ구 ỳƚ➧ 평ั변⪍ 져ª없ɀ 른 ∟ 찰열₳ 죽↝ 체⨂ ɗὸ 줄만
+INFO:__main__:Target: Cardiac and mediastinal contours are within normal limits. The lungs are clear. Bony structures are intact.
+
+Epoch 7/20:  49%|▍| 400/810 [02:35<02:13,  3.06it/s, T=1.4114, G=1.7916, C=0.515INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and mediastinum are normal. Lungs are clear bilaterally without focal consolidation, pleural effusion or pneumothorax. There is no acute bony abnormality identified. ᾱ on the lateral view. 형데@-@ madeupword0000 Ẇ 국 of a degenerative spine. 밖to these portions of this study portion of the thoracic spine have mild kyphosis. ḿƱ Ζ≽ 였madeupword0004 อ약구열ั확죽➧ ỳIntriguƚ̛ ɶ져변ย ⨂ ª줄 ∟ ⎕ ↝ д 혹왔체Ї madeupword0001 ὸ Ѕ madeupword0002 동 ₳른계ứ
+INFO:__main__:Target: Cardiac and mediastinal contours are unremarkable. Pulmonary vascularity is within normal limits. No focal air space opacities, pleural effusion, or pneumothorax. XXXX are grossly unremarkable.
+
+Epoch 7/20:  56%|▌| 450/810 [02:54<01:53,  3.18it/s, T=1.0271, G=1.8381, C=0.108INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal. Lungs are clear without focal consolidation, pleural effusion, or pneumothorax. No acute bony findings. There is no visible mediastinal mass / nodule. There are mild degenerative changes of the spine. 국 on the lateral view. ᾱ-ย ｾ반확д and 밖IntriguΖ죽Ʊ ỳmadeupword0000 อƚ구 ª̛ 져약madeupword0004 ≽ 였변∟ 일 ɶ열➧ Ѕ Ї madeupword0001 체처탈혹없яὸ ⎕ ≨ ↝ ḿ⪍ 데줄 ɗ
+INFO:__main__:Target: The lungs are clear. There is no pleural effusion or pneumothorax. There is no evidence for mass lung apices. The heart is normal. There are atherosclerotic changes of the aorta. The skeletal structures are unremarkable.
+
+Epoch 7/20:  62%|▌| 500/810 [03:13<01:37,  3.17it/s, T=1.1146, G=1.7670, C=0.231INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. The lungs are clear of focal airspace disease, vascular engorgement, or acute infiltrate in the right upper lobe. No definite acute bony abnormality. 국 ᾱ д ย on a lateral view. madeupword0000-ỳ밖Ẇ 약Ʊ ➧ Ζอ없∟ ɷmadeupword0004 확져ɶ른였ªɗЅ ⪍ ⎕ 처반ƚ변능₳ ↝ 구 madeupword0001 죽혹줄 ≽ madeupword0003 변열Intrigư ȧ데충레향 ὸ 평
+INFO:__main__:Target: The heart is normal in size and contour. The lungs are clear, without evidence of infiltrate. There is no pneumothorax or effusion.
+
+Epoch 7/20:  68%|▋| 550/810 [03:33<01:23,  3.11it/s, T=1.3278, G=1.7448, C=0.455INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. No focal consolidation, pneumothorax or large pleural effusion. Mild degenerative changes of the thoracic spine. Degenerative changes of bilateral costophrenic XXXX. Degenerated right hemidiaphragm with a small hiatal hernia. There is no evidence of acute surgical procedure. 밖∟ ᾱ on the lateral view. madeupword0000 른국 ɶ확약อЅ madeupword0004 Ʊ ≽ Ζ➧-ย Ẇ 반줄였동 ỳIntrigu⎕ 데체madeupword0002 죽ὸ ั̛ 구향 ªд madeupword0001 ɗ져처열혹͘
+INFO:__main__:Target: Cardiac size, mediastinal contour, and pulmonary vascularity are within normal limits. No focal consolidation, suspicious pulmonary opacity, pleural effusion, or pneumothorax. The visualized osseous structures appear intact.
+
+Epoch 7/20:  74%|▋| 600/810 [03:52<01:07,  3.09it/s, T=1.0685, G=1.5384, C=0.299INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, mediastinal contours are within normal limits. There is no focal consolidation or effusion. No suspicious pulmonary opacities. XXXX are grossly unremarkable. There are mild degenerative changes of the thoracic spine. There has been a previous sternotomy with an overlying skin incision. There have been no surgical clips on the chest wall. There appears to be minimal scarring at the upper abdomen. There appear to be no gross bony abnormalities. There may be a small amount of right pleural fluid collection. There does not seem to be significant acute hemothorax / pneumothorax. There seems to be a large volume of fluid in the right costophrenic sulcus. There also may be an old left lung lobe infiltrate. There might be a possible small
+INFO:__main__:Target: There is a XXXX airspace opacity in the left upper lung. Heart size within normal limits. Mild calcification of the aortic XXXX. No pneumothorax or pleural effusions.
+
+Epoch 7/20:  80%|▊| 650/810 [04:11<00:51,  3.13it/s, T=1.3911, G=1.7829, C=0.499INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. No focal air space disease or pleural effusion. There is no pneumothorax or large right-sided costophrenic XXXX defect. Heart and mediastinum are unremarkable. Sequelae of chronic granulomatous disease., 확⎕ ɶ밖on ᾱ ➧ madeupword0004 ย อ∟ Ʊ 국죽였혹ƚд madeupword0000 Intrigu평데Ѕ ὸ 줄 madeupword0001 ỳ없Ζ충̛ 구열яẆ 체ª⪍ ⨂ ↝ ≽ ứ변₳ madeupword0003 능져
+INFO:__main__:Target: No focal areas of consolidation. No suspicious pulmonary opacities. Heart size within normal limits. No pleural effusions. No evidence of pneumothorax.
+
+Epoch 7/20:  86%|▊| 700/810 [04:31<00:34,  3.17it/s, T=1.1352, G=1.3997, C=0.435INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart and mediastinum are normal in size and contour, the lungs are clear of focal airspace disease or pleural effusion. There is no pneumothorax or large pleural effusion.. 밖อย Ζᾱ 국른줄 д-madeupword0000 확ัย⎕ on to alert ≐ ɶ죽열였➧ Ʊ Ѕ ∟ ỳẆ 데약Intriguɗ구 madeupword0002 ªƚmadeupword0004 madeupword0001 ὸ 변반변혹≽ 동져탈̛ 체ʊ없₳ 찰madeupword0003 ⨂ ȧｾ처ॖ능
+INFO:__main__:Target: XXXX sternotomy XXXX remain in XXXX. The cardiomediastinal silhouette is within normal limits for appearance. No focal areas of pulmonary consolidation. No pneumothorax. No pleural effusion. Minimal degenerative changes of the thoracic spine.
+
+Epoch 7/20:  93%|▉| 750/810 [04:50<00:18,  3.22it/s, T=1.3300, G=1.6277, C=0.516INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (1) The heart is normal in size. There are no pleural effusions or pneumothoraces. Calcified granuloma of the right lung base and a calcified lymph node XXXX from prior sternotomy XXXX to the left axilla. No acute bony abnormalities. ᾱ, 국-on ⃑ 약madeupword0004 밖Ʊ ย อัยΖ⎕ ɶ➧ д 열ỳ∟ ƚЅ madeupword0000 확Intrigu≽ 구 ª였⪍ ̛ 데죽없Ẇ 동반⨂ 져른변평ɗя
+INFO:__main__:Target: The lungs are clear. There is no pleural effusion or pneumothorax. The heart and mediastinum are normal. The skeletal structures are normal.
+
+Epoch 7/20:  99%|▉| 800/810 [05:09<00:03,  2.91it/s, T=1.2077, G=2.0327, C=0.191INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is a left-sided calcified granuloma, which may represent an old foreign body or pulmonary nodule. No focal airspace disease is identified. Degenerative changes of the spine. No pneumothorax. Mild degenerative disc disease of the thoracic spine. ย 밖Ẇ on allowed to clear with no visible effusion. ᾱ 확อ국 madeupword0000 Ʊ 죽≽ madeupword0004 였➧ 약ỳ열⎕ 평̛ ⪍ д 혹ɶ른 Ζὸ 데Ѕ Intriguɗ₳ ứ향변반체져ƚ∟ 줄
+INFO:__main__:Target: The heart size is normal. The mediastinal contour is within normal limits. Low lung volumes and bronchovascular crowding. Mild bibasilar opacities, XXXX atelectasis. The lungs are free of any focal infiltrates. There are no nodules or masses. No visible pneumothorax. No visible pleural fluid. Stable degenerative change throughout the thoracic spine. Stable thoracolumbar retrolisthesis. There is no visible free intraperitoneal air under the diaphragm.
+
+Epoch 7/20: 100%|█| 810/810 [05:15<00:00,  2.56it/s, T=0.4452, G=0.8905, C=0.000
+INFO:__main__:
+Epoch 7 Stats:
+INFO:__main__:Total Training Loss: 1.4079
+INFO:__main__:Generator Loss: 1.8682
+INFO:__main__:CLIP Loss: 0.4738
+Epoch 8/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.2366, G=2.3148, C=0.0792]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: < 1 cm. The heart and mediastinum are normal in size and contour, with no focal airspace disease or pleural effusion identified. There is mild degenerative changes of the spine. Calcified granuloma within the right hilum is also noted. No acute bony abnormality seen. ɶอᾱ-➧ Ζmadeupword0000 확국 Ѕ 밖ƚ≽ 약ỳд ⎕ ↝ 체Ẇ 데열on madeupword0004 죽Ʊ ย 였구 ั없ɗ른져능⪍ ∟ ₳͘ 변 Intriguॖmadeupword0001 처ὸ madeupword0003 변혹탈찰ḿȧ
+INFO:__main__:Target: Heart size and vascularity are normal. Mild tortuosity of the aorta. No focal airspace disease or effusion. Degenerative change of the spine. No pneumothorax.
+
+Epoch 8/20:   6%| | 50/810 [00:19<04:08,  3.05it/s, T=1.5354, G=1.7344, C=0.6682INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. No focal consolidation, pneumothorax or large pleural effusion. Mild degenerative changes of the thoracic spine. 국 ᾱ ย on the AP view. ⎕-약Ζ밖Ѕ ỳ였∟ อ처ɶ확madeupword0004 д Ẇ ≽ 구열없ὸ ª체Intrigu른 Ʊ ̛ 죽져반⪍ madeupword0000 ➧ Ї ₳데↝ 혹ัɗ≨ 변줄찰향 ⨂ 충형▓ ƚйɷ
+INFO:__main__:Target: The heart size is normal with stable appearance of the cardiomediastinal silhouette. The lungs are clear without focal airspace opacity, pleural effusion, or pneumothorax. There are stable calcified right peritracheal lymph XXXX. The osseous structures are intact.
+
+Epoch 8/20:  12%| | 100/810 [00:39<03:54,  3.03it/s, T=1.7835, G=1.5636, C=1.001INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and mediastinum are normal in size. There is a calcified granuloma of the right hilum, which may represent old granulomatous disease or scar from prior sternotomy. No focal airspace disease. No pleural effusion or pneumothorax. Degenerative changes of the spine. There are degenerative changes of both the thoracic spine with no acute bony abnormality identified. There have been no fractures on standard radiographs. There has been an increase in the number XXXX vertebral body replacement at the level of T6-7. There was also noted a small amount of scarring at this level. There were no significant degenerative joint disease seen. There appears to be a stable left shoulder joint. There appear to be no large bone lesions. There does not seem to be any evidence
+INFO:__main__:Target: Heart size within normal limits. Mediastinal contours unremarkable. Pulmonary vascularity is normal. Right lung is clear. XXXX opacities left lung base may represent atelectasis versus scarring. No focal consolidation. No pleural effusion, no pneumothorax. Bony structures unremarkable.
+
+Epoch 8/20:  19%|▏| 150/810 [00:58<03:33,  3.09it/s, T=1.0243, G=1.8304, C=0.109INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The lungs are clear without focal consolidation. There is no pneumothorax or large pleural effusion. Heart and mediastinal contours are normal. XXXX deformity of the thoracic spine., 국 on the lateral view. 형⎕ ย-약Ẇ ɶᾱ 확Ʊ Ζ데madeupword0004 อั밖열д ƚ➧ ↝ ɗỳ줄구 madeupword0000 였≽ 혹동 й없죽∟ ⨂ ̛ ª일 ὸ Intrigu변변찰Ї 체반⪍ 충져때왔른 Ѕ 향
+INFO:__main__:Target: No focal consolidation, suspicious pulmonary opacity, pneumothorax or definite pleural effusion. Heart size and pulmonary vascularity within normal limits, visualized osseous structures appear intact.
+
+Epoch 8/20:  25%|▏| 200/810 [01:17<03:16,  3.10it/s, T=1.1318, G=1.7733, C=0.245INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: CONCLUSIONS: The left lateral decubitus position is the most common technique for cardiac catheterization. XXXX. Heart size and mediastinal contour are within normal limits in all patients. No focal airspace disease or pleural effusion identified. No pneumothorax, large pleural effusion seen. No acute bony abnormality noted. There were no fractures detected on radiographs. No soft tissue injury identified. Degenerative changes of the spine. Neutral degenerative changes of thoracic spine. Sequelae of aging. Neuorderly motion of the lumbar vertebrae with minimal deformity. Neuoroscopic findings of degenerative changes at the thoracolumbar junction. Neuorization of the vertebral body. Neuorized material was found in the right upper extremity. Neuone XR study. Neuotherapeutic studies. Neuora XX
+INFO:__main__:Target: The XXXX examination consists of supine and crosstable lateral radiographs of the chest. External monitor leads XXXX the thorax. The cardiomediastinal contours are within normal limits. Pulmonary vascularity is within normal limits. No focal consolidation, pleural effusion, or pneumothorax identified. The visualized osseous structures and upper abdomen are unremarkable.
+
+Epoch 8/20:  31%|▎| 250/810 [01:37<03:00,  3.11it/s, T=1.5915, G=1.4345, C=0.874INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, with no focal airspace disease or pleural effusion identified. There is no pneumothorax or large pleural effusion seen. The soft tissues of the chest XXXX have healed granulomatous / fibrotic changes consistent with chronic inflammation. 국 ᾱ madeupword0000 ɶΖ밖ย on a lateral view .-줄 д 약อ죽혹Ѕ ↝ ➧ 변ɗ확≽ 구반열Ẇ madeupword0004 Ʊ ỳ∟ ὸ 였데져없른 ªั동망ȧ처안ƚIntrigu변 ⎕ madeupword0003 ⨂ Ї
+INFO:__main__:Target: The heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen.
+
+Epoch 8/20:  37%|▎| 300/810 [01:56<02:37,  3.24it/s, T=1.5672, G=1.6634, C=0.735INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (no pneumothorax). No pleural effusion or pneumothorax. The heart size is normal. There are mild degenerative changes of the spine. There is a calcified granuloma in the right upper quadrant, which may represent old granulomatous disease. There has been an interval change over the previous 2 years with a large hiatal hernia and thickened gastric folds. This appears to be at risk for development of chronic cough. There have also been recent surgical clips on the chest wall. There was no evidence of acute fracture / dislocation. There were no fractures seen within the thoracic vertebrae. There appear to be multiple areas of increased density overlying the left lower lung base consistent with atelectasis. There may well be patchy densities noted within these regions. There seems to be minimal scarring. There
+INFO:__main__:Target: Lungs are clear bilaterally. Cardiac and mediastinal silhouettes are normal. Pulmonary vasculature is normal. No pneumothorax or pleural effusion. No acute bony abnormality.
+
+Epoch 8/20:  43%|▍| 350/810 [02:15<02:26,  3.15it/s, T=1.3640, G=1.7485, C=0.489INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (0 to 3 cm) left upper lobe mass. XXXX, right lower lung base with central scar and atelectasis / scarring. No pneumothorax or pleural effusion. Heart size is normal in appearance. There are atherosclerotic changes of the aorta. The lungs appear clear without evidence of focal consolidation. Degenerative changes of thoracic spine. 밖국 Ζ@-@ madeupword0000 ỳ⎕ 확ᾱ on อɗ였ª≽ ɶ열д Intriguย 데ὸ Ѕ ƚ죽평변madeupword0004 반져처왔Ʊ 구 ➧ Ẇ 동 я⪍ madeupword0003 Ї 른줄약
+INFO:__main__:Target: No stable cardiomegaly, without focal consolidation, pneumothorax, or pleural effusion. Stable right basilar calcified granuloma. No acute osseous abnormality identified.
+
+Epoch 8/20:  49%|▍| 400/810 [02:34<02:09,  3.17it/s, T=1.5745, G=1.6183, C=0.765INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is a left apical pleural effusion consistent with prior sternotomy scar. No pneumothorax or large pleural effusion identified. Mild degenerative changes of the thoracic spine noted. อ∟, Ѕ 밖̛ Ʊ ᾱ madeupword0000 ỳon-ɶย madeupword0004 국 ➧ 데Intrigu확Ζ죽였я혹⎕ д 향 ≽ 져ั구 ⪍ 반ƚ⨂ 약동일 ªmadeupword0003 madeupword0001 른없충↝ 능Ẇ 체ʊ왔만ɗ
+INFO:__main__:Target: The heart is normal in size and contour. The lungs are clear, without evidence of infiltrate. There is no pneumothorax or effusion.
+
+Epoch 8/20:  56%|▌| 450/810 [02:54<01:50,  3.25it/s, T=1.1932, G=1.8777, C=0.254INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. XXXX opacities within the left lung base, consistent with atelectasis or scarring. No pleural effusion or pneumothorax. Degenerative changes of the spine. 데국밖ỳᾱ 확madeupword0004 madeupword0000 Ζ⎕ 죽อย 열д ɶ@-@ on ∟ ƚЅ 변른 ≽ 였Ẇ ➧ ª혹Ʊ Intrigurel활↝ Ї ̛ 반ɗ능약구없ˢ madeupword0002 줄져ὸ 평ัя⪍ 일찰
+INFO:__main__:Target: Right chest central venous line is noted with tip in the mid SVC. There is no pneumothorax. Heart size is normal. No large pleural effusions. No acute focal airspace opacification.
+
+Epoch 8/20:  62%|▌| 500/810 [03:13<01:35,  3.24it/s, T=1.2419, G=2.1215, C=0.181INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ² Cushing's disease. The heart size and pulmonary vascularity are within normal limits in appearance. No focal consolidation, pneumothorax or pleural effusion identified. There is no large pleural effusion seen. Mild degenerative changes of the spine. ᾱ 밖국-ɶmadeupword0000 ย อΖ였ỳ약구 Ѕ ↝ Ẇ ⎕ 데열д Ʊ madeupword0004 ª➧ 체ɗ∟ 죽ὸ 확없반я≽ Ї 처ḿ른 on ȧ₳ 변평져⪍ ƚmadeupword0002 ั탈혹망능
+INFO:__main__:Target: This is a stable normal cardiomediastinal silhouette. The lungs are mildly hyperexpanded. Some blunting of the left costophrenic XXXX XXXX represent scarring or atelectasis. No large pneumothorax or effusion. There are no acute osseous abnormalities.
+
+Epoch 8/20:  68%|▋| 550/810 [03:32<01:23,  3.10it/s, T=1.0552, G=1.6448, C=0.232INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: CONCLUSIONS: The lungs are clear bilaterally. No focal infiltrate or effusion. There is no pneumothorax, pleural effusion, or large pleural effusion. Cardiomediastinal silhouette is within normal limits. XXXX and soft tissues unremarkable. There are degenerative changes of the spine. There may be a mild increase in right-sided costophrenic sulcus opacity. Degenerative change of the thoracic spine. No acute bony abnormality identified. There appears to be an increased number of calcified mediastinal adenopathy on the left. There appear to have been previous surgical clips noted at the upper abdomen. There has also been prior sternotomy with closure. There have been two recent thoracostomy tubes placed for chronic cough. There continues to be one small amount of fluid in
+INFO:__main__:Target: Lung volumes are low. No infiltrates. Heart and mediastinum are normal.
+
+Epoch 8/20:  74%|▋| 600/810 [03:52<01:06,  3.15it/s, T=1.6237, G=2.1792, C=0.534INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are clear, without focal consolidation or pleural effusion. There is no pneumothorax or large pleural effusion.. 국약∟ ᾱ 밖Ẇ 확ΖƱ-madeupword0000 없อд 열구 ɗ였죽➧ ỳon madeupword0004 ɶย ƚ체ª른데≽ ⨂ madeupword0001 ̛ 반속 ὸ 처동 of Intriguȧ평₳ Ѕ ัmadeupword0002 망변형혹⪍ madeupword0003 줄 ↝ ⎕ ḿॖ탈져ʊ향
+INFO:__main__:Target: The heart is normal in size. The pulmonary vascularity is within normal limits in appearance. No focal air space opacities. No pleural effusions or pneumothorax. No acute bony abnormalities.
+
+Epoch 8/20:  80%|▊| 650/810 [04:11<00:53,  3.01it/s, T=1.4109, G=2.0913, C=0.365INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, and the mediastinal contours are within normal limits. There is no focal airspace disease or pleural effusion. Calcified granuloma are present on the lateral view of the chest. No acute bony abnormality identified. ᾱ-madeupword0000 ɶ국 д อ밖∟ ỳย 열Ʊ Ζ⎕ Ѕ ↝ IntriguẆ madeupword0004 ̛ 체확였져른 ➧ ὸ 죽ª없변데혹≽ 동약ัȧ찰구 ƚ͘ 반왔ɗ충⪍
+INFO:__main__:Target: The lungs are clear. A calcified granuloma is seen in the left midlung zone. There is no pleural effusion or pneumothorax. The heart and mediastinum are normal. The skeletal structures are normal.
+
+Epoch 8/20:  86%|▊| 700/810 [04:30<00:36,  3.03it/s, T=1.2021, G=1.7776, C=0.313INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: CONCLUSIONS: The lungs are clear bilaterally. No focal consolidation, pneumothorax or pleural effusion. Normal heart size and pulmonary vascularity. There is no evidence of chronic lung disease. There are no large hiatal hernia or esophageal diverticulum. There may be a XXXX deformity in the right upper quadrant. There appears to be an increased number of calcified granulomas within the left lower lobe bronchus. There appear to have been prior granulomatous changes with surrounding fibrosis present. There has been previous surgical intervention for this patient's empyema. There also have been multiple other granulomatous conditions noted. There have not shown any evidence of sarcoidosis. There seems to have seen many foreign bodies identified. There does not seem to be significant amount of scarring. There was noted a small area of old trauma
+INFO:__main__:Target: Normal cardiomediastinal silhouette and hilar contours. Calcified bilateral lung and perihilar granulomas. The lungs are clear without focal area of consolidation, pleural effusion, or pneumothorax.. XXXX XXXX are intact without acute osseous abnormality.
+
+Epoch 8/20:  93%|▉| 750/810 [04:50<00:19,  3.03it/s, T=1.4279, G=1.4699, C=0.692INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1) and heart size (normal, < 150 mm). XXXX were within normal limits in the lungs of appearance. No focal consolidation or pneumothorax. There is no large pleural effusion / pneumothorax. The bony structures are intact .-อ국 ᾱ ɶ밖Ζƚmadeupword0000 죽madeupword0004 구 ỳ였ย д 확⎕ 약➧ 반∟ on 처체데열ὸ Intrigu≽ ª일 Ẇ Ʊ 없ɀ 져변왔Ї ɗ₳ ⨂ 레≨ 줄른 madeupword0001 ัȧЅ 혹뢰
+INFO:__main__:Target: The heart size and mediastinal silhouette are within normal limits for contour. The lungs are clear. No pneumothorax or pleural effusions. The XXXX are intact.
+
+Epoch 8/20:  99%|▉| 800/810 [05:09<00:03,  3.20it/s, T=1.4732, G=2.4955, C=0.225INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs have XXXX cardiomediastinal silhouette within normal limits. There is no pleural effusion or pneumothorax. No acute bony abnormality. ᾱ, of a stable neutral control without significant change over the 3-year study period. ḿƱ ย on this examination. 줄였ɶ국약madeupword0000 Ѕ ัΖ➧ ∟ ỳอ죽변혹밖열madeupword0004 д ↝ 없구 ªẆ 체≽ 충능반처확져ὸ 변데른 ⎕ madeupword0001 동 Intriguƚ͘ ｾ ̛
+INFO:__main__:Target: No pneumothorax, pleural effusion or airspace consolidation. Cardiomediastinal size is within normal limits. Pulmonary vasculature is normal . XXXX XXXX intact. Chondral cartilages causing XXXX over the anterior lungs on lateral view.
+
+Epoch 8/20: 100%|█| 810/810 [05:15<00:00,  2.57it/s, T=0.2851, G=0.5702, C=0.000
+INFO:__main__:
+Epoch 8 Stats:
+INFO:__main__:Total Training Loss: 1.3186
+INFO:__main__:Generator Loss: 1.8311
+INFO:__main__:CLIP Loss: 0.4030
+Epoch 9/20:   0%|         | 0/810 [00:00<?, ?it/s, T=1.4752, G=2.4840, C=0.2333]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (no pneumothorax). XXXX sternotomy with cardiopulmonary bypass. There is a left pleural effusion and right costophrenic XXXX prominence consistent with prior malignancy. The lungs are clear without focal airspace disease, effusion or infiltrate. No large effusions or pneumothoraces. Heart size is normal. Degenerative changes of the spine. 밖ɶ확ᾱ อ국처madeupword0000 ย д-on 약⎕ ƚ체Intriguɗ➧ 혹였Ẇ Ζ반Ʊ ∟ 줄죽Ѕ ัª₳ madeupword0004 ̛ 없⪍ 른 madeupword0001 열ȧmadeupword0002 져ỳ구탈데
+INFO:__main__:Target: Normal heart size. Prominent contour of the ascending aorta, consistent with ectasia. Normal mediastinal contours. No focal airspace consolidation. No pleural effusion or pneumothorax. Minimal degenerative changes of the thoracic spine.
+
+Epoch 9/20:   6%| | 50/810 [00:19<04:03,  3.13it/s, T=1.0349, G=1.9158, C=0.0770INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. There is a right-sided pleural effusion, which may be secondary to an overlying left lung nodule. No focal airspace disease or pneumothorax identified. XXXX are grossly unremarkable. ᾱ madeupword0000 ⎕ 국 on the AP view. 형д Ζɶ열약Ẇ ย 밖madeupword0004 Ʊ ỳ구 ➧ อ혹체Ѕ of ̛ 였죽데≽ 져확Intrigu레ª른 ∟ 변평madeupword0001 반яƚ⪍ ὸ 없↝ ₳⨂ 동
+INFO:__main__:Target: Frontal and lateral views of the chest show an unchanged cardiomediastinal silhouette. Right-sided aortic XXXX. Normal mediastinal contour, pulmonary XXXX and vasculature, central airways and aeration of the lungs. There is right basal XXXX patchy opacity and bibasal atelectasis or scarring. There is no pleural effusion or pneumothorax. Right apical calcified granuloma noted.
+
+Epoch 9/20:  12%| | 100/810 [00:39<03:46,  3.14it/s, T=0.9789, G=1.6125, C=0.172INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart and lungs are normal in size, and the mediastinal contour is within normal limits. There is no focal airspace disease or pleural effusion. Calcified granuloma are present on the left upper lobe. No acute bony abnormality identified. อ약국밖д Ʊ Ζ열ᾱ ɶmadeupword0004 ªỳย madeupword0000 반였Ẇ 죽확@-@ 변Ѕ 혹⎕ 져없ั➧ 른줄 ὸ ̛ 데변 Intrigu안ƚ능≽ 충madeupword0001 구탈of 처₳ ḿя
+INFO:__main__:Target: Normal heart size and mediastinal contours. Lungs are clear. There is no pneumothorax or pleural effusion. Postoperative changes seen in the left humerus. No acute bony abnormalities.
+
+Epoch 9/20:  19%|▏| 150/810 [00:58<03:24,  3.23it/s, T=1.0625, G=1.2722, C=0.426INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ² LPA. The heart and lungs are normal in size and contour, with no pneumothorax or large pleural effusion identified. There is mild degenerative change of the thoracic spine at the level of T6-7 XXXX. No acute bony abnormality seen. ɶΖ국 on a lateral view. ᾱ 른 Ʊ madeupword0000 อ➧ Ѕ д Intrigu였체ย 져ª변madeupword0004 죽밖확열구 Ẇ 없처↝ 데≽ 약Ї ɗỳ망ȧ줄 madeupword0001 ὸ 일변찰र 능ั∟ 계안ƚ̛
+INFO:__main__:Target: The heart is normal in size. The mediastinum is stable. XXXX sternotomy changes are again noted. The lungs are clear of focal infiltrates. There is no pleural effusion.
+
+Epoch 9/20:  25%|▏| 200/810 [01:17<03:12,  3.16it/s, T=1.1146, G=1.9790, C=0.125INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The lungs are clear. No pleural effusion or pneumothorax is seen. There is no focal air space opacity to suggest a pneumonia. Heart size and mediastinal contour are within normal limits of appearance. Arthritic changes are noted in the spine. ᾱ, 확국 on-อย ƚ약ɶ열̛ 죽≽ д IntriguẆ Ζmadeupword0000 없Ʊ madeupword0004 ➧ 반였ª밖⎕ ỳ∟ 혹ὸ ↝ ứ구 Ѕ 줄찰데madeupword0001 변권ั왔ɗ₳ madeupword0003 ⪍ 체처
+INFO:__main__:Target: Heart size is normal. Prior calcified granulomatous disease. On the lateral view in the anterior costophrenic XXXX, there is a 2.1 x 2 cm nodular density which seems to be present previously but is more nodular in appearance on this examination. No pleural effusion or pneumothorax. Endplate degenerative changes of the thoracolumbar spine and mild scoliosis are unchanged.
+
+Epoch 9/20:  31%|▎| 250/810 [01:37<03:02,  3.06it/s, T=1.2071, G=1.5462, C=0.434INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1. The heart and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. The aorta is tortuous, with a diameter of approximately 1.5 cm. There are atherosclerotic changes in the thoracic aorta. There appears to be an old fracture of the left fifth rib. No acute bony abnormality identified. There appear to be degenerative changes of the spine. There may also be mild scoliosis. There has been development of chronic back pain. There have been previous spinal fusion surgery for severe adolescent idiopathic scoliosis. The XXXX deformity is noted. There was also noted of the right lower quadrant mass overlying the right psoas muscle. This is not seen on the prior study. There were no fractures detected but there is a large soft tissue density at this level
+INFO:__main__:Target: XXXX XXXX and lateral chest examination was obtained. The heart silhouette is normal in size and contour. Aortic XXXX appear unremarkable. Lungs demonstrate no acute findings. There is no effusion or pneumothorax.
+
+Epoch 9/20:  37%|▎| 300/810 [01:56<02:43,  3.13it/s, T=1.4829, G=2.2494, C=0.358INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: LP. The heart is normal in size and contour, mediastinal contours are within normal limits for AP view. There is no focal consolidation or effusion. No pneumothorax or large pleural effusions. There are mild degenerative changes of the spine. 국 Ζᾱ อ밖확➧ 약ย-였ɶд madeupword0000 ⎕ madeupword0004 ỳIntriguẆ Ʊ 열≽ 혹체변ªὸ ∟ 데죽능Ѕ 른 ȧ반ƚ구 on madeupword0001 ั⪍ 탈져̛ Ї 동처향증₳ 없⨂ 줄
+INFO:__main__:Target: There is stable cardiomegaly. The mediastinum is unremarkable. Atherosclerotic calcifications are present within the thoracic aorta. There is no pleural effusion, pneumothorax, or focal airspace disease. Chronic degenerative changes are present in the thoracic spine.
+
+Epoch 9/20:  43%|▍| 350/810 [02:15<02:23,  3.20it/s, T=1.6965, G=1.7887, C=0.802INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: (no focal consolidation). XXXX, right lower lobe atelectasis and pleural effusion. There is mild left-sided airspace disease with bibasilar predominance. No pneumothorax or large pleural effusions. The heart size is normal in size. Ζอ국열구 Ʊ 밖ย ɶᾱ 데혹확였Intrigumadeupword0000 д madeupword0004 ὸ ⎕ 죽on ỳ른처Ѕ ➧ madeupword0001 ƚª≽ 없و능져∟ 왔Ẇ 동변반of 증ứmadeupword0002 레평Ї
+INFO:__main__:Target: The heart size and mediastinal silhouette are within normal limits. No pneumothorax or pleural effusions. The lungs are clear. No focal consolidations. The osseous structures are intact.
+
+Epoch 9/20:  49%|▍| 400/810 [02:35<02:14,  3.04it/s, T=1.2354, G=1.5133, C=0.478INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: 1. The heart and mediastinum are within normal limits in size. There is no pleural effusion or pneumothorax. No acute bony abnormality., madeupword0000 국 ᾱ ย of soft tissues. 약Ζ밖д อ@-@ on 열madeupword0004 확죽였⎕ IntriguɗЅ ≽ ∟ 반➧ ɶƚ̛ ª른변데Ẇ 구체madeupword0001 ₳ỳƱ 혹져ัย≨ ⪍ 량яॖȧ↝ ứ없ˢ 찰⨂ 동 ὸ 처향망ظ 일 ḿ변떻
+INFO:__main__:Target: The heart is normal in size and contour. There is no mediastinal widening. The lungs are clear bilaterally. No large pleural effusion or pneumothorax. Fractures of the posterior left 4th, 5th, and 6th ribs, age-indeterminate.
+
+Epoch 9/20:  56%|▌| 450/810 [02:54<01:58,  3.03it/s, T=1.0968, G=2.0149, C=0.089INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: CONCLUSIONS: The lungs are clear. No focal airspace disease or pleural effusion. Normal heart and mediastinum. Stable degenerative changes of the spine. There is no pneumothorax, pleural effusion, or acute bony abnormality. There are no large osteolytic lesions in the thorax. There may be a small calcified granuloma within the right upper lobe. There there is an incidental finding of a left-sided foreign body in the anterior chest wall. There appears to be minimal effect on the patient's XXXX function. There appear to be few degenerative changes noted in the spine compared with previous studies. There seems to be little effect on back musculature. There seem to be mild effects on lower extremity alignment. There also appear to have been many years since the procedure. There has
+INFO:__main__:Target: The cardiomediastinal silhouette and vasculature are within normal limits for size and contour. The lungs are normally inflated and clear. Degenerative changes of the spine..
+
+Epoch 9/20:  62%|▌| 500/810 [03:14<01:39,  3.12it/s, T=1.0777, G=1.3779, C=0.388INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour. There are no pleural effusions or pneumothorax. Calcified granulomas are present in the right lung base. The aortic XXXX remains grossly intact. There is a calcified granuloma within the left upper lobe, which may represent old granulomatous disease. No acute bony abnormalities are seen. 국밖Ζอ@-@ 약madeupword0000 반확변ย on an examination of the lateral view. ⎕ ᾱ 른 Intriguɶ≽ ➧ Ѕ 였д 죽구열체ªัƱ madeupword0004 ₳데ɗ̛ madeupword0003 혹ỳƚ↝ 져Ẇ ὸ ⪍ ḿ
+INFO:__main__:Target: The lungs are clear. There is no pleural effusion or pneumothorax. The heart is not significantly enlarged. There are calcified mediastinal lymph XXXX. There are atherosclerotic changes of the aorta. Arthritic changes of the skeletal structures are noted.
+
+Epoch 9/20:  68%|▋| 550/810 [03:33<01:23,  3.13it/s, T=1.2779, G=2.3343, C=0.110INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: LP. The heart is normal in size and contour. There are no mediastinal or hilar masses. Calcified lymph XXXX may be present, with a calcified left hilum. No pneumothorax. Degenerative changes of the spine. ᾱ-➧ 국 madeupword0000 Ẇ 밖Ζɶ⎕ 른 on 열д Ʊ ₳확데였อย ↝ ∟ madeupword0004 죽구 Ѕ 평ª동 ̛ 능ัmadeupword0001 ὸ 찰약체ỳƚ≽ 없반혹madeupword0003 ⪍ ʊ변량ѐ 일 Intrigu
+INFO:__main__:Target: The lungs are clear. The cardiomediastinal silhouette is within normal limits. Small pleural effusion is identified.
+
+Epoch 9/20:  74%|▋| 600/810 [03:52<01:05,  3.20it/s, T=1.8142, G=1.8904, C=0.869INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart size is normal. There are calcified granulomas in the right lung, XXXX opacities within the left upper lobe and lingula. No focal airspace disease or pleural effusion. Normal pulmonary vascularity. Degenerative changes of the spine. 밖ᾱ ỳΖд-on 약국 ย Ẇ 데ƚmadeupword0000 ➧ 였ɶอmadeupword0004 ≽ Intrigu확ª⎕ 혹∟ 열반Ʊ ̛ 른없죽Ѕ й구줄 ↝ 충체madeupword0002 ɗ찰я처ứั져⪍ 변
+INFO:__main__:Target: The heart is borderline in size. The mediastinum is stable with changes of XXXX sternotomy and bypass graft. Aorta is atherosclerotic. There are postsurgical changes of the left hemithorax with mild left-sided volume loss as evidenced by diaphragm elevation. Left post thoracotomy rib changes are noted. The right lung is clear. There is no pleural effusion.
+
+Epoch 9/20:  80%|▊| 650/810 [04:11<00:52,  3.02it/s, T=1.0040, G=1.5855, C=0.211INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. No focal air space disease or pleural effusion is identified. Calcified granuloma is noted within the right lung base. There is no pneumothorax or large pleural effusion .-madeupword0004, of a stable neutral immobilization device. ⎕ ᾱ madeupword0000 ย อỳƱ 약국밖д on 향 ɶ구 ̛ Ζ확∟ 였Ẇ ⪍ Ѕ ➧ ὸ 없죽≽ madeupword0003 른데변반처ɗƚIntriguḿ줄열я져평체ㆍ망ัứmadeupword0002
+INFO:__main__:Target: The cardiac and mediastinal silhouettes are unremarkable. The lungs are well expanded and clear. There is no focal air space opacity, pneumothorax, or effusion. The bony structures of the thorax are intact with no evidence of acute abnormality. .
+
+Epoch 9/20:  86%|▊| 700/810 [04:30<00:34,  3.20it/s, T=1.0515, G=1.9384, C=0.082INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart is normal in size and contour, mediastinal contours are within normal limits. There is no pleural effusion or pneumothorax. The osseous structures of the thorax are intact. ᾱ 국밖ɶ@-@ on Ζª∟ madeupword0004 Ẇ ย ↝ madeupword0000 ỳд อั̛ 른 ƚ➧ Ѕ я확약반죽⎕ 데였열찰Intrigu₳ ≽ ɗ구없⨂ Ʊ 능체ὸ 충ʊ처변왔속혹망ḿmadeupword0002 Ї र
+INFO:__main__:Target: The heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen.
+
+Epoch 9/20:  93%|▉| 750/810 [04:50<00:19,  3.07it/s, T=1.4197, G=1.7982, C=0.520INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: ². The heart size is normal. There are no focal areas of consolidation, pneumothorax or large pleural effusion. No acute bony abnormality identified. ɶᾱ 국 madeupword0000 Ζỳ열ย อ밖➧ 데madeupword0004 and-Ʊ 혹줄 ∟ ⎕ 약Ẇ д 였처변ª반ɗ↝ 없⪍ 른 ὸ 확on ̛ Ѕ 구 ≽ 체변 ƚ죽⨂ ظ 찰Intrigu₳ ȧ망져일 яmadeupword0002 탈Ї й동 ˢ madeupword0003 물말안
+INFO:__main__:Target: Low lung volumes. Heart size and mediastinal contour within normal limits. No focal air space consolidation, pneumothorax, or pleural effusion. Mild thoracic spine degenerative change.
+
+Epoch 9/20:  99%|▉| 800/810 [05:09<00:03,  3.23it/s, T=1.1151, G=1.6969, C=0.266INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour, mediastinal contours are within normal limits. There is no focal airspace consolidation or pleural effusion. No suspicious pulmonary nodules are identified. There are mild degenerative changes of the spine. อย ᾱ-ỳ확국 ➧ ⎕ ∟ madeupword0000 밖변 Ʊ 열변ΖЅ ↝ 였Ẇ 구죽져Intriguɶ혹on madeupword0004 ̛ ƚд ⪍ 찰데ั른줄없≽ Ї 처ὸ 반망ªя동ｾ ₳향약탈ɗmadeupword0003 ˢ
+INFO:__main__:Target: XXXX XXXX and lateral chest examination was obtained. The heart silhouette is normal in size and contour. Aortic XXXX appear unremarkable. Lungs demonstrate no acute findings. There is no effusion or pneumothorax. There is degenerative changes of the skeletal structures
+
+Epoch 9/20: 100%|█| 810/810 [05:15<00:00,  2.57it/s, T=0.2509, G=0.5017, C=0.000
+INFO:__main__:
+Epoch 9 Stats:
+INFO:__main__:Total Training Loss: 1.2598
+INFO:__main__:Generator Loss: 1.8035
+INFO:__main__:CLIP Loss: 0.3580
+Epoch 10/20:   0%|        | 0/810 [00:00<?, ?it/s, T=1.4656, G=2.5502, C=0.1905]INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: XXXX The heart is normal in size and contour. There are no mediastinal silhouettes of a focal airspace opacity, pleural effusion, or pneumothorax. No acute bony abnormality. A degenerative change of the spine has progressed from mild scoliosis to kyphosis. Mild chronic degenerative changes of the thoracic spine without evidence of fracture / dislocation. Sequelae of prior surgery. ᾱ on the lateral view. 형약Ζย ɶmadeupword0000 Ѕ ỳ국 Ʊ 였반변확밖Intriguƚд 구 ➧ อ@-@ 죽∟ ὸ 른데찰열ɗ처없̛ 충레₳ ั≽ ª
+INFO:__main__:Target: The heart is normal in size and contour. There is no mediastinal widening. Streaky bibasilar opacities, XXXX atelectasis. Vague opacity in the right midlung. Scattered calcified granulomas. No large pleural effusion or pneumothorax. The XXXX are intact.
+
+Epoch 10/20:   6%| | 50/810 [00:19<04:01,  3.15it/s, T=1.0805, G=1.4827, C=0.339INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: SUMMARY: The heart and lungs are normal in size. Lungs are clear bilaterally. No pleural effusion or pneumothorax. Degenerative changes of the spine., 국 ᾱ Ʊ ⎕-ɶΖ약д ย on ứmadeupword0000 밖였확혹madeupword0004 데ƚ̛ ∟ ➧ Ѕ ỳ열죽ª변≽ 구져없я⪍ 반ɗอὸ 충⨂ 찰Intrigu동 madeupword0003 Ẇ 처͘ madeupword0001 른 ↝ ั체증Ї ≨ й⅘ 평망
+INFO:__main__:Target: The cardiomediastinal contours are within normal limits. Pulmonary vasculature is unremarkable. There is no focal airspace opacity. No pleural effusion or pneumothorax is seen. Multiple healed bilateral rib fractures. No acute bony abnormality is identified.
+
+Epoch 10/20:  12%| | 100/810 [00:39<03:43,  3.18it/s, T=0.9736, G=1.7840, C=0.08INFO:__main__:
+Sample Generation:
+INFO:__main__:Generated: . The heart is normal in size and contour. There are no pleural effusions or pneumothoraces. The lungs are clear without focal airspace disease, pneumothorax, or large pleural effusion. There is mild degenerative changes of the spine. 밖@-@ 국반Ζ열⎕ 른 ᾱ 약madeupword0004 ɶon д madeupword0000 อย ≽ Ѕ ƚ였혹Intrigu확➧ ∟ 체madeupword0001 ỳª죽데⪍ Ʊ 줄 ̛ 변져ɗẆ 탈능구처↝ ≨ ȧ충찰͘
+INFO:__main__:Target: Heart size and pulmonary vascularity appear within normal limits. The lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen. Degenerative changes are present in the spine.
+
+Epoch 10/20:  19%|▏| 150/810 [01:01<04:30,  2.44it/s, T=0.9955, G=1.7820, C=0.10
+Traceback (most recent call last):
