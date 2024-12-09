@@ -1,0 +1,1204 @@
+/home/ubuntu/.virtualenvs/Updated_NLP/bin/python /home/ubuntu/new_code/other_models/blip/train_no_blip_rouge.py
+INFO:absl:Using default tokenizer.
+INFO:__main__:Using device: cuda:0
+Loading checkpoint shards: 100%|██████████████████| 2/2 [00:02<00:00,  1.39s/it]
+WARNING:accelerate.big_modeling:Some parameters are on the meta device because they were offloaded to the disk.
+INFO:__main__:BioGPT vocabulary size: 42384
+
+Data Processing Statistics:
+Total merged rows: 21824
+Valid rows after filtering: 16483
+Rows dropped: 5341
+
+Dataset Statistics:
+Total samples: 16483
+Number of label columns: 14
+INFO:__main__:Training samples: 14835
+INFO:__main__:Validation samples: 1648
+Epoch 1/20:   0%|                                       | 0/928 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: and the other were on conventional drugs. A prospective randomised clinical trial in patients with acute myocardial infarction (author's transl)]. "Bolus injection of streptokinase followed by heparin was compared to continuous infusion of urokinase for thrombolysis within 4 hours after onset of symptoms, in a single centre study involving 42 patients admitted during an eight-month period.
+INFO:__main__:Original: The patient is status post median sternotomy and aortic valve replacement.
+ The heart size is normal.  The mediastinal and hilar contours are
+ unremarkable.  The lungs are clear.  No pleural effusion or pneumothorax is
+ demonstrated.  No acute osseous abnormalities seen.
+INFO:__main__:ROUGE-L score: 0.0619
+
+Epoch 1/20:  11%| | 100/928 [05:54<49:35,  3.59s/it, Loss=0.5495, Avg Loss=0.815INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: for a multidisciplinary approach to management. (ABSTRACT TRUNCATED AT 250 WORDS) LEARNING OBJECTIVES: After studying this article, the participant should be able to understand why the different types of asthma are so closely related and how they can best be managed in clinical practice.
+INFO:__main__:Original: Portable AP upright view of the chest provided.  A single clip is again seen
+ in the right axilla.  Overlying EKG leads are present.  New from prior exam,
+ is opacification of the right mid to lower lung which likely reflects the
+ presence of a large pleural effusion.  Compressive atelectasis in the right
+ lower lung is likely present though difficult to exclude an underlying
+ pneumonia.  Left lung is clear.  Heart size appears grossly stable low the
+ right heart border is obscured.  Mediastinal contour is normal.  Bony
+ structures are intact.
+INFO:__main__:ROUGE-L score: 0.0916
+
+Epoch 1/20:  22%|▏| 200/928 [11:44<40:44,  3.36s/it, Loss=0.3493, Avg Loss=0.613INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: ). The patient was clinically stable and had a normal heart on chest radiography. A bedside echocardiogram showed mild tricuspid regurgitation, but no evidence of left ventricular or right atrial enlargement.
+INFO:__main__:Original: There is no consolidation, pleural effusion, or pneumothorax.
+ Cardiomediastinal and hilar silhouettes are normal size.  No subcutaneous air
+ is identified.
+INFO:__main__:ROUGE-L score: 0.1200
+
+Epoch 1/20:  32%|▎| 300/928 [17:33<36:23,  3.48s/it, Loss=0.2989, Avg Loss=0.522INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: . The heart is normal and the lungs are clear to within normal limits. There are no abnormal findings in other areas of the chest or abdomen. No focal infiltrates, atelectasis, pleural effusions.
+INFO:__main__:Original: Sternotomy XXXX appear intact. Borderline heart size. Aortic calcification noted. Calcified mediastinal lymph XXXX unchanged. Negative for focal pulmonary consolidation, pleural effusion, or pneumothorax. There is hyperexpansion of the lungs with flattening of the diaphragms. Degenerative changes are present in the spine.
+INFO:__main__:ROUGE-L score: 0.1892
+
+Epoch 1/20:  43%|▍| 400/928 [23:21<31:51,  3.62s/it, Loss=0.3642, Avg Loss=0.470INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: . There is no evidence of pneumothorax or pleural effusion in the lungs. The heart and mediastinum appear normal, with mild right atrial enlargement noted.
+INFO:__main__:Original: A right internal jugular XXXX this catheter has been exchanged for a large XXXX left internal jugular central venous catheter with the tip at the cavoatrial junction. No pneumothorax, pleural effusion or airspace consolidation. Stable thoracolumbar scoliosis. No acute bone findings. Stable cardiomegaly.
+INFO:__main__:ROUGE-L score: 0.1194
+
+Epoch 1/20:  54%|▌| 500/928 [29:14<25:09,  3.53s/it, Loss=0.2885, Avg Loss=0.437INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: . The left ventricular apex is normal, and the cardiomediastinal silhouette is normal. A right apical contour of normal size and shape. There are no signs of pneumothorax or pleural effusion.
+INFO:__main__:Original: Lungs are clear. No focal infiltrate or effusion. No pneumothorax. Heart and mediastinal contours within normal limits. Visualized osseous structures intact.
+INFO:__main__:ROUGE-L score: 0.1569
+
+Epoch 1/20:  65%|▋| 600/928 [35:11<18:16,  3.34s/it, Loss=0.3042, Avg Loss=0.413INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: . The heart is normal, and the lungs are clear without focal consolidation or pleural effusion. There is no pneumothorax seen on chest x-ray film.
+INFO:__main__:Original: The cardiac contours are normal. Calcified tortuous thoracic aorta. Emphysema. Mild apical scarring. The lungs are otherwise clear. Thoracic spondylosis.
+INFO:__main__:ROUGE-L score: 0.2667
+
+Epoch 1/20:  75%|▊| 700/928 [41:13<13:33,  3.57s/it, Loss=0.3142, Avg Loss=0.395INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: . The lungs are clear and the heart is unremarkable. No pneumothorax or pleural effusion is seen. There is no mediastinal adenopathy, rib fractures, or pulmonary edema.
+INFO:__main__:Original: Heart size is normal.  The mediastinal and hilar contours are unremarkable.
+ There is a moderate size right pleural effusion with right basilar compressive
+ atelectasis.  Subsegmental atelectasis is noted in the right upper lobe.  A
+ small left pleural effusion is also noted.  Left lung is clear.  No pulmonary
+ edema or pneumothorax is identified.  There are no acute osseous
+ abnormalities.
+INFO:__main__:ROUGE-L score: 0.2381
+
+Epoch 1/20:  86%|▊| 800/928 [47:11<07:30,  3.52s/it, Loss=0.2372, Avg Loss=0.381INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: (3) The heart is normal size. There are no focal pulmonary infiltrates or pleural effusions. No pneumothorax, pneumomediastinum, or hemothorax.
+INFO:__main__:Original: As compared to the previous radiograph, the patient has received a
+ small right Pleurx catheter.  The extent of the pre-existing right pleural
+ effusion has decreased.  Also decreased are the areas of pre-existing
+ atelectasis at the right lung base.  However, the moderate amount of right
+ effusion remains.
+
+ There is no evidence for right pneumothorax.  Moderate cardiomegaly of
+ unchanged. No change in appearance of the left lung.
+INFO:__main__:ROUGE-L score: 0.1149
+
+Epoch 1/20:  97%|▉| 900/928 [53:07<01:43,  3.69s/it, Loss=0.2478, Avg Loss=0.368INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: XX. There is no pneumothorax or pleural effusion in the thorax, nor evidence of pulmonary edema. The cardiomediastinal silhouette is normal.
+INFO:__main__:Original: The heart is normal in size and contour. There is no mediastinal widening. The lungs are clear bilaterally. No large pleural effusion or pneumothorax. The XXXX are intact.
+INFO:__main__:ROUGE-L score: 0.2449
+
+Epoch 1/20: 100%|█| 928/928 [54:47<00:00,  3.54s/it, Loss=0.1904, Avg Loss=0.366
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:00<00:00,  4.08s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.2590
+INFO:__main__:Average ROUGE-L: 0.2134
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2134
+INFO:__main__:Saved checkpoint to checkpoint_epoch_1.pt
+Epoch 2/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear on the frontal and lateral views. There is no pleural effusion or pneumothorax seen. Cardiac silhouette, mediastinal contours, and hilar vasculature appear normal.
+INFO:__main__:Original: PA and lateral views of the chest.  No prior.  Small calcified
+ granulomas are identified at the upper lungs, more numerous on the right than
+ on the left.  The lungs are otherwise clear without consolidation or effusion.
+ The cardiomediastinal silhouette is normal.  Osseous and soft tissue
+ structures are unremarkable.
+INFO:__main__:ROUGE-L score: 0.1842
+
+Epoch 2/20:  11%| | 100/928 [05:57<48:11,  3.49s/it, Loss=0.2619, Avg Loss=0.268INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: CONCLUSION: The cardiomediastinal silhouette is within normal limits. There are no focal changes in the lungs, pleural effusion or pneumothorax seen on CXR.
+INFO:__main__:Original: Mild dextroscoliosis of the thoracic spine is present.  The cardiac,
+ mediastinal and hilar contours are unchanged, with the heart size within
+ normal limits.  The lungs are clear and the pulmonary vascularity is normal.
+ There are no pleural effusions or pneumothoraces.  No acute osseous
+ abnormalities are seen.
+INFO:__main__:ROUGE-L score: 0.3478
+
+Epoch 2/20:  22%|▏| 200/928 [11:47<41:59,  3.46s/it, Loss=0.2536, Avg Loss=0.267INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: CONCLUSION: This study demonstrates the exquisite osseous detail obtained with the high resolution CT. The normal appearance of pulmonary vessels is reaffirmed. There are no abnormalities in cardiac or mediastinal structures.
+INFO:__main__:Original: There is streaky density in the upper lobes most consistent with parenchymal
+ scarring, more pronounced on the right.  Ill-defined increased density in the
+ lung bases that probably represents a chronic interstitial changes and
+ subsegmental atelectasis or scarring.  There is no definite focal
+ consolidation.  The patient is status post median sternotomy and CABG as
+ before.  A PICC is been withdrawn.
+INFO:__main__:ROUGE-L score: 0.1319
+
+Epoch 2/20:  32%|▎| 300/928 [17:40<37:57,  3.63s/it, Loss=0.2291, Avg Loss=0.263INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear on the study. No focal consolidation or pleural effusion is seen in this patient, and there is no evidence of pneumothorax.
+INFO:__main__:Original: Comparison is made to previous study from ___.
+
+ There is unchanged cardiomegaly.  There is no focal consolidation.  There is
+ some atelectasis at the lung bases.  There are no pneumothoraces.  There are
+ no signs for overt pulmonary edema.
+INFO:__main__:ROUGE-L score: 0.2258
+
+Epoch 2/20:  43%|▍| 400/928 [23:32<30:02,  3.41s/it, Loss=0.2992, Avg Loss=0.262INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: There is no pulmonary edema. The cardiomediastinal silhouette is normal and the lungs are clear with minimal atelectasis on the right upper lobe base. No pleural effusion or pneumothorax identified.
+INFO:__main__:Original: PA and lateral images of the chest demonstrate well-expanded lungs.
+ There is a small left pleural effusion.  Left-sided Pleurx catheter is seen in
+ place.  The lungs are otherwise clear.  There is no right pleural effusion.
+ There is no pneumothorax.  Cardiomediastinal silhouette is unremarkable.
+INFO:__main__:ROUGE-L score: 0.2895
+
+Epoch 2/20:  54%|▌| 500/928 [29:22<25:53,  3.63s/it, Loss=0.3053, Avg Loss=0.260INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: _ _ _ and AP chest radiographs. There is no focal consolidation or pleural effusion. The cardiomediastinal silhouette is unremarkable.
+INFO:__main__:Original: Heart size is normal. The mediastinal and hilar contours are unchanged. The
+ pulmonary vasculature is normal. Lungs are clear. No pleural effusion or
+ pneumothorax is seen.  There are no acute osseous abnormalities. Mild
+ degenerative changes are re- demonstrated in the thoracic spine with anterior
+ osteophyte formation.
+INFO:__main__:ROUGE-L score: 0.1905
+
+Epoch 2/20:  65%|▋| 600/928 [35:15<18:51,  3.45s/it, Loss=0.2651, Avg Loss=0.258INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear. There is no pleural effusion or pneumothorax seen, and the cardiomediastinal silhouette appears normal.
+INFO:__main__:Original: The lungs remain clear. Cardiomediastinal silhouette is within normal limits.
+ No acute osseous abnormality is identified.
+INFO:__main__:ROUGE-L score: 0.3429
+
+Epoch 2/20:  75%|▊| 700/928 [41:08<12:32,  3.30s/it, Loss=0.2202, Avg Loss=0.256INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear. There is no pleural effusion or pneumothorax seen on the CT study of the chest, thus there is minimal acute pulmonary edema. No focal consolidation, new osseous abnormality, or pneumothorax present at this interval.
+INFO:__main__:Original: Frontal and lateral views of the chest.  Left lower lobe opacity
+ highly concerning for pneumonia.  No pulmonary edema, pleural effusion, or
+ pneumothorax is seen.  The heart size is top normal.  The mediastinal contours
+ are normal.  Nodular opacity at the right apex.
+INFO:__main__:ROUGE-L score: 0.2500
+
+Epoch 2/20:  86%|▊| 800/928 [47:00<07:32,  3.53s/it, Loss=0.2612, Avg Loss=0.254INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: CONCLUSION: There is a mildly thickened left pleural wall and right hilar adenopathy. No evidence of pneumonia or pneumothorax. The cardiomediastinal silhouette remains within normal limits.
+INFO:__main__:Original: The heart is normal in size and contour. There is no mediastinal widening. No focal airspace disease. No large pleural effusion or pneumothorax. The XXXX are intact.
+INFO:__main__:ROUGE-L score: 0.2264
+
+Epoch 2/20:  97%|▉| 900/928 [52:53<01:42,  3.66s/it, Loss=0.2712, Avg Loss=0.253INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: CONCLUSION: In comparison to the prior study, there is a reduction in cardiac size and an increase in pulmonary vasculature. There are no significant changes in hilar contours or pleural effusions.
+INFO:__main__:Original: Compared with prior radiographs on ___, there is increased aeration at
+ the left lung base.  There is no significant change in the large conglomerates
+ of fibrosis and lymphadenopathy in both mid lungs.There is no new focal
+ consolidation.  No pleural effusion or pneumothorax is seen. Heart size is
+ normal.
+INFO:__main__:ROUGE-L score: 0.2785
+
+Epoch 2/20: 100%|█| 928/928 [54:34<00:00,  3.53s/it, Loss=0.5867, Avg Loss=0.254
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [06:49<00:00,  3.98s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.2320
+INFO:__main__:Average ROUGE-L: 0.2298
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2298
+INFO:__main__:Saved checkpoint to checkpoint_epoch_2.pt
+Epoch 3/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear without focal consolidation or pleural effusion. No pneumothorax is seen. Cardiomediastinal silhouette appears within normal limits for size and contour. There is no free air in the chest.
+INFO:__main__:Original: Frontal and lateral views of the chest show normal size and configuration of the cardiac silhouette. Normal mediastinal contour, pulmonary XXXX and vasculature, central airways and lung volumes. No pleural effusion.
+INFO:__main__:ROUGE-L score: 0.1875
+
+Epoch 3/20:  11%| | 100/928 [05:54<47:58,  3.48s/it, Loss=0.2320, Avg Loss=0.243INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: CONCLUSION: The heart size is within normal limits. There are no focal consolidation or pleural effusion. No acute bony abnormality seen. Lung volumes and compliance appear stable.
+INFO:__main__:Original: PA and lateral views of the chest are provided.  There is no focal
+ consolidation, large effusion, or pneumothorax.  Cardiomediastinal silhouette
+ appears normal.  Atherosclerotic calcifications at the aortic knob noted.
+ Bony structures are intact.  There is blunting at the right CP angle laterally
+ which could indicate mild pleural thickening or possibly a tiny effusion.
+INFO:__main__:ROUGE-L score: 0.2000
+
+Epoch 3/20:  22%|▏| 200/928 [11:45<43:09,  3.56s/it, Loss=0.2185, Avg Loss=0.238INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear without focal consolidation, pleural effusion or pneumothorax. No acute osseous abnormality is seen. Cardiomediastinal silhouette is within normal limits for size and contour.
+INFO:__main__:Original: There are ill-defined bibasilar opacities, left greater than right, suspicious
+ for infection or aspiration given patient's history.  Trace pleural effusion
+ is present on the left.  No pneumothorax.  A 1 cm opacity projecting over the
+ right heart border corresponds to a calcified granuloma as seen on the same
+ day CT.  Heart size is moderately enlarged.
+INFO:__main__:ROUGE-L score: 0.1429
+
+Epoch 3/20:  32%|▎| 300/928 [17:41<36:10,  3.46s/it, Loss=0.2152, Avg Loss=0.238INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear. No focal consolidation, pleural effusion or pneumothorax is seen. There is no evidence of acute osseous abnormality. Heart size is normal and the mediastinal contours appear unremarkable.
+INFO:__main__:Original: Frontal and lateral radiographs of the chest show clear lungs
+ without focal consolidation, pleural effusion, or pneumothorax.  The pulmonary
+ vasculature is not engorged.  The mediastinal and hilar contours are within
+ normal limits.  The cardiac silhouette is normal in size.  The aortic knob is
+ partially calcified, with tortuosity of the descending thoracic aorta.  A
+ right humeral head prosthesis is partially imaged and unchanged from the
+ preceding radiograph.  Irregularity at the left glenohumeral joint is
+ incompletely assessed on these images, but unchanged from CT of ___.  The
+ patient is status post coronary artery stenting which is visualized overlying
+ the heart on frontal and lateral radiographs.
+INFO:__main__:ROUGE-L score: 0.2090
+
+Epoch 3/20:  43%|▍| 400/928 [23:34<31:32,  3.58s/it, Loss=0.1824, Avg Loss=0.238INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear. No pleural effusion or pneumothorax is seen. There is no focal consolidation, edema, or large free air spaces identified in the lung bases. Heart size and pulmonary vascularity are within normal limits.
+INFO:__main__:Original: The lungs are well-expanded without focal consolidation.  Moderate
+ cardiomegaly and pulmonary vascular congestion are slightly increased from
+ ___. No pulmonary edema or pleural effusions.  Unchanged right chest
+ dual lumen pacemaker.
+INFO:__main__:ROUGE-L score: 0.2687
+
+Epoch 3/20:  54%|▌| 500/928 [29:27<24:25,  3.42s/it, Loss=0.1551, Avg Loss=0.236INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: (AP and lateral views of the chest). There is a right-sided effusion with an overlying pleural mass, possibly representing metastatic carcinoma. No pneumothorax or free air below the right hemithorax. The cardiac silhouette is within normal limits. There are no focal areas of consolidation on upright radiograph, which may represent atelectasis or pneumonia.
+INFO:__main__:Original: AP portable upright view of the chest.   Since the prior exam, there has been
+ near complete resolution of pulmonary edema. Cardiomegaly is unchanged. No
+ large effusion is seen. No pneumothorax. Aortic atherosclerotic calcification
+ noted. Bony structures appear grossly intact. No free air below the right
+ hemidiaphragm.
+INFO:__main__:ROUGE-L score: 0.3000
+
+Epoch 3/20:  65%|▋| 600/928 [35:23<20:19,  3.72s/it, Loss=0.2302, Avg Loss=0.235INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: Conclusion Lung volumes are low. No focal consolidation, effusion or pneumothorax is seen. The heart and mediastinum appear normal in size. The hilar structures remain clear without evidence of acute abnormality.
+INFO:__main__:Original: The lungs appear clear. There are calcified nodules projecting in the right upper lung. Mediastinal contours appear normal. The heart pulmonary XXXX appear normal. Pleural spaces are clear. Surgical clips are identified in the right neck and left mediastinum.
+INFO:__main__:ROUGE-L score: 0.2286
+
+Epoch 3/20:  75%|▊| 700/928 [41:13<13:08,  3.46s/it, Loss=0.2429, Avg Loss=0.235INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: CONCLUSION: There is minimal left-sided pleural effusion. No pneumothorax or focal airspace disease is identified. The cardiac and mediastinal silhouettes are within normal limits.
+INFO:__main__:Original: PA and lateral views of the chest were provided.  Lungs are clear
+ and well inflated.  No focal consolidation, effusion or pneumothorax seen.
+ Cardiomediastinal silhouette is normal.  No bony abnormalities and no
+ fractures are seen.
+INFO:__main__:ROUGE-L score: 0.1695
+
+Epoch 3/20:  86%|▊| 800/928 [47:06<07:10,  3.36s/it, Loss=0.2077, Avg Loss=0.235INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear, with no focal consolidation or effusion. No pneumothorax is seen. There is a small left pleural effusion of uncertain significance and no evidence of pneumonia.
+INFO:__main__:Original: The cardiomediastinal silhouette and pulmonary vasculature are within normal limits in size. There is ill-defined airspace opacity in the posterior left lower lobe. There is focal opacity in the right upper lobe which suggests scar and/or granulomatous calcification. There is no pneumothorax or pleural effusion.
+INFO:__main__:ROUGE-L score: 0.2078
+
+Epoch 3/20:  97%|▉| 900/928 [52:57<01:37,  3.49s/it, Loss=0.2256, Avg Loss=0.234INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: CONCLUSION: The lung volumes are low, and the lungs are hyperinflated with mild cardiomegaly. There is no focal consolidation, pneumothorax or pleural effusion seen. No acute osseous abnormality identified.
+INFO:__main__:Original: The heart size remains mildly enlarged.  The aorta is tortuous with diffuse
+ atherosclerotic calcifications noted.  The pulmonary vasculature is normal.
+ Mild atelectasis is noted in both lung bases. No focal consolidation, pleural
+ effusion or pneumothorax is seen.  Multiple clips are demonstrated within the
+ left upper abdomen.  No displaced fractures are demonstrated.
+INFO:__main__:ROUGE-L score: 0.3000
+
+Epoch 3/20: 100%|█| 928/928 [54:33<00:00,  3.53s/it, Loss=0.3314, Avg Loss=0.233
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [06:42<00:00,  3.91s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.2180
+INFO:__main__:Average ROUGE-L: 0.2363
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2363
+INFO:__main__:Saved checkpoint to checkpoint_epoch_3.pt
+Epoch 4/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: Conclusion: Lungs are clear without focal consolidation, pleural effusion or pneumothorax. The cardiomediastinal silhouette is normal in size and contour.
+INFO:__main__:Original: PA and lateral chest radiographs demonstrate clear lungs.  There is
+ no pleural effusion or pneumothorax.  The cardiomediastinal silhouette is
+ normal.  No rib fracture is identified.
+INFO:__main__:ROUGE-L score: 0.4444
+
+Epoch 4/20:  11%| | 100/928 [05:53<46:52,  3.40s/it, Loss=0.2336, Avg Loss=0.224INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: Conclusion: The lungs are clear bilaterally. Cardiomediastinal silhouette is normal without pneumothorax or pleural effusion. No acute osseous abnormalities seen.
+INFO:__main__:Original: Normal heart size and mediastinal contours. No focal airspace consolidation. No pleural effusion or pneumothorax. Chronic appearing right mid clavicle injury. Visualized bony structures otherwise unremarkable.
+INFO:__main__:ROUGE-L score: 0.1304
+
+Epoch 4/20:  22%|▏| 200/928 [11:44<42:50,  3.53s/it, Loss=0.2578, Avg Loss=0.222INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: CONCLUSION: There is no definite focal consolidation, effusion or pneumothorax. The cardiomediastinal silhouette and hilar contours are normal.
+INFO:__main__:Original: Heart size and pulmonary vascularity appear within normal limits. Lungs are free of focal airspace disease. No pleural effusion or pneumothorax is seen. In the left midlung zone there is identified a 1.5 cm nodule. This appears somewhat dense and may contain calcium although this cannot be stated with certainty.
+INFO:__main__:ROUGE-L score: 0.1739
+
+Epoch 4/20:  32%|▎| 300/928 [17:32<35:50,  3.42s/it, Loss=0.1937, Avg Loss=0.222INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: Conclusion: There is no consolidation. No pleural effusion or pneumothorax. Heart size and pulmonary vascularity are within normal limits. Mild degenerative changes of the thoracic spine have been demonstrated, which may be related to prior back surgery.
+INFO:__main__:Original: Two frontal images of the chest demonstrate a left basilar hazy
+ opacity concerning for left lower lobe pneumonia.  There is no pleural
+ effusion or pneumothorax.  There is some vascular crowding likely due to low
+ lung volumes from poor inspiration.  Heart size is normal.
+INFO:__main__:ROUGE-L score: 0.2500
+
+Epoch 4/20:  43%|▍| 400/928 [23:23<33:17,  3.78s/it, Loss=0.1772, Avg Loss=0.223INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: There is an interval change in the cardiac silhouette with a right ventricular mass. No focal consolidation, effusion or pneumothorax. The lungs are clear without evidence of acute osseous abnormality.
+INFO:__main__:Original: PA and lateral views of the chest.  The lungs are clear.  There is
+ no consolidation, effusion, or pneumothorax.  The cardiomediastinal silhouette
+ is normal.  No acute osseous abnormality is detected.
+INFO:__main__:ROUGE-L score: 0.3667
+
+Epoch 4/20:  54%|▌| 500/928 [29:18<26:48,  3.76s/it, Loss=0.2777, Avg Loss=0.224INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: CONCLUSION: There is mild widening of the right costophrenic angle, which may be due to atelectasis. No focal consolidation or pleural effusion appears to have resolved at this time interval.
+INFO:__main__:Original: Severe kyphoscoliosis deformity is again noted.  There is atelectasis at the
+ right lung base.  Left lower lobe opacity with partial obscuration of the left
+ hemidiaphragm may reflect atelectasis, although aspiration or pneumonia is
+ also possible.  The aorta remains tortuous.  There is central vascular
+ congestion.  No pneumothorax is identified.
+INFO:__main__:ROUGE-L score: 0.1795
+
+Epoch 4/20:  65%|▋| 600/928 [35:10<20:19,  3.72s/it, Loss=0.1732, Avg Loss=0.222INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: (AP, lateral and supine). Comparison with prior chest radiographs. The right hemidiaphragm is unchanged in position. There is no pleural effusion or pneumothorax. Cardiomediastinal silhouette remains within normal limits.
+INFO:__main__:Original: The XXXX examination consists of frontal and lateral radiographs of the chest. Again seen is evidence of prior CABG. The cardiomediastinal contours are unchanged. XXXX XXXX right and XXXX left pleural effusions. There is XXXX right greater than left bibasilar atelectasis. XXXX B-lines seen at the lung bases. No consolidation or pneumothorax.
+INFO:__main__:ROUGE-L score: 0.2439
+
+Epoch 4/20:  75%|▊| 700/928 [41:02<13:17,  3.50s/it, Loss=0.2206, Avg Loss=0.223INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: CONCLUSION: There is a mild increase in right hilar opacity, which may represent an atelectasis. The cardiomediastinal silhouette appears stable and unchanged from prior exam. No pneumothorax or pleural effusion is identified.
+INFO:__main__:Original: The visualized lung fields are clear of any focal opacities,
+ pleural effusions or pneumothorax.  Lung markings in the retrocardiac space
+ are likely atelectasis within the left lower lobe.  The cardiac and
+ mediastinal silhouette is unremarkable.  Visualized osseous structures are
+ unremarkable.
+INFO:__main__:ROUGE-L score: 0.1389
+
+Epoch 4/20:  86%|▊| 800/928 [46:58<07:57,  3.73s/it, Loss=0.2629, Avg Loss=0.222INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: CONCLUSION: Frontal and lateral chest radiographs demonstrated no focal consolidation, pleural effusion or pneumothorax. The cardiomediastinal silhouette is normal in size and contour. There are no large-vessel pulmonary edema.
+INFO:__main__:Original: As compared to the previous radiograph, the monitoring and support
+ devices are unchanged.  In unchanged manner, the overall small lungs are
+ showing extensive bilateral parenchymal opacities, part of which is likely
+ caused by pulmonary edema but part of which could also reflect multifocal
+ pneumonia.  This is particularly evident on the left, where a consolidated
+ lateral lung area does not comply with the typical findings for pulmonary
+ edema.
+
+ The presence of small bilateral pleural effusions cannot be excluded.
+
+ Unchanged slightly enlarged cardiac silhouette with tortuosity of the thoracic
+ aorta.
+INFO:__main__:ROUGE-L score: 0.1017
+
+Epoch 4/20:  97%|▉| 900/928 [52:55<01:39,  3.54s/it, Loss=0.2740, Avg Loss=0.222INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear without focal consolidation, effusion or pneumothorax. Cardiac and mediastinal silhouettes demonstrate normal size and contour of the cardiac and hilar contours. There is no acute osseous abnormality.
+INFO:__main__:Original: Stable cardiomediastinal contour is mild cardiomegaly. No pneumothorax or significant pulmonary edema. Small left pleural effusion. No focal lung consolidation. Mildly low lung volumes.
+INFO:__main__:ROUGE-L score: 0.1071
+
+Epoch 4/20: 100%|█| 928/928 [54:30<00:00,  3.52s/it, Loss=0.2971, Avg Loss=0.222
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [06:49<00:00,  3.97s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.2096
+INFO:__main__:Average ROUGE-L: 0.2400
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2400
+INFO:__main__:Saved checkpoint to checkpoint_epoch_4.pt
+Epoch 5/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: (AP and lateral views of the chest). The heart is normal in size and contour. There are no focal airspace consolidation, pleural effusion or pneumothorax.
+INFO:__main__:Original: The inspiratory lung volumes are appropriate.  There is interval
+ development of a faint opacity in the right lung base on the AP view,
+ corresponding to retrocardiac density over the lower thoracic spine on the
+ lateral view, which may represent early pneumonia.  No pleural effusion or
+ pneumothorax is present.  The pulmonary vasculature is not engorged and there
+ is no overt pulmonary edema.  The cardiac silhouette is increased in size from
+ ___.  The mediastinal contours are within normal limits.  Mild
+ tortuosity of the thoracic aorta.  The hilar contours are within normal limits
+ and unchanged.
+INFO:__main__:ROUGE-L score: 0.1724
+
+Epoch 5/20:  11%| | 100/928 [05:52<49:52,  3.61s/it, Loss=0.2068, Avg Loss=0.218INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: (PA and lateral views) of the chest. There is mild to moderate cardiomegaly with pulmonary vascular congestion but no pleural effusion or pneumothorax.
+INFO:__main__:Original: Two portable supine radiographs of the chest demonstrate the
+ endotracheal tube terminates above the thoracic inlet, approximately ___.7 cm
+ above the level of the carina, and should be advanced approximately 6 cm.
+ There has been interval placement of a nasoenteric tube, which terminates in
+ the stomach, which is distended with gas.
+
+ The lung volumes are low, and there is collapse of the right upper lobe, with
+ elevation of the right hemidiaphragm, which is new since the prior study.  The
+ heart is top normal in size.  The left lung is grossly clear.  There is no
+ pneumothorax or large pleural effusion.
+INFO:__main__:ROUGE-L score: 0.1475
+
+Epoch 5/20:  22%|▏| 200/928 [11:49<43:16,  3.57s/it, Loss=0.2403, Avg Loss=0.220INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: (AP and lateral) of the chest. There is no focal consolidation, pleural effusion or pneumothorax. The cardiomediastinal silhouette is normal.
+INFO:__main__:Original: Frontal and lateral views of the chest were obtained.  Lungs are
+ clear without focal consolidation.  No pleural effusion or pneumothorax is
+ seen.  Cardiac and mediastinal silhouettes are unremarkable.
+INFO:__main__:ROUGE-L score: 0.5000
+
+Epoch 5/20:  32%|▎| 300/928 [17:36<35:55,  3.43s/it, Loss=0.2334, Avg Loss=0.220INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: (AP). No endotracheal tube is present. The heart size and pulmonary vascularity are within normal limits for patient habitus, indicating no acute lung disease. There is mild to moderate bibasilar atelectasis in the right lower lobe as well as a small pleural effusion with an associated pneumothorax on the left side.
+INFO:__main__:Original: As compared to the previous radiograph, the monitoring and support
+ devices are constant.  There is minimally improved ventilation of the left and
+ right lung base.  Overall, the parenchymal opacities bilaterally are still
+ severe in extent and severity.  The presence of a small left pleural effusion
+ cannot be excluded.  No pneumothorax.
+INFO:__main__:ROUGE-L score: 0.2376
+
+Epoch 5/20:  43%|▍| 400/928 [23:27<31:14,  3.55s/it, Loss=0.2053, Avg Loss=0.218INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: SUMMARY: The patient is stable in position. There are no focal consolidation, pneumothorax or pleural effusion. The heart size and pulmonary vascularity appear normal. No acute osseous abnormalities identified.
+INFO:__main__:Original: Lung volumes are low. Bibasilar consolidation and bilateral costophrenic XXXX blunting are present. Heart size normal. Pulmonary XXXX normal. Shunt tubing traverses the entire image from top to XXXX.
+INFO:__main__:ROUGE-L score: 0.2069
+
+Epoch 5/20:  54%|▌| 500/928 [29:23<25:53,  3.63s/it, Loss=0.1819, Avg Loss=0.217INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: (AP). The patient is stable in appearance with no focal consolidation, pleural effusion or pneumothorax noted on the prior study from _ _ _ and _ _, however there are scattered areas of atelectasis in both lungs consistent with previous pneumonia.
+INFO:__main__:Original: The patient is status post CABG with sternotomy wires that are intact
+ appropriately aligned.  There is a left pectoral pacemaker with leads
+ appropriate and unchanged in position since ___.
+
+ There is stable enlargement of the cardiomediastinal silhouette.  No focal
+ consolidations.  The pulmonary vasculature is normal.  No pleural effusion or
+ pneumothorax is seen. There are no acute osseous abnormalities.
+INFO:__main__:ROUGE-L score: 0.2796
+
+Epoch 5/20:  65%|▋| 600/928 [35:13<17:57,  3.29s/it, Loss=0.2302, Avg Loss=0.216INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: No focal consolidation, pleural effusion or pneumothorax. Heart size is normal and mediastinal contour unremarkable. There are no acute osseous abnormalities. The lungs appear clear without evidence of pneumonia, edema, or acute osseous abnormality.
+INFO:__main__:Original: XXXX sternotomy XXXX remain in XXXX. The cardiomediastinal silhouette is within normal limits for appearance. The thoracic aorta is tortuous. No focal areas of pulmonary consolidation. No pneumothorax. No pleural effusion. Moderate degenerative changes of the thoracic spine. No acute, displaced rib fractures identified.
+INFO:__main__:ROUGE-L score: 0.1795
+
+Epoch 5/20:  75%|▊| 700/928 [41:05<13:25,  3.53s/it, Loss=0.1863, Avg Loss=0.216INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: Conclusion PA and lateral chest radiographs demonstrate no focal consolidation, effusion or pneumothorax. The cardiac silhouette is normal in size. Bony structures are intact with the exception of a small left pleural effusion which appears to be slightly more prominent than on prior exam.
+INFO:__main__:Original: Heart size, mediastinal and hilar contours are within normal
+ limits, and lungs and pleural surfaces are clear.  No acute skeletal findings.
+INFO:__main__:ROUGE-L score: 0.0923
+
+Epoch 5/20:  86%|▊| 800/928 [46:56<07:39,  3.59s/it, Loss=0.1622, Avg Loss=0.215INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: CONCLUSIONS: The lungs are well expanded. There is no focal consolidation, pleural effusion or pneumothorax. Heart and mediastinal contours appear normal. Mild degenerative changes of the thoracic spine seen on
+INFO:__main__:Original: Cardiac and mediastinal contours are unremarkable. Pulmonary vascularity is within normal limits. No focal air space opacities, pleural effusion, or pneumothorax. No cavitary lesions. XXXX are grossly unremarkable.
+INFO:__main__:ROUGE-L score: 0.2759
+
+Epoch 5/20:  97%|▉| 900/928 [52:50<01:37,  3.48s/it, Loss=0.1698, Avg Loss=0.214INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: CONCLUSION: The cardiac silhouette is within normal limits. There are no focal airspace opacities, pleural effusions or pneumothorax. No large pneumothoraces.
+INFO:__main__:Original: There is XXXX airspace disease in the right lower lobe seen behind the right hemidiaphragm on PA view. This is also well seen on lateral view. Remainder of the lungs appear clear. The heart and pulmonary XXXX appear normal. Mediastinal contours are normal.
+INFO:__main__:ROUGE-L score: 0.1250
+
+Epoch 5/20: 100%|█| 928/928 [54:26<00:00,  3.52s/it, Loss=0.1127, Avg Loss=0.214
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [06:53<00:00,  4.02s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.2031
+INFO:__main__:Average ROUGE-L: 0.2402
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2402
+INFO:__main__:Saved checkpoint to checkpoint_epoch_5.pt
+Epoch 6/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: (AP). A single lead pacemaker is present in the right ventricle with leads terminating at the upper SVC and apex, which have been previously studied on _ _ _. The patient has undergone coronary artery bypass grafting surgery. There are moderate to severe pulmonary vascular disease with significant cardiomegaly.
+INFO:__main__:Original: 2 views of the chest demonstrate a right pacemaker generator with atrial and
+ ventricular leads.  Bibasilar opacities are seen which correlate with areas of
+ consolidation on the concurrently obtained CT of the abdomen and pelvis which
+ may represent atelectasis or infection.  The cardiac and mediastinal contours
+ are normal.  No pleural abnormality is perceived, although a small left
+ pleural effusion was seen on the concurrently obtained CT of the abdomen and
+ pelvis.
+INFO:__main__:ROUGE-L score: 0.1538
+
+Epoch 6/20:  11%| | 100/928 [05:58<49:38,  3.60s/it, Loss=0.1724, Avg Loss=0.210INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear bilaterally. There is no pleural effusion or pneumothorax. Heart size and mediastinal contour appear within normal limits. No acute osseous abnormality identified.
+INFO:__main__:Original: Frontal and lateral views of the chest.  The right-sided tunneled
+ venous catheter is seen with tip projecting over the mid right clavicle.  The
+ lungs are clear.  There is no effusion or pneumothorax.  The cardiomediastinal
+ silhouette is within normal limits.  Osseous structures are unremarkable.
+INFO:__main__:ROUGE-L score: 0.3944
+
+Epoch 6/20:  22%|▏| 200/928 [11:46<41:27,  3.42s/it, Loss=0.1971, Avg Loss=0.209INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: _ _. The patient is intubated and placed in the supine position with a nasogastric tube. There has been interval change of the right midlower lobe fissure which appears greater than previously reported on chest radiograph from prior study (_ _), as well as new opacity at the left base consistent with atelectasis or pleural effusion.
+INFO:__main__:Original: Left-sided chest tubes are in unchanged position.  There has been interval
+ resolution of a left apical pneumothorax.  There has been interval development
+ of hazy opacification throughout the left lung which could represent
+ asymmetric pulmonary edema.  Low lung volumes with subsegmental atelectasis in
+ the right mid and lower lung.  There is a an unchanged probable small
+ left-sided pleural effusion.  Interval decrease in small subcutaneous
+ emphysema throughout the left chest wall.
+INFO:__main__:ROUGE-L score: 0.2276
+
+Epoch 6/20:  32%|▎| 300/928 [17:42<36:39,  3.50s/it, Loss=0.1825, Avg Loss=0.210INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: There is no focal consolidation, effusion or pneumothorax. The cardiac and mediastinal silhouettes are normal in size and contour. There is a calcified granuloma at the left lung base with possible calcification of the pulmonary vasculature.
+INFO:__main__:Original: Frontal and lateral views of the chest were compared to previous
+ exam from ___.  Lungs remain clear of confluent consolidation.
+ There is no pleural effusion.  The mediastinal silhouette is stable as are the
+ osseous and soft tissue structures.
+INFO:__main__:ROUGE-L score: 0.2432
+
+Epoch 6/20:  43%|▍| 400/928 [23:37<33:48,  3.84s/it, Loss=0.1892, Avg Loss=0.210INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: The heart size is normal. Pulmonary vascularity and pulmonary vasculature are within normal limits. There is no pleural effusion or pneumothorax. No acute osseous abnormality identified.
+INFO:__main__:Original: The heart is normal in size. The mediastinum is stable. The previously visualized bilateral pneumothoraces have resolved. Right chest wall surgical XXXX have been removed. There is improved aeration in the lung bases with mild residual XXXX opacities compatible with scarring or atelectasis.
+INFO:__main__:ROUGE-L score: 0.2029
+
+Epoch 6/20:  54%|▌| 500/928 [29:24<25:49,  3.62s/it, Loss=0.2176, Avg Loss=0.209INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: CONCLUSION: There is mild cardiomegaly. The lungs are clear without focal consolidation, pleural effusion or pneumothorax. No acute bony abnormality seen. Mild degenerative changes of the thoracic spine.
+INFO:__main__:Original: PA and lateral views of the chest are provided.  Lungs are clear
+ bilaterally without focal consolidation, effusion, or pneumothorax.  Heart and
+ mediastinal, hilar contours are normal.  Bony structures are intact.  No free
+ air below the right hemidiaphragm.
+INFO:__main__:ROUGE-L score: 0.3692
+
+Epoch 6/20:  65%|▋| 600/928 [35:15<19:30,  3.57s/it, Loss=0.1597, Avg Loss=0.209INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: CONCLUSION: There is mild right lower lobe atelectasis. The cardiomediastinal silhouette is within normal limits for size and contour, with stable XXXX bilateral pleural effusion. No acute osseous abnormality identified.
+INFO:__main__:Original: The cardiomediastinal silhouette is normal in size and contour. Aortic atherosclerosis. Hyperexpanded lungs. XXXX right perihilar/midlung density. Streaky bibasilar opacities, as well. Left upper lobe nodular opacity (anterior first rib interspace) may be exaggerated by overlapping bone silhouettes. Grossly similar midthoracic vertebral XXXX fracture.
+INFO:__main__:ROUGE-L score: 0.2400
+
+Epoch 6/20:  75%|▊| 700/928 [41:09<12:50,  3.38s/it, Loss=0.1730, Avg Loss=0.208INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: (PA and lateral views) of the chest. The lungs are clear without focal consolidation, effusion or pneumothorax. There is no free air below the right hemidiaphragm seen on this study.
+INFO:__main__:Original: The lung volumes are low.  The patient is status post sternotomy.
+ A dual-lead pacemaker/ICD device with leads terminating in the right atrium
+ and ventricle appears unchanged.  The heart is again mildly enlarged.  The
+ mediastinal and hilar contours appear unchanged.  There are no pleural
+ effusions or pneumothorax.  Pleural plaques are widespread.  On this
+ examination, compared to the prior radiograph, there is vague hazy opacity
+ projecting over the right upper lung.  It appears similar, however, to more
+ recent chest CT imaging, however, and probably less severe.  Mild superior
+ endplate compression deformity of vertebral body situated at the thoracolumbar
+ junction appears unchanged.
+INFO:__main__:ROUGE-L score: 0.1679
+
+Epoch 6/20:  86%|▊| 800/928 [47:00<07:19,  3.44s/it, Loss=0.2346, Avg Loss=0.208INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: No pneumothorax. Heart size within normal limits for age. There is no focal consolidation, pleural effusion or pulmonary edema. Visualized osseous structures are intact.
+INFO:__main__:Original: The heart and mediastinum are unremarkable. The lungs are clear without infiltrate. There is no effusion or pneumothorax. There is an old healed fracture through the right 8th rib.
+INFO:__main__:ROUGE-L score: 0.2264
+
+Epoch 6/20:  97%|▉| 900/928 [52:51<01:38,  3.52s/it, Loss=0.2925, Avg Loss=0.208INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: CONCLUSION: AP upright chest radiograph demonstrates a small left pleural effusion. No pneumothorax is seen. The cardiomediastinal silhouette is normal. There are no focal air space opacities to suggest pneumonia.
+INFO:__main__:Original: The lungs are now clear.  Cardiac silhouette is normal in size.
+ Aorta is tortuous.  Pulmonary vasculature is within normal limits.  There is
+ no pleural effusion or pneumothorax or significant pulmonary edema.
+
+ The patient is status post left shoulder replacement. Right shoulder
+ degenerative changes are again noted.
+INFO:__main__:ROUGE-L score: 0.1579
+
+Epoch 6/20: 100%|█| 928/928 [54:25<00:00,  3.52s/it, Loss=0.3936, Avg Loss=0.208
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [06:58<00:00,  4.06s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1976
+INFO:__main__:Average ROUGE-L: 0.2364
+INFO:__main__:Saved checkpoint to checkpoint_epoch_6.pt
+Epoch 7/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: CONCLUSION: Frontal and lateral views of the chest were obtained. There is no focal consolidation, effusion or pneumothorax identified. The cardiomediastinal silhouette remains within normal limits.
+INFO:__main__:Original: PA and lateral views of the chest were provided.  The lungs are
+ clear bilaterally without focal consolidation, effusion, or pneumothorax.  The
+ heart and mediastinal contour is normal.  Bony structures are intact.  No free
+ air below the right hemidiaphragm.
+INFO:__main__:ROUGE-L score: 0.4375
+
+Epoch 7/20:  11%| | 100/928 [05:55<47:31,  3.44s/it, Loss=0.1594, Avg Loss=0.210INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: Conclusion PA and lateral views of the chest demonstrate stable enlargement of the cardiac silhouette with unchanged cardiomediastinal contours. There is no focal consolidation, pleural effusion or pneumothorax.
+INFO:__main__:Original: Dual-chamber pacemaker with two leads in right atrium and anterior
+ right ventricle. Interval increase in bilateral moderate sized pleural
+ effusions, right greater than left.  Interval worsening of bilateral opacities
+ likely due to aspiration pneumonia with no interval change in calcified
+ pleural thickening on the left.  Heart size is obscured by pleural effusion.
+ Mediastinal contour and hila are normal.  No pneumothorax or pulmonary edema.
+INFO:__main__:ROUGE-L score: 0.1522
+
+Epoch 7/20:  22%|▏| 200/928 [11:49<40:36,  3.35s/it, Loss=0.1840, Avg Loss=0.206INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: . There is a left pleural effusion, which likely represents atelectasis rather than pneumonia or empyema. The right lung is clear without evidence of consolidation.
+INFO:__main__:Original: Frontal portable radiograph of the chest demonstrates mild cardiomegaly with
+ moderate bilateral pleural effusions with increase in size of right pleural
+ effusion compared to prior. Pulmonary edema persists. No pneumothorax.  Right
+ internal jugular catheter ends in the right atrium
+INFO:__main__:ROUGE-L score: 0.1270
+
+Epoch 7/20:  32%|▎| 300/928 [17:40<38:53,  3.72s/it, Loss=0.2374, Avg Loss=0.207INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: (AP). There is a new left lower lobe opacity, which likely represents atelectasis or pneumonia since the previous examination. The right lung appears clear and has not changed in size since prior study with similar patient positioning. A new right pleural effusion could be an artifact from overlying endotracheal tube on the same CT. No pneumothorax.
+INFO:__main__:Original: Compared to the chest radiograph obtained 4 days prior, lung volumes are
+ lower.  Diffuse, right greater than left opacities are increased.  No large
+ pleural effusion.  Heart size is normal.  Cardiomediastinal silhouette is not
+ well evaluated.  Dense aortic arch calcifications are noted. A left PICC
+ terminates in the right atrium.
+INFO:__main__:ROUGE-L score: 0.1143
+
+Epoch 7/20:  43%|▍| 400/928 [23:31<29:54,  3.40s/it, Loss=0.3165, Avg Loss=0.206INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: The lungs are clear. There is no pleural effusion or pneumothorax. Cardiomediastinal silhouette is unremarkable. Osseous structures are intact.
+INFO:__main__:Original: Cardiac and mediastinal contours are within normal limits. Mild aortic tortuosity. The lungs are clear. Bony structures are intact.
+INFO:__main__:ROUGE-L score: 0.3684
+
+Epoch 7/20:  54%|▌| 500/928 [29:24<24:05,  3.38s/it, Loss=0.1618, Avg Loss=0.205INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: Conclusion Stable cardiomegaly with moderate pulmonary vascular congestion and mild right-sided pleural effusion. The XXXX are grossly unremarkable. There is no pneumothorax or focal consolidation. No acute osseous abnormality identified.
+INFO:__main__:Original: The lungs and pleural spaces show no acute abnormality. Heart size and pulmonary vascularity within normal limits.
+INFO:__main__:ROUGE-L score: 0.2083
+
+Epoch 7/20:  65%|▋| 600/928 [35:15<20:00,  3.66s/it, Loss=0.1665, Avg Loss=0.204INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: (AP). The patient is status post median sternotomy and CABG with left-sided IJ central venous catheter in place at the level of SVC junction. There are no focal consolidations, pleural effusions or pneumothorax identified on chest radiograph. Cardiomediastinal silhouette is normal.
+INFO:__main__:Original: PA and lateral radiographs of the chest depict the left-sided
+ pigtail pleural drainage catheter in unchanged position.  There is a
+ persistent small left-sided pleural effusion which appears to be loculated
+ into two components, anteriorly and posteriorly.  The drainage catheter is
+ within the anterior component.  The size of the effusion on the left has
+ decreased from the prior study and the right-sided effusion has almost
+ completely resolved.  There is no pneumothorax and the lungs are otherwise
+ clear.  Severe cardiomegaly and scoliosis is unchanged.
+INFO:__main__:ROUGE-L score: 0.1732
+
+Epoch 7/20:  75%|▊| 700/928 [41:10<12:54,  3.40s/it, Loss=0.2075, Avg Loss=0.204INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: (AP view). The right and left lungs are clear without focal consolidation, effusion or pneumothorax. There is no evidence of pleural effusions or pneumothoraces. Heart size remains normal. Mediastinal contours appear within normal limits.
+INFO:__main__:Original: The lateral aspect of the right hemi thorax is omitted from view.  ET tube is
+ in the upper thoracic trachea approximately 6.5 cm from the carina. Enteric
+ tube courses through the esophagus terminating in the stomach.
+
+ There are large bilateral layering pleural effusions.  Retrocardiac opacity
+ likely due to atelectasis although superimposed consolidation would be
+ possible.  Also be due to The heart is obscured by pleural effusion.  There is
+ no evidence of large pneumothorax within the limitations of this study.
+INFO:__main__:ROUGE-L score: 0.2105
+
+Epoch 7/20:  86%|▊| 800/928 [47:04<07:44,  3.63s/it, Loss=0.1910, Avg Loss=0.203INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: CONCLUSION: There is mild crowding of the right costophrenic XXXX. This may represent a subtle elevation in volume or atelectasis due to previous pneumonia and / or infection, which could reflect underlying pulmonary edema. The left lung remains clear with no focal consolidation, pleural effusion, pneumothorax, or large hemidiaphragm. No acute osseous abnormalities seen.
+INFO:__main__:Original: PA and lateral views of the chest provided demonstrate clear
+ well-expanded lungs without focal consolidation, effusion, or pneumothorax.
+ Cardiomediastinal silhouette is normal.  Bony structures are intact.  No free
+ air below the right hemidiaphragm.
+INFO:__main__:ROUGE-L score: 0.1839
+
+Epoch 7/20:  97%|▉| 900/928 [53:00<01:38,  3.53s/it, Loss=0.1385, Avg Loss=0.203INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: (PA and lateral views). The lungs are well inflated without focal consolidation, pleural effusion or pneumothorax. Heart size is normal in both cases. Mediastinal contours are stable. Calcified aortic knob has been noted on the prior study from _ _ _.
+INFO:__main__:Original: PA and lateral views of the chest demonstrate the lungs are well
+ expanded and clear.  The cardiomediastinal silhouette is unremarkable.  There
+ is no pleural effusion, pulmonary edema, pneumothorax or focal airspace
+ opacity.  Bilateral nipple shadows should not be confused for pulmonary
+ nodules.
+INFO:__main__:ROUGE-L score: 0.2750
+
+Epoch 7/20: 100%|█| 928/928 [54:36<00:00,  3.53s/it, Loss=0.2540, Avg Loss=0.204
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:17<00:00,  4.24s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1936
+INFO:__main__:Average ROUGE-L: 0.2379
+INFO:__main__:Saved checkpoint to checkpoint_epoch_7.pt
+Epoch 8/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: (AP). There is a small right pleural effusion with overlying atelectasis and linear opacities at the right base, consistent with scarring or atelectasis from prior pneumothorax. No focal consolidation is seen. The cardiomediastinal silhouette appears normal in size and contour.
+INFO:__main__:Original: PA and lateral views of the chest.  No prior.  The lungs are clear
+ without confluent consolidation or effusion.  Cardiac silhouette is enlarged.
+ Dense atherosclerotic calcifications noted at the arch.  Surgical clips
+ project just superior to the thoracic inlet.  Osseous and soft tissue
+ structures are otherwise unremarkable.
+INFO:__main__:ROUGE-L score: 0.1628
+
+Epoch 8/20:  11%| | 100/928 [05:53<49:22,  3.58s/it, Loss=0.2655, Avg Loss=0.200INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: VA / SI. The cardiomediastinal silhouette is within normal limits. There are no focal consolidation, pleural effusion or pneumothorax.
+INFO:__main__:Original: AP and lateral views of the chest were reviewed.  The cardiomediastinal and
+ hilar contours are normal.  There is no pleural effusion or pneumothorax.  The
+ lungs are well expanded and clear.  The right vasculature the normal limits.
+ No displaced rib fractures are seen.
+INFO:__main__:ROUGE-L score: 0.3000
+
+Epoch 8/20:  22%|▏| 200/928 [11:47<42:35,  3.51s/it, Loss=0.2371, Avg Loss=0.201INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear bilaterally. There is no pleural effusion or pneumothorax. No focal consolidation is identified, and the cardiomediastinal silhouette appears within normal limits for patient habitus.
+INFO:__main__:Original: PA and lateral views of the chest provided.   Left upper extremity access PICC
+ line terminates in the upper SVC.  Surgical anchors noted in the right humeral
+ head.  Midline sternotomy wires and mediastinal clips again noted.  The heart
+ remains stably enlarged.  A small right pleural effusion is noted with right
+ basal atelectasis.  Hila appear somewhat congested without frank edema.  No
+ pneumothorax.  Bony structures are intact.
+INFO:__main__:ROUGE-L score: 0.1075
+
+Epoch 8/20:  32%|▎| 300/928 [17:40<35:59,  3.44s/it, Loss=0.1374, Avg Loss=0.201INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: There is mild cardiomegaly with pulmonary vascular congestion. The lungs are otherwise clear without focal consolidation, pleural effusion or pneumothorax.. Cardiomediastinal silhouette and hilar contours are within normal limits.
+INFO:__main__:Original: The cardiomediastinal silhouette is normal.  The hila and pleura are
+ unremarkable.  No focal consolidations, pleural effusions, pulmonary edema, or
+ pneumothorax are seen.
+INFO:__main__:ROUGE-L score: 0.3846
+
+Epoch 8/20:  43%|▍| 400/928 [23:35<31:02,  3.53s/it, Loss=0.1926, Avg Loss=0.202INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: Mild cardiomegaly is unchanged from _ _. There is no focal consolidation, pleural effusion or pneumothorax. No acute bony abnormality identified.
+INFO:__main__:Original: The lungs are clear.  Mediastinal and cardiac contours are normal.  There is
+ no pleural effusion or pneumothorax.
+
+ CONCLUSION:
+
+ There is no significant cardiopulmonary findings.  There is no pneumonia.
+INFO:__main__:ROUGE-L score: 0.3333
+
+Epoch 8/20:  54%|▌| 500/928 [29:27<23:45,  3.33s/it, Loss=0.2107, Avg Loss=0.202INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: XX XX. Heart size normal. No focal airspace disease, pneumothorax or large pleural effusion seen. XXXX are normal in appearance. Bony structures appear intact.
+INFO:__main__:Original: PA and lateral views the chest were obtained. The cardiomediastinal silhouette is normal in size and configuration. The lungs are well aerated. No pneumothorax, pleural effusion, or lobar air space consolidation. XXXX right middle lobe collapse appears less distinct than on prior study.
+INFO:__main__:ROUGE-L score: 0.2090
+
+Epoch 8/20:  65%|▋| 600/928 [35:12<19:10,  3.51s/it, Loss=0.1839, Avg Loss=0.201INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: PA and lateral views of the chest. There is no focal consolidation, effusion or pneumothorax identified. The cardiomediastinal silhouette appears normal.
+INFO:__main__:Original: PA and lateral chest views have been obtained with patient in
+ upright position.  Analysis is performed in direct comparison with the next
+ preceding similar study dated ___.  There exists no previous
+ chest examination as of ___.  There is moderate cardiac enlargement.
+ The configuration indicates an additional prominence of the left atrial
+ appendage on the frontal view suggestive of moderate enlargement of the left
+ atrium (clinical nodes include evidence of atrial fibrillation).  The thoracic
+ aorta is mildly widened and elongated but does not show any local contour
+ abnormality.  The pulmonary vasculature demonstrates again an upper zone
+ redistribution pattern, similar as seen on the examination one year ago.
+ There is some mild blunting of the lateral pleural sinuses also visible in the
+ posterior sinuses on the lateral view.  Acute parenchymal infiltrates cannot
+ be identified and there is no evidence of pneumothorax in the apical area.  A
+ suspicious parenchymal infiltrate involving the left upper lobe lingula
+ adjacent to the left lateral cardiac border cannot be seen anymore.
+ Comparison is extended to a chest examination of ___, at which
+ time the heart size was slightly lesser than now.  Can also be observed that
+ the pulmonary vasculature did not show the same degree of upper zone
+ redistribution of the pulmonary circulation and the lateral pleural sinuses
+ where completely free from any blunting at all.
+INFO:__main__:ROUGE-L score: 0.0928
+
+Epoch 8/20:  75%|▊| 700/928 [41:01<12:34,  3.31s/it, Loss=0.2092, Avg Loss=0.200INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: No focal consolidation, pleural effusion or pneumothorax. Heart size is within normal limits. XXXX are unremarkable with no acute bony abnormalities seen. Calcified granuloma of the left upper lobe noted in XXXX on the lateral projection.
+INFO:__main__:Original: The lungs are clear. There is no pleural effusion. The heart and mediastinum are normal. Arthritic changes are seen throughout the spine and both XXXX.
+INFO:__main__:ROUGE-L score: 0.2951
+
+Epoch 8/20:  86%|▊| 800/928 [46:53<07:31,  3.52s/it, Loss=0.1828, Avg Loss=0.200INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: No focal consolidation. Heart size normal. Lungs clear without effusion or pneumothorax. XXXX are intact. Bony structures and soft tissues of the thorax appear unremarkable.
+INFO:__main__:Original: Stable cardiomediastinal silhouette. Pulmonary vascularity is within normal limits. Lungs are expanded and clear airspace disease. Negative for pneumothorax or pleural effusion. Limited evaluation reveals the XXXX XXXX to be grossly intact.
+INFO:__main__:ROUGE-L score: 0.2105
+
+Epoch 8/20:  97%|▉| 900/928 [52:47<01:44,  3.72s/it, Loss=0.1789, Avg Loss=0.199INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: XX. The heart size is normal in appearance and contour. No focal airspace consolidation, pneumothorax or large pleural effusion.. There are no acute osseous abnormalities.
+INFO:__main__:Original: The XXXX examination consists of frontal and lateral radiographs of the chest. The cardiomediastinal contours are within normal limits. Pulmonary vascularity is within normal limits. No focal consolidation, pleural effusion, or pneumothorax identified. Deformity of the right clavicle related to remote XXXX is again seen. Visualized upper abdomen grossly unremarkable.
+INFO:__main__:ROUGE-L score: 0.2133
+
+Epoch 8/20: 100%|█| 928/928 [54:24<00:00,  3.52s/it, Loss=0.1203, Avg Loss=0.199
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:11<00:00,  4.19s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1902
+INFO:__main__:Average ROUGE-L: 0.2442
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2442
+INFO:__main__:Saved checkpoint to checkpoint_epoch_8.pt
+Epoch 9/20:   0%|                                       | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: _ _. The patient is status post median sternotomy and CABG with mediastinal shift to the left, which could be due to a previous aortic valve replacement or coronary artery bypass graft. There has been interval improvement in the cardiac size and pulmonary vascularity. No new focal consolidation or pleural effusion seen on this study.
+INFO:__main__:Original: AP portable upright view of the chest.   Overlying EKG leads are present.
+ There is a PICC line partially visualized overlying the right upper arm with
+ catheter tip in the region of the right axilla.  Cardiomegaly is mild.  Hila
+ appear congested.  No frank edema.  Retrocardiac opacity could represent
+ atelectasis versus an early pneumonia.  No large effusion or pneumothorax.
+ Aortic calcifications again noted.
+INFO:__main__:ROUGE-L score: 0.1228
+
+Epoch 9/20:  11%| | 100/928 [05:54<48:18,  3.50s/it, Loss=0.1832, Avg Loss=0.198INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: . There is a left apical pneumothorax and right pleural effusion. The cardiomediastinal silhouette appears within normal limits in size and contour, without focal consolidations concerning for pneumonia or edema. No acute osseous abnormalities are identified.
+INFO:__main__:Original: PA and lateral radiographs through the chest demonstrate low lung
+ volumes.  No focal consolidation is identified.  There is no pleural effusion
+ or pneumothorax identified.  The lung volumes result in bronchovascular
+ congestion.  No acute osseous abnormality is identified.
+INFO:__main__:ROUGE-L score: 0.3056
+
+Epoch 9/20:  22%|▏| 200/928 [11:44<40:52,  3.37s/it, Loss=0.1566, Avg Loss=0.195INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: The heart is normal in size. Lungs are clear. No pleural effusion or pneumothorax is seen. There is no evidence of acute osseous abnormality.
+INFO:__main__:Original: Cardiac size, mediastinal contour, and pulmonary vascularity are within normal limits. No focal consolidation, suspicious pulmonary opacity, pleural effusion, or pneumothorax. The visualized osseous structures appear intact.
+INFO:__main__:ROUGE-L score: 0.3137
+
+Epoch 9/20:  32%|▎| 300/928 [17:43<35:26,  3.39s/it, Loss=0.2112, Avg Loss=0.197INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: There is no focal consolidation, effusion or pneumothorax. Heart size within normal limits and mediastinal contour are stable in appearance. No acute osseous abnormality identified.
+INFO:__main__:Original: The cardiomediastinal silhouette is normal in size and contour. Low lung volumes without focal consolidation, pneumothorax or large pleural effusion. Normal XXXX.
+INFO:__main__:ROUGE-L score: 0.2083
+
+Epoch 9/20:  43%|▍| 400/928 [23:35<31:48,  3.62s/it, Loss=0.1431, Avg Loss=0.197INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: There is no focal consolidation, pleural effusion or pneumothorax. The cardiomediastinal silhouette and hilar contours are normal. No acute osseous abnormality identified.
+INFO:__main__:Original: PA and lateral views of the chest provided.   Cardiomegaly is again noted.
+ There is no focal consolidation, large effusion or pneumothorax.  There may be
+ mild hilar congestion though there is no frank pulmonary edema.  A prominent
+ right and left nipple shadow noted.  Streaky left lower lobe atelectasis is
+ better assessed on the same day CT chest.  Diffusely sclerotic appearance of
+ the bones may reflect chronic renal disease.
+INFO:__main__:ROUGE-L score: 0.2222
+
+Epoch 9/20:  54%|▌| 500/928 [29:31<26:02,  3.65s/it, Loss=0.2297, Avg Loss=0.197INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: Conclusion: Mild cardiomegaly is stable. No focal consolidation, pleural effusion or pneumothorax is seen. The mediastinal and hilar contours are normal. There are no acute osseous abnormalities.
+INFO:__main__:Original: Heart size is normal.  The mediastinal and hilar contours are normal. The
+ pulmonary vasculature is normal. Lungs are clear.  No pleural effusion or
+ pneumothorax is seen. There are no acute osseous abnormalities.  Partial
+ resection of the left sixth rib is re- demonstrated.
+INFO:__main__:ROUGE-L score: 0.4058
+
+Epoch 9/20:  65%|▋| 600/928 [35:20<19:26,  3.56s/it, Loss=0.2410, Avg Loss=0.196INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: No focal consolidation. Heart size within normal limits and pulmonary vascularity. The XXXX are intact with no evidence of pleural effusion or pneumothorax. Degenerative changes noted in the thoracic spine.
+INFO:__main__:Original: The cardiomediastinal contours are within normal limits. Pulmonary vasculature is unremarkable. There is no focal airspace opacity. No pleural effusion or pneumothorax is seen. No acute bony abnormality is identified.
+INFO:__main__:ROUGE-L score: 0.3000
+
+Epoch 9/20:  75%|▊| 700/928 [41:11<12:34,  3.31s/it, Loss=0.2301, Avg Loss=0.196INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: CONCLUSIONS: The heart is normal in size. Mild aortic calcifications are noted. Pulmonary vascularity appears within normal limits. There is no focal consolidation, pleural effusion or pneumothorax identified.
+INFO:__main__:Original: Frontal and lateral views of the chest demonstrate stable mild
+ cardiomegaly.  There is minimal unfolding of the thoracic aorta.  Mediastinal
+ and hilar contours are normal.  There may be mild central vascular congestion
+ without frank edema. There is no pleural effusion, vascular congestion, or
+ pneumothorax.
+INFO:__main__:ROUGE-L score: 0.3333
+
+Epoch 9/20:  86%|▊| 800/928 [46:59<07:01,  3.29s/it, Loss=0.1588, Avg Loss=0.196INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: PA and lateral views of the chest demonstrate no focal consolidation, pleural effusion or pneumothorax. The cardiac silhouette is normal in size and contour. Mediastinal contours are unremarkable.
+INFO:__main__:Original: Heart size is top-normal.  The mediastinal and hilar contours are
+ unremarkable.  The pulmonary vasculature is normal.  Patchy atelectasis is
+ seen in the right lung base without focal consolidation.  No pleural effusion
+ or pneumothorax is seen.  There are no acute osseous abnormalities.
+INFO:__main__:ROUGE-L score: 0.2857
+
+Epoch 9/20:  97%|▉| 900/928 [52:53<01:38,  3.51s/it, Loss=0.1644, Avg Loss=0.196INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: XX XXXX normal heart size. Lungs are clear bilaterally. No pneumothorax or pleural effusion. Visualized osseous structures without acute abnormality.
+INFO:__main__:Original: The cardiomediastinal silhouette is within normal limits for appearance. No focal areas of pulmonary consolidation. No pneumothorax. No pleural effusion. The thoracic spine appears intact..
+INFO:__main__:ROUGE-L score: 0.2222
+
+Epoch 9/20: 100%|█| 928/928 [54:28<00:00,  3.52s/it, Loss=0.2854, Avg Loss=0.196
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:06<00:00,  4.14s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1872
+INFO:__main__:Average ROUGE-L: 0.2401
+INFO:__main__:Saved checkpoint to checkpoint_epoch_9.pt
+Epoch 10/20:   0%|                                      | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: CONCLUSION: There is a small left pleural effusion. Small right pleural effusion may be present, but it requires further evaluation given the location and extent of the lesion. No pneumothorax or large focal air space opacity is seen. The cardiomediastinal silhouette is normal.
+INFO:__main__:Original: Since the prior study, there has been decrease in lung volumes and
+ redemonstration of coarse interstitial markings.  Cardiomediastinal silhouette
+ is mildly enlarged and there is no new focal parenchymal consolidation.  No
+ evidence of large pleural effusion or pneumothorax. Aside from general
+ osteopenia, there is no acute osseous finding.
+INFO:__main__:ROUGE-L score: 0.1319
+
+Epoch 10/20:  11%| | 100/928 [05:55<47:39,  3.45s/it, Loss=0.2189, Avg Loss=0.19INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: CONCLUSION: Mild cardiomegaly is stable. No focal airspace disease, pleural effusion or pneumothorax identified. The aorta and pulmonary XXXX are tortuous with calcification seen in the right coronary artery aneurysm.
+INFO:__main__:Original: Frontal and lateral views of the chest show an unchanged cardiomediastinal silhouette. The cardiac silhouette remains moderately enlarged, exaggerated by epicardial fat pads. Interstitium is XXXX prominent. No XXXX focal airspace consolidation or pleural effusion. There is XXXX spine spondylosis.
+INFO:__main__:ROUGE-L score: 0.2000
+
+Epoch 10/20:  22%|▏| 200/928 [11:48<43:19,  3.57s/it, Loss=0.2418, Avg Loss=0.19INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: (PA and lateral views) are provided. The lungs remain clear without focal consolidation, pleural effusion or pneumothorax. Cardiomediastinal silhouette is normal in size and contour. Bony structures are intact.
+INFO:__main__:Original: Calcified granulomas noted. XXXX symmetric apical scarring. The diaphragms are flattened, and the chest is somewhat XXXX shaped. The cardiothymic silhouette is within normal limits for size. Pulmonary vascularity is unremarkable. No acute bony abnormality.
+INFO:__main__:ROUGE-L score: 0.2188
+
+Epoch 10/20:  32%|▎| 300/928 [17:41<38:29,  3.68s/it, Loss=0.2013, Avg Loss=0.19INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: The heart is normal in size. Lungs are clear without focal consolidation, pneumothorax or pleural effusion.. Visualized osseous structures show no acute abnormality.
+INFO:__main__:Original: XXXX XXXX and lateral chest examination was obtained. The heart silhouette is normal in size and contour. Aortic XXXX appear unremarkable. Lungs demonstrate increased interstitial markings probably COPD. There is calcified hilar lymph XXXX. There is no effusion or pneumothorax.
+INFO:__main__:ROUGE-L score: 0.2540
+
+Epoch 10/20:  43%|▍| 400/928 [23:34<29:06,  3.31s/it, Loss=0.1635, Avg Loss=0.19INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: CONCLUSION: PA and lateral views of the chest were obtained. There is mild left basilar atelectasis. No focal consolidation, pleural effusion or pneumothorax is seen. The cardiomediastinal silhouette is normal. Imaged osseous structures are intact.
+INFO:__main__:Original: Patchy left base opacity may be due to atelectasis versus subtle pneumonia.
+ No pleural effusion or pneumothorax is seen. The cardiac and mediastinal
+ silhouettes are unremarkable.
+INFO:__main__:ROUGE-L score: 0.3934
+
+Epoch 10/20:  54%|▌| 500/928 [29:27<26:30,  3.72s/it, Loss=0.1646, Avg Loss=0.19INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: (AP). The cardiomediastinal silhouette is within normal limits in size and contour without focal consolidation, pleural effusion or pneumothorax. There are no acute osseous abnormalities identified.
+INFO:__main__:Original: There is a new opacity in the right medial lung base, concerning for
+ pneumonia.  Moderate atelectatic changes are seen in the bilateral lung bases.
+ Small bilateral pleural effusions are likely.  Severe cardiomegaly is
+ unchanged since ___.  A left pectoral pacemaker is noted with transvenous
+ leads in the region of the right atrium and right ventricle.  No pneumothorax.
+INFO:__main__:ROUGE-L score: 0.1463
+
+Epoch 10/20:  65%|▋| 600/928 [35:18<19:09,  3.51s/it, Loss=0.1474, Avg Loss=0.19INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: (PA and lateral views). The patient is status post median sternotomy and CABG, with the left internal jugular vein central venous catheter tip in a usual position. There are no pneumothorax or pleural effusion. Heart size remains normal.
+INFO:__main__:Original: A small right and moderate left pleural effusions are new since ___.  There is moderate left lower lobe atelectasis.  Underlying
+ consolidation cannot be entirely excluded.  There is no pneumothorax.  The
+ cardiac and mediastinal contours remain within normal limits.
+INFO:__main__:ROUGE-L score: 0.2133
+
+Epoch 10/20:  75%|▊| 700/928 [41:13<14:43,  3.88s/it, Loss=0.1662, Avg Loss=0.19INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: CONCLUSION: The cardiac silhouette is normal in size. Mediastinal and hilar contours are unchanged, however the lungs appear clear. No pleural effusion or pneumothorax is seen. There is no acute osseous abnormality identified.
+INFO:__main__:Original: PA and lateral views of the chest were obtained demonstrating clear
+ well expanded lungs without focal consolidation, effusion, pneumothorax.
+ Heart size is top normal.  Mediastinal contour is normal aside from an
+ unfolded thoracic aorta.  Bony structures are intact.  A focal eventration of
+ the right hemidiaphragm noted.  No free air below the right hemidiaphragm.
+INFO:__main__:ROUGE-L score: 0.1860
+
+Epoch 10/20:  86%|▊| 800/928 [47:06<07:53,  3.70s/it, Loss=0.2452, Avg Loss=0.19INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: _ _. The heart size is normal, with a mildly enlarged left atrium and mild aortic tortuosity. There are no focal areas of consolidation, pleural effusion or pneumothorax.
+INFO:__main__:Original: PA and lateral views of the chest.  The lungs are clear.  The
+ cardiomediastinal silhouette is within normal limits.  No acute osseous
+ abnormalities detected.
+INFO:__main__:ROUGE-L score: 0.1633
+
+Epoch 10/20:  97%|▉| 900/928 [52:55<01:40,  3.57s/it, Loss=0.1745, Avg Loss=0.19INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: There is a right lower lobe nodular opacity. The lungs are clear without consolidation, effusion or pneumothorax. Heart size and mediastinal contours within normal limits.
+INFO:__main__:Original: Stable appearance of aortic valve prosthesis. Sternotomy XXXX. Aortic calcifications. Mild interstitial edema. No focal infiltrate. No effusion or pneumothorax. Mild cardiomegaly.
+INFO:__main__:ROUGE-L score: 0.1277
+
+Epoch 10/20: 100%|█| 928/928 [54:32<00:00,  3.53s/it, Loss=0.1133, Avg Loss=0.19
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:14<00:00,  4.21s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1845
+INFO:__main__:Average ROUGE-L: 0.2405
+INFO:__main__:Saved checkpoint to checkpoint_epoch_10.pt
+Epoch 11/20:   0%|                                      | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: The heart is normal in size. There is no pulmonary edema or pleural effusion.. Cardiomediastinal silhouette is unremarkable, with stable left mid to upper lobe scarring noted.
+INFO:__main__:Original: There are multiple bilateral pulmonary nodules. For example, there is a 12 mm left lower lobe nodule, XXXX seen on the frontal view. There is no pleural effusion or pneumothorax. Heart size is within normal limits. The left hilar contour is prominent. There are diffuse degenerative changes of the spine.
+INFO:__main__:ROUGE-L score: 0.2078
+
+Epoch 11/20:  11%| | 100/928 [05:54<50:28,  3.66s/it, Loss=0.1583, Avg Loss=0.19INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: (AP). The patient is status post median sternotomy and CABG with left internal jugular vein central venous catheter in place. Portable frontal view of the chest shows an old right-sided pleural effusion which is slightly better appreciated on a lateral view compared to the current study. A small amount of fluid at the right base may be due to atelectasis or aspiration, but there are no specific signs for pneumonia. There is no evidence of pneumothorax.
+INFO:__main__:Original: The ETT terminates approximately 4.5 cm above the carina.  A right IJ catheter
+ terminates in the low SVC.  An NG tube is in place, but does not appear to
+ course below the diaphragm.
+
+ There is moderate to severe pulmonary edema.  There is also a probable small
+ left pleural effusion.  The heart is top-normal in size.  No pneumothorax.
+INFO:__main__:ROUGE-L score: 0.2059
+
+Epoch 11/20:  22%|▏| 200/928 [11:45<41:18,  3.40s/it, Loss=0.1753, Avg Loss=0.19INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: _ _. The lungs are clear without focal consolidation, pleural effusion or pneumothorax. No acute osseous abnormality is identified. Mediastinal contour and hilar contours appear normal.
+INFO:__main__:Original: PA and lateral views of the chest.  There is prominence of pulmonary
+ vasculature consistent with mild congestion.  Stable lung hyperinflation is
+ consistent with underlying emphysema.  There is no focal consolidation,
+ pleural effusion or pneumothorax.  The heart is mildly enlarged.
+INFO:__main__:ROUGE-L score: 0.2857
+
+Epoch 11/20:  32%|▎| 300/928 [17:42<37:29,  3.58s/it, Loss=0.1728, Avg Loss=0.19INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: CONCLUSION: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. There is no evidence of pulmonary edema. Cardiomediastinal silhouette and hilar contours appear within normal limits.
+INFO:__main__:Original: The lungs are mildly hyperexpanded, as on prior.  Hazy retrocardiac opacity
+ projects over the spine on lateral view.  There is no effusion or
+ pneumothorax. The cardiomediastinal silhouette is normal. Imaged osseous
+ structures are intact.  No free air below the right hemidiaphragm is seen.
+ Surgical clips are seen projecting over the left upper chest.
+INFO:__main__:ROUGE-L score: 0.2381
+
+Epoch 11/20:  43%|▍| 400/928 [23:35<31:45,  3.61s/it, Loss=0.1413, Avg Loss=0.19INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: No pneumothorax. Heart size is normal. The lungs are clear without focal airspace disease, pleural effusion or pneumothorax. Visualized osseous structures of the thorax appear intact.
+INFO:__main__:Original: Clear lungs. No pneumothorax. No pleural effusion. Normal heart. Trachea is midline.
+INFO:__main__:ROUGE-L score: 0.2105
+
+Epoch 11/20:  54%|▌| 500/928 [29:25<26:02,  3.65s/it, Loss=0.2055, Avg Loss=0.19INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: _ _. Heart size is normal in appearance, but there are atherosclerotic calcifications of the thoracic aorta. No focal consolidation, pleural effusion or pneumothorax identified.
+INFO:__main__:Original: Cardiac, mediastinal and hilar contours are normal.  Lungs are clear and the
+ pulmonary vasculature is normal.  No pleural effusion or pneumothorax is seen.
+ There are no acute osseous abnormalities.
+INFO:__main__:ROUGE-L score: 0.3077
+
+Epoch 11/20:  65%|▋| 600/928 [35:20<19:40,  3.60s/it, Loss=0.1775, Avg Loss=0.19INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: PA and lateral views of the chest demonstrate well expanded lungs with no focal consolidation, pleural effusion or pneumothorax. Cardiomediastinal silhouette is within normal limits. Osseous structures are intact without acute abnormality.
+INFO:__main__:Original: The cardiac, mediastinal and hilar contours are normal.  Lungs are clear and
+ the pulmonary vasculature normal.  No pleural effusion or pneumothorax is
+ detected.  There are no acute osseous abnormalities.  Cholecystectomy clips
+ are demonstrated in the right upper quadrant of the abdomen.  There are mild
+ degenerative changes in the lower thoracic spine.
+INFO:__main__:ROUGE-L score: 0.2651
+
+Epoch 11/20:  75%|▊| 700/928 [41:19<13:27,  3.54s/it, Loss=0.1700, Avg Loss=0.19INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: The heart size is normal. There are no focal airspace consolidations, pleural effusions or pneumothorax. Bony structures demonstrate intact fusion of the thoracic spine without acute abnormality.
+INFO:__main__:Original: No focal lung consolidation. Heart size and pulmonary vascularity are within normal limits. No pneumothorax or pleural effusion. Osseous structures are grossly intact.
+INFO:__main__:ROUGE-L score: 0.3200
+
+Epoch 11/20:  86%|▊| 800/928 [47:17<07:35,  3.56s/it, Loss=0.1641, Avg Loss=0.19INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: Normal heart size and mediastinal contour. Lungs are clear without focal consolidation, pneumothorax or pleural effusion.. Visualized osseous structures of the thorax are unremarkable.
+INFO:__main__:Original: The heart and lungs have XXXX XXXX in the interval. Both lungs are clear and expanded. Heart and mediastinum normal. No change calcified aorticopulmonary XXXX node.
+INFO:__main__:ROUGE-L score: 0.2000
+
+Epoch 11/20:  97%|▉| 900/928 [53:09<01:42,  3.66s/it, Loss=0.1990, Avg Loss=0.19INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: . The lungs are clear without focal consolidation, effusion or pneumothorax. There is no pleural effusion or pneumothoraces. The cardiac and mediastinal silhouettes are unremarkable.
+INFO:__main__:Original: Lung volumes are low-normal.  There is no focal consolidation, effusion, or
+ pneumothorax.  There is no central vascular congestion or overt pulmonary
+ edema.  Mediastinal and hilar contours are normal.  Moderate calcification of
+ the aortic knob is noted.  Heart size is normal.
+INFO:__main__:ROUGE-L score: 0.4000
+
+Epoch 11/20: 100%|█| 928/928 [54:42<00:00,  3.54s/it, Loss=0.1729, Avg Loss=0.19
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:05<00:00,  4.13s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1823
+INFO:__main__:Average ROUGE-L: 0.2383
+INFO:__main__:Saved checkpoint to checkpoint_epoch_11.pt
+Epoch 12/20:   0%|                                      | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: CONCLUSION: There is no focal consolidation, effusion or pneumothorax. The cardiomediastinal silhouette and hilar contours are normal.
+INFO:__main__:Original: The cardiac, mediastinal and hilar contours appear unchanged.
+ There is no pleural effusion or pneumothorax.  The lungs appear clear.  Bony
+ structures are unremarkable.  There has been no significant change.
+INFO:__main__:ROUGE-L score: 0.3478
+
+Epoch 12/20:  11%| | 100/928 [05:52<45:59,  3.33s/it, Loss=0.1607, Avg Loss=0.18INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: CONCLUSION: Frontal and lateral views of the chest demonstrate no focal consolidation, pleural effusion or pneumothorax. The cardiomediastinal silhouette is normal in size and contour. Bony structures are intact.
+INFO:__main__:Original: Frontal and lateral chest radiograph demonstrates well-expanded lungs.  The
+ right lung is grossly clear with no focal consolidation or appreciable pleural
+ effusion.  There is a persistent left-sided pleural effusion and or pleural
+ thickening.  Unchanged left chest tube seen along the left hemidiaphram and
+ spine.  No appreciable pneumothorax is identified.  The cardiomediastinal and
+ hilar contours having normal postoperative appearance.  Heart size is top
+ normal. Median sternotomy wires are intact. Incidental note is made of pectus
+ excavatum.
+INFO:__main__:ROUGE-L score: 0.3396
+
+Epoch 12/20:  22%|▏| 200/928 [11:46<46:28,  3.83s/it, Loss=0.1690, Avg Loss=0.18INFO:__main__:
+Sample at batch 200:
+INFO:__main__:Generated: (_ _). There is no focal consolidation, effusion or pneumothorax. The cardiomediastinal silhouette and hilar contours are normal.
+INFO:__main__:Original: The examination is compared to ___.
+
+ In the interval, the patient has been intubated.  The tip of the endotracheal
+ tube projects 3.3 cm above the carina.  There is no evidence of complication,
+ notably no pneumothorax.  The appearance of the lungs is unchanged.  In the
+ interval, bilateral pleural effusions have developed.  Additional evidence of
+ retrocardiac atelectasis.  Unchanged appearance of the cardiac silhouette.
+INFO:__main__:ROUGE-L score: 0.1558
+
+Epoch 12/20:  32%|▎| 300/928 [17:41<36:39,  3.50s/it, Loss=0.1436, Avg Loss=0.18INFO:__main__:
+Sample at batch 300:
+INFO:__main__:Generated: _ _ and AP upright chest radiograph. The lungs are clear without focal consolidation, pleural effusion or pneumothorax. There is mild cardiomegaly with no evidence of pulmonary edema.
+INFO:__main__:Original: Lungs are well expanded and clear.  There are no lung opacities of concern.
+ Heart size, mediastinal and hilar contours are normal.  There is no
+ pneumothorax or pleural effusion.  Left Port-A-Cath through the left internal
+ jugular approach ends at lower SVC.  No evidence of pneumothorax.
+INFO:__main__:ROUGE-L score: 0.2222
+
+Epoch 12/20:  43%|▍| 400/928 [23:41<33:29,  3.81s/it, Loss=0.2092, Avg Loss=0.18INFO:__main__:
+Sample at batch 400:
+INFO:__main__:Generated: The heart size and mediastinal contours appear within normal limits. Lungs are clear without focal airspace consolidation, pleural effusion or pneumothorax.. No acute bony abnormality detected.
+INFO:__main__:Original: Lungs are clear. No pleural effusions or pneumothoraces. Heart and mediastinum of normal size and contour. Degenerative changes in the spine. spinal stimulator is in XXXX with tip overlying the T9 vertebral body.
+INFO:__main__:ROUGE-L score: 0.2034
+
+Epoch 12/20:  54%|▌| 500/928 [29:50<24:51,  3.48s/it, Loss=0.1476, Avg Loss=0.18INFO:__main__:
+Sample at batch 500:
+INFO:__main__:Generated: No pneumothorax. The heart size and pulmonary vascularity are within normal limits. There is no pleural effusion or pneumothorax. Calcified granulomas are noted in the left hilum.
+INFO:__main__:Original: Chest. There is no change in the strandy scarring in the right apex. No XXXX infiltrates or masses in the lungs. Heart and mediastinum remain normal. Lumbosacral spine. disc spaces are old narrow, and large osteophytes present on the vertebral bodies, worst at L2-L3. XXXX elements from L4 through S1 are sclerotic. Sacrum and sacroiliac joints are normal. Calcific aortic disease is present.
+INFO:__main__:ROUGE-L score: 0.1538
+
+Epoch 12/20:  65%|▋| 600/928 [35:49<19:09,  3.50s/it, Loss=0.1826, Avg Loss=0.18INFO:__main__:
+Sample at batch 600:
+INFO:__main__:Generated: The lungs are clear without focal consolidation. No pleural effusion or pneumothorax is seen. Cardiomediastinal silhouette is within normal limits.
+INFO:__main__:Original: The heart, pulmonary XXXX and mediastinum are within normal limits. There is no pleural effusion or pneumothorax. There is no focal air space opacity to suggest a pneumonia.
+INFO:__main__:ROUGE-L score: 0.3333
+
+Epoch 12/20:  75%|▊| 700/928 [41:39<13:52,  3.65s/it, Loss=0.2348, Avg Loss=0.18INFO:__main__:
+Sample at batch 700:
+INFO:__main__:Generated: The heart size and pulmonary vascularity are within normal limits. No focal airspace opacities, pleural effusion or pneumothorax identified. There is no evidence of acute bony abnormality.
+INFO:__main__:Original: Heart size and mediastinal contours appear within normal limits. Eventration of the right hemidiaphragm. No focal lung consolidation, pleural effusion or pneumothorax. No acute bony abnormality.
+INFO:__main__:ROUGE-L score: 0.6038
+
+Epoch 12/20:  86%|▊| 800/928 [47:36<08:01,  3.76s/it, Loss=0.2596, Avg Loss=0.18INFO:__main__:
+Sample at batch 800:
+INFO:__main__:Generated: . The lungs are clear without focal consolidation or effusion. There is no pneumothorax. Cardiomediastinal silhouette is normal in size and contour, stable with moderate aortic ectasia noted on CT.
+INFO:__main__:Original: Mild dextroscoliosis of the thoracic spine is present.  The cardiac,
+ mediastinal and hilar contours are unchanged, with the heart size within
+ normal limits.  The lungs are clear and the pulmonary vascularity is normal.
+ There are no pleural effusions or pneumothoraces.  No acute osseous
+ abnormalities are seen.
+INFO:__main__:ROUGE-L score: 0.1600
+
+Epoch 12/20:  97%|▉| 900/928 [53:33<01:45,  3.78s/it, Loss=0.1516, Avg Loss=0.18INFO:__main__:
+Sample at batch 900:
+INFO:__main__:Generated: . There is a left lower lobe consolidation with associated atelectasis and scarring, likely due to prior infection / aspiration in the setting of persistent mild pulmonary edema. The cardiomediastinal silhouette is normal. No pneumothorax or pleural effusion seen.
+INFO:__main__:Original: The lungs are hyperinflated and grossly clear.  There is no pneumothorax,
+ pleural effusion, overt pulmonary edema, or focal consolidation concerning for
+ pneumonia.  A Bochdalek's hernias again noted on the left.  The
+ cardiomediastinal silhouette is stable.  Calcifications are again seen within
+ the aortic arch and descending thoracic aorta.
+INFO:__main__:ROUGE-L score: 0.2118
+
+Epoch 12/20: 100%|█| 928/928 [55:13<00:00,  3.57s/it, Loss=0.1025, Avg Loss=0.18
+INFO:__main__:
+Running validation...
+Validating: 100%|█████████████████████████████| 103/103 [07:24<00:00,  4.31s/it]
+INFO:__main__:
+Validation Results:
+INFO:__main__:Average Loss: 0.1801
+INFO:__main__:Average ROUGE-L: 0.2462
+INFO:__main__:New best model saved with validation ROUGE-L: 0.2462
+INFO:__main__:Saved checkpoint to checkpoint_epoch_12.pt
+Epoch 13/20:   0%|                                      | 0/928 [00:00<?, ?it/s]INFO:__main__:
+Sample at batch 0:
+INFO:__main__:Generated: XX XXXX and lateral chest radiograph demonstrate clear lungs bilaterally. Cardiomediastinal silhouette is within normal limits for size and contour. No pneumothorax, pleural effusion or focal airspace consolidation.
+INFO:__main__:Original: The heart is normal size with normal appearance the cardiomediastinal silhouette. There is no focal air space opacity, pleural effusion, or pneumothorax. The osseous structures are intact with degenerative changes in thoracic spine.
+INFO:__main__:ROUGE-L score: 0.2295
+
+Epoch 13/20:  11%| | 100/928 [05:55<46:59,  3.40s/it, Loss=0.1957, Avg Loss=0.18INFO:__main__:
+Sample at batch 100:
+INFO:__main__:Generated: 'Normal heart size. Lungs are clear bilaterally. There is no pleural effusion or pneumothorax. No acute bony abnormality seen. Mild degenerative changes of the thoracic spine.
+INFO:__main__:Original: Normal heart size and mediastinal contours. Lungs are clear. There is no pneumothorax or pleural effusion. Degenerative changes are seen in the spine.
+INFO:__main__:ROUGE-L score: 0.6122
