@@ -4,42 +4,6 @@ from tqdm import tqdm
 
 import xml.etree.ElementTree as ET
 
-# import paths
-
-# xml_dir = '/home/ubuntu/nlp_project/Data/ecgen-radiology'
-#
-# img_dir = '/home/ubuntu/nlp_project/Data/images'
-
-# def create_img_report_df():
-#     cols = ['image_id', 'image_path', 'findings', 'impression']
-#     data = []
-#
-#     for file in tqdm(os.listdir(paths.reports_dir_path)):
-#         print('file names')
-#         print(file)
-#         file_path = os.path.join(paths.reports_dir_path, file)
-#         if file_path.endswith('.xml'):
-#             xml_tree = ET.parse(file_path)
-#             findings = xml_tree.find(".//AbstractText[@Label='FINDINGS']").text
-#             impression = xml_tree.find(".//AbstractText[@Label='IMPRESSION']").text
-#
-#             for parent_img in xml_tree.findall('parentImage'):
-#                 parent_img_id = parent_img.attrib['id'] + '.png'
-#                 img_path = os.path.join(paths.images_dir_path, parent_img_id)
-#                 data.append([parent_img_id, img_path, findings, impression])
-#
-#     image_report_df = pd.DataFrame(data, columns=cols)
-#     return image_report_df
-#
-#
-#
-#
-#
-# df = create_img_report_df()
-# print(df.head())
-# print(df.shape)
-# print(df.columns)
-
 
 def extract_findings_and_impression(file_path):
     with open(file_path, 'r') as file:
@@ -79,41 +43,6 @@ if not os.path.exists(reports_root_path):
 
 grp_folders = os.listdir(reports_root_path)
 
-# for p_grp in grp_folders:
-#     cxr_path = os.path.join(reports_root_path, p_grp)
-#     # print(cxr_path)
-#     p_files = os.listdir(cxr_path)
-#     # print(p_files)
-#     for p in p_files:
-#         res_path = os.path.join(cxr_path, p)
-#
-#
-#
-#
-#         print(res_path)
-#
-#         if os.path.isdir(res_path):
-#             txt_files = [f for f in os.listdir(res_path) if f.endswith('.txt') and f.startswith('s')]
-#
-#             for s in txt_files:
-#                 file_path = os.path.join(res_path, s)
-#
-#                 print(file_path)
-#
-#                 findings, impression = extract_findings_and_impression(file_path)
-#
-#                 print(f"File: {s}")
-#                 print(f"Findings:\n{findings}")
-#                 print(f"Impression:\n{impression}")
-#                 print("=" * 80)
-
-            # for txt_file in txt_files:
-            #     txt_file_path = os.path.join(res_path, txt_file)
-            #     print(txt_file_path)
-
-    #     if os.path.isdir(res_path):
-    #         txt_files = [f for f in os.listdir(res_path) if f.endswith('.txt')]
-    #         print(txt_files)
 
 
 data = []
