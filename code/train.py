@@ -1,134 +1,278 @@
-
-
-# # train.py - updated with metric calculations
 import torch
 import torch.nn as nn
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
+from transformers import get_linear_schedule_with_warmup
 from tqdm import tqdm
 import logging
+import wandb
 from pathlib import Path
-import json
-import nltk
-from nltk.translate.bleu_score import corpus_bleu
-from nltk.translate.meteor_score import meteor_score
-from rouge_score import rouge_scorer
-
-# Ensure NLTK packages are downloaded:
-# nltk.download('wordnet')
+from typing import Dict, Any
+from torch.cuda.amp import autocast, GradScaler
+from datetime import datetime
 
 from data2 import data_processing
 from alignment_model import ImageTextAlignmentModel
 from report_generator import MedicalReportGenerator
-from biovil_t.model import ImageModel
-from biovil_t.pretrained import get_biovil_t_image_encoder
+from biovil_t.pretrained import get_biovil_t_image_encoder  # Ensure this import path is correct
+from rouge_score import rouge_scorer
 
+def train_epoch(image_encoder, alignment_model, report_generator, train_loader,
+                contrastive_loss, alignment_optimizer, generator_optimizer,
+                alignment_scheduler, generator_scheduler, scaler, device,
+                gradient_accumulation_steps, max_grad_norm, epoch):
+    alignment_model.train()
+    report_generator.train()
+    image_encoder.eval()
 
-def save_checkpoint(epoch: int, alignment_model: nn.Module, report_generator: nn.Module,
-                   alignment_optimizer: torch.optim.Optimizer, generator_optimizer: torch.optim.Optimizer,
-                   metrics: dict, save_path: Path) -> None:
-    """Save model checkpoint"""
-    checkpoint = {
-        'epoch': epoch,
-        'alignment_model_state_dict': alignment_model.state_dict(),
-        'report_generator_model': report_generator.model.state_dict(),
-        'report_generator_projection': report_generator.input_projection.state_dict(),
-        'alignment_optimizer_state_dict': alignment_optimizer.state_dict(),
-        'generator_optimizer_state_dict': generator_optimizer.state_dict(),
-        'metrics': metrics
+    # Metrics tracking
+    total_train_loss = 0.0
+    total_align_loss = 0.0
+    total_gen_loss = 0.0
+    total_samples = 0
+
+    progress_bar = tqdm(train_loader, desc=f'Training Epoch {epoch}')
+
+    for batch_idx, (images, findings_texts, findings_lists) in enumerate(progress_bar):
+        images = images.to(device)
+        batch_size = images.size(0)
+        total_samples += batch_size
+
+        # Get image embeddings
+        with torch.no_grad():
+            image_embeddings = image_encoder(images).img_embedding
+
+        # Create prompts using findings_lists (for generation)
+        batch_prompts = [
+            f"Findings: {', '.join(findings) if findings else 'No Findings'}."
+            for findings in findings_lists
+        ]
+
+        # Use findings_texts (actual findings) for alignment
+        actual_findings = findings_texts
+
+        # Mixed precision training
+        with autocast():
+            # Alignment phase
+            projected_image, projected_text = alignment_model(image_embeddings, actual_findings)
+
+            # Contrastive loss
+            labels = torch.ones(batch_size).to(device)
+            align_loss = contrastive_loss(projected_image, projected_text, labels)
+            align_loss = align_loss / gradient_accumulation_steps
+
+        # Scale and accumulate alignment gradients
+        scaler.scale(align_loss).backward()
+
+        # Generation phase
+
+        # Tokenize the prompts
+        prompt_encoding = report_generator.tokenizer(
+            batch_prompts,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+            max_length=512
+        ).to(device)
+
+        # Tokenize target texts (actual findings)
+        target_encoding = report_generator.tokenizer(
+            actual_findings,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+            max_length=512
+        ).to(device)
+
+        with autocast():
+            gen_loss, _ = report_generator(
+                image_embeddings=image_embeddings.detach(),
+                prompt_input_ids=prompt_encoding['input_ids'],
+                target_ids=target_encoding['input_ids']
+            )
+            gen_loss = gen_loss / gradient_accumulation_steps
+
+        # Scale and accumulate generator gradients
+        scaler.scale(gen_loss).backward()
+
+        # Update metrics
+        total_align_loss += align_loss.item() * gradient_accumulation_steps * batch_size
+        total_gen_loss += gen_loss.item() * gradient_accumulation_steps * batch_size
+        total_train_loss += (align_loss.item() + gen_loss.item()) * gradient_accumulation_steps * batch_size
+
+        # Step optimizers and schedulers
+        if (batch_idx + 1) % gradient_accumulation_steps == 0:
+            # Unscale gradients
+            scaler.unscale_(alignment_optimizer)
+            scaler.unscale_(generator_optimizer)
+
+            # Clip gradients
+            torch.nn.utils.clip_grad_norm_(
+                alignment_model.parameters(), max_grad_norm
+            )
+            torch.nn.utils.clip_grad_norm_(
+                report_generator.parameters(), max_grad_norm
+            )
+
+            # Step optimizers
+            scaler.step(alignment_optimizer)
+            scaler.step(generator_optimizer)
+            scaler.update()
+
+            # Zero gradients
+            alignment_optimizer.zero_grad()
+            generator_optimizer.zero_grad()
+
+            # Step schedulers
+            alignment_scheduler.step()
+            generator_scheduler.step()
+
+        # Update progress bar
+        progress_bar.set_postfix({
+            'align_loss': f"{align_loss.item():.4f}",
+            'gen_loss': f"{gen_loss.item():.4f}"
+        })
+
+    epoch_align_loss = total_align_loss / total_samples
+    epoch_gen_loss = total_gen_loss / total_samples
+    epoch_train_loss = total_train_loss / total_samples
+
+    return {
+        'train_loss': epoch_train_loss,
+        'train_align_loss': epoch_align_loss,
+        'train_gen_loss': epoch_gen_loss,
     }
-    torch.save(checkpoint, save_path)
+
+def validate_epoch(image_encoder, alignment_model, report_generator, val_loader,
+                   contrastive_loss, device, epoch):
+    alignment_model.eval()
+    report_generator.eval()
+    image_encoder.eval()
+
+    # Metrics storage
+    total_val_loss = 0.0
+    total_align_loss = 0.0
+    total_gen_loss = 0.0
+    total_samples = 0
+    all_generated = []
+    all_references = []
+
+    with torch.no_grad():
+        progress_bar = tqdm(val_loader, desc=f'Validation Epoch {epoch}')
+
+        for batch_idx, (images, findings_texts, findings_lists) in enumerate(progress_bar):
+            images = images.to(device)
+            batch_size = images.size(0)
+            total_samples += batch_size
+
+            # Get image embeddings
+            image_embeddings = image_encoder(images).img_embedding
+
+            # Create prompts using findings_lists
+            batch_prompts = [
+                f"Findings: {', '.join(findings) if findings else 'No Findings'}."
+                for findings in findings_lists
+            ]
+
+            # Actual findings for alignment and reference
+            actual_findings = findings_texts
+
+            # Alignment phase
+            projected_image, projected_text = alignment_model(image_embeddings, actual_findings)
+            labels = torch.ones(batch_size).to(device)
+            align_loss = contrastive_loss(projected_image, projected_text, labels)
+
+            # Generation phase
+            prompt_encoding = report_generator.tokenizer(
+                batch_prompts,
+                padding=True,
+                truncation=True,
+                return_tensors="pt",
+                max_length=512
+            ).to(device)
+
+            target_encoding = report_generator.tokenizer(
+                actual_findings,
+                padding=True,
+                truncation=True,
+                return_tensors="pt",
+                max_length=512
+            ).to(device)
+
+            # Compute generation loss
+            gen_loss, _ = report_generator(
+                image_embeddings=image_embeddings,
+                prompt_input_ids=prompt_encoding['input_ids'],
+                target_ids=target_encoding['input_ids']
+            )
+
+            # Generate text for evaluation
+            generated_texts = report_generator(
+                image_embeddings=image_embeddings,
+                prompt_input_ids=prompt_encoding['input_ids'],
+                target_ids=None
+            )
+
+            # Store the generated and reference texts for ROUGE calculation
+            all_generated.extend(generated_texts)
+            all_references.extend(actual_findings)
+
+            # Update totals
+            total_align_loss += align_loss.item() * batch_size
+            total_gen_loss += gen_loss.item() * batch_size
+            total_val_loss += (align_loss.item() + gen_loss.item()) * batch_size
+
+            # Print sample generation
+            if batch_idx % 10 == 0:
+                print(f"\nSample Generation (Batch {batch_idx}):")
+                print(f"Generated: {generated_texts[0]}")
+                print(f"Reference: {actual_findings[0]}")
+                # Also display the pathologies findings from findings_lists
+                print(f"Pathologies/Findings List: {findings_lists[0]}\n")
+
+        # Calculate overall metrics
+        epoch_align_loss = total_align_loss / total_samples
+        epoch_gen_loss = total_gen_loss / total_samples
+        epoch_val_loss = total_val_loss / total_samples
+
+    # Compute ROUGE-L
+    scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
+    rouge_l_scores = []
+    for ref, gen in zip(all_references, all_generated):
+        score = scorer.score(ref, gen)['rougeL'].fmeasure
+        rouge_l_scores.append(score)
+    avg_rouge_l = sum(rouge_l_scores) / len(rouge_l_scores) if rouge_l_scores else 0.0
+
+    # Display validation losses and ROUGE-L
+    print(f"\nEpoch {epoch} Validation Metrics:")
+    print(f"Validation Loss: {epoch_val_loss:.4f}")
+    print(f"Alignment Loss: {epoch_align_loss:.4f}")
+    print(f"Generation Loss: {epoch_gen_loss:.4f}")
+    print(f"ROUGE-L: {avg_rouge_l:.4f}")
+
+    return {
+        'val_loss': epoch_val_loss,
+        'val_align_loss': epoch_align_loss,
+        'val_gen_loss': epoch_gen_loss,
+        'val_rouge_l': avg_rouge_l
+    }
 
 
-def save_best_model(alignment_model: nn.Module, report_generator: nn.Module, metrics: dict, save_dir: Path) -> None:
-    """Save best model with metrics"""
-    # Save alignment model
-    torch.save(alignment_model.state_dict(), save_dir / "best_alignment_model.pt")
-
-    # Save report generator (PEFT model)
-    report_generator.model.save_pretrained(save_dir / "best_report_generator")
-    torch.save(report_generator.input_projection.state_dict(),
-               save_dir / "best_report_generator_projection.pt")
-
-    # Save metrics
-    with open(save_dir / 'best_model_metrics.json', 'w') as f:
-        json.dump(metrics, f, indent=4)
-
-def compute_metrics(references, predictions):
-    """
-    Compute ROUGE-L, BLEU-1, and METEOR scores.
-    references: List of reference strings
-    predictions: List of predicted strings
-    """
-    # Tokenize for BLEU and METEOR
-    # Simple whitespace tokenization
-    try:
-        # Tokenize the references and predictions
-        ref_tokens = [[ref.split()] for ref in references]  # corpus_bleu expects a list of lists of refs
-        pred_tokens = [pred.split() for pred in predictions]
-
-        # Compute BLEU-1 score
-        # We use weights=(1,0,0,0) for BLEU-1
-        bleu_1_score = corpus_bleu(ref_tokens, pred_tokens, weights=(1, 0, 0, 0)) * 100.0
-
-    except Exception as e:
-        # print(f"An error occurred while calculating BLEU score")
-        bleu_1_score = 0.0
-
-    # Initialize the average METEOR score
-    try:
-        # METEOR score computation
-        # meteor_score(ref, pred) expects strings, so we pass them directly
-        meteor_scores = []
-        for r, p in zip(references, predictions):
-            try:
-                score = meteor_score([r], p)
-                meteor_scores.append(score)
-            except Exception as e:
-                # print(f"Error calculating METEOR for a pair")
-                meteor_scores.append(0.0)  # Assign 0.0 to individual errors
-
-        # Compute the average METEOR score
-        avg_meteor = (sum(meteor_scores) / len(meteor_scores)) * 100.0 if meteor_scores else 0.0
-
-    except Exception as e:
-        # print(f"An error occurred while calculating the average METEOR score")
-        avg_meteor = 0.0
-
-    # Initialize the average ROUGE-L score
-    try:
-        # Initialize the ROUGE scorer
-        scorer = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
-        rouge_l_scores = []
-
-        # Compute ROUGE-L scores
-        for r, p in zip(references, predictions):
-            try:
-                score = scorer.score(r, p)['rougeL'].fmeasure
-                rouge_l_scores.append(score)
-            except Exception as e:
-                # print(f"Error calculating ROUGE-L for a pair")
-                rouge_l_scores.append(0.0)  # Assign 0.0 to individual errors
-
-        # Compute the average ROUGE-L score
-        avg_rouge_l = (sum(rouge_l_scores) / len(rouge_l_scores)) * 100.0 if rouge_l_scores else 0.0
-
-    except Exception as e:
-        # print(f"An error occurred while calculating the average ROUGE-L score")
-        avg_rouge_l = 0.0
-
-    return avg_rouge_l, bleu_1_score, avg_meteor
-
-
-def train_model(csv_path: str, save_dir: str, num_epochs: int = 30):
-    """
-    Train the medical report generation model
-
-    Args:
-        csv_path: Path to CSV file containing image paths and reports
-        save_dir: Directory to save model checkpoints
-        num_epochs: Number of training epochs
-    """
+def train_model(
+        csv_with_image_paths: str,
+        csv_with_labels: str,
+        num_epochs: int = 30,
+        batch_size: int = 8,
+        train_split: float = 0.85,
+        num_workers: int = 4,
+        learning_rate: float = 2e-4,
+        warmup_steps: int = 1000,
+        gradient_accumulation_steps: int = 4,
+        max_grad_norm: float = 1.0,
+        use_wandb: bool = True,
+        checkpoint_dir: str = "checkpoints",
+        seed: int = 42
+):
     # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -136,225 +280,162 @@ def train_model(csv_path: str, save_dir: str, num_epochs: int = 30):
     # Initialize models
     image_encoder = get_biovil_t_image_encoder()
     alignment_model = ImageTextAlignmentModel(image_embedding_dim=512)
-    report_generator = MedicalReportGenerator()
+    report_generator = MedicalReportGenerator(image_embedding_dim=512)
 
     # Move models to device
     image_encoder = image_encoder.to(device)
     alignment_model = alignment_model.to(device)
     report_generator = report_generator.to(device)
 
-    # Get dataloaders
-    train_loader, val_loader = data_processing.get_dataloaders(csv_path)
+    # Initialize wandb
+    if use_wandb:
+        wandb.init(
+            project="medical-report-generation",
+            config={
+                "learning_rate": learning_rate,
+                "epochs": num_epochs,
+                "batch_size": batch_size,
+                "warmup_steps": warmup_steps,
+                "gradient_accumulation_steps": gradient_accumulation_steps,
+            }
+        )
+        wandb.watch(models=[alignment_model, report_generator], log="all")
 
-    # Optimizers
-    alignment_optimizer = AdamW(alignment_model.parameters(), lr=2e-5)
-    peft_params = [p for p in report_generator.model.parameters() if p.requires_grad]
+    # Get dataloaders
+    train_loader, val_loader = data_processing.get_dataloaders(
+        csv_with_image_paths=csv_with_image_paths,
+        csv_with_labels=csv_with_labels,
+        batch_size=batch_size,
+        train_split=train_split,
+        num_workers=num_workers,
+        seed=seed,
+    )
+
+    # Initialize optimizers
+    alignment_optimizer = AdamW(
+        alignment_model.parameters(),
+        lr=learning_rate,
+        weight_decay=0.01
+    )
     generator_optimizer = AdamW([
-        {'params': peft_params, 'lr': 2e-5},
-        {'params': report_generator.input_projection.parameters(), 'lr': 1e-4}
+        {'params': report_generator.model.parameters(), 'lr': learning_rate},
+        {'params': report_generator.image_projection.parameters(), 'lr': learning_rate * 10}
     ])
 
-    # Loss function for alignment
+    # Initialize schedulers
+    num_training_steps = len(train_loader) * num_epochs // gradient_accumulation_steps
+    alignment_scheduler = get_linear_schedule_with_warmup(
+        alignment_optimizer,
+        num_warmup_steps=warmup_steps,
+        num_training_steps=num_training_steps
+    )
+    generator_scheduler = get_linear_schedule_with_warmup(
+        generator_optimizer,
+        num_warmup_steps=warmup_steps,
+        num_training_steps=num_training_steps
+    )
+
+    # Initialize loss function and scaler
     contrastive_loss = nn.CosineEmbeddingLoss()
+    scaler = GradScaler()
 
-    # Create save directories
-    save_dir = Path(save_dir)
-    checkpoints_dir = save_dir / "checkpoints"
-    best_model_dir = save_dir / "best_model"
+    # Create checkpoint directory
+    checkpoint_dir = Path(checkpoint_dir)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
-    for dir_path in [checkpoints_dir, best_model_dir]:
-        dir_path.mkdir(exist_ok=True, parents=True)
-
-    # Track best validation metrics
-    best_val_loss = float('inf')
-    best_metrics = None
-
-    # Load last checkpoint if exists
-    last_checkpoint = max(checkpoints_dir.glob("checkpoint_*.pt"), default=None,
-                          key=lambda x: int(x.stem.split('_')[1]))
-    start_epoch = 0
-
-    if last_checkpoint:
-        print(f"Loading checkpoint: {last_checkpoint}")
-        checkpoint = torch.load(last_checkpoint, map_location=device)
-        alignment_model.load_state_dict(checkpoint['alignment_model_state_dict'])
-        report_generator.model.load_state_dict(checkpoint['report_generator_model'])
-        report_generator.input_projection.load_state_dict(checkpoint['report_generator_projection'])
-        alignment_optimizer.load_state_dict(checkpoint['alignment_optimizer_state_dict'])
-        generator_optimizer.load_state_dict(checkpoint['generator_optimizer_state_dict'])
-        start_epoch = checkpoint['epoch'] + 1
-        print(f"Resuming from epoch {start_epoch}")
-
-    for epoch in range(start_epoch, num_epochs):
+    for epoch in range(num_epochs):
         print(f"\nEpoch {epoch + 1}/{num_epochs}")
 
-        # Training Phase
-        image_encoder.eval()  # Keep image encoder in eval mode
-        alignment_model.train()
-        report_generator.train()
-
-        # Track training losses
-        train_align_losses = []
-        train_gen_losses = []
-
-        # Progress bar
-        progress_bar = tqdm(train_loader, desc=f'Training')
-
-        for batch_idx, (images, impressions) in enumerate(progress_bar):
-            images = images.to(device)
-
-            # Get image embeddings
-            with torch.no_grad():
-                image_embeddings = image_encoder(images).img_embedding
-
-            # Alignment phase
-            alignment_optimizer.zero_grad()
-            projected_image, projected_text = alignment_model(image_embeddings, impressions)
-            batch_size = images.size(0)
-            labels = torch.ones(batch_size).to(device)
-            align_loss = contrastive_loss(projected_image, projected_text, labels)
-            align_loss.backward()
-            alignment_optimizer.step()
-
-            # Generation phase
-            generator_optimizer.zero_grad()
-            target_encoding = report_generator.tokenizer(
-                impressions,
-                padding=True,
-                truncation=True,
-                return_tensors="pt",
-                max_length=150
-            ).to(device)
-            target_ids = target_encoding['input_ids']
-            gen_loss, logits = report_generator(projected_image.detach(), target_ids)
-            gen_loss.backward()
-            generator_optimizer.step()
-
-            # Track losses
-            train_align_losses.append(align_loss.item())
-            train_gen_losses.append(gen_loss.item())
-
-            # Update progress bar
-            progress_bar.set_postfix({
-                'Align Loss': f'{align_loss.item():.4f}',
-                'Gen Loss': f'{gen_loss.item():.4f}'
-            })
-
-            # Print sample outputs every 50 batches
-            if batch_idx % 50 == 0:
-                with torch.no_grad():
-                    sample_report = report_generator.generate_report(projected_image[0:1].detach())[0]
-                    print("\nSample Generation:")
-                    print(f"Generated: {sample_report}")
-                    print(f"Target: {impressions[0]}\n")
-
-        # Calculate average training losses
-        avg_train_align_loss = sum(train_align_losses) / len(train_align_losses)
-        avg_train_gen_loss = sum(train_gen_losses) / len(train_gen_losses)
-
-        # Validation Phase
-        alignment_model.eval()
-        report_generator.eval()
-
-        val_align_losses = []
-        val_gen_losses = []
-        val_references = []
-        val_predictions = []
-
-        print("\nRunning validation...")
-        with torch.no_grad():
-            for val_images, val_impressions in val_loader:
-                val_images = val_images.to(device)
-                val_image_embeddings = image_encoder(val_images).img_embedding
-                val_projected_image, val_projected_text = alignment_model(val_image_embeddings, val_impressions)
-
-                # Calculate alignment loss
-                val_labels = torch.ones(val_images.size(0)).to(device)
-                val_align_loss = contrastive_loss(val_projected_image, val_projected_text, val_labels)
-                val_align_losses.append(val_align_loss.item())
-
-                # Prepare target text for generation loss
-                val_target_encoding = report_generator.tokenizer(
-                    val_impressions,
-                    padding=True,
-                    truncation=True,
-                    return_tensors="pt",
-                    max_length=150
-                ).to(device)
-                val_target_ids = val_target_encoding['input_ids']
-
-                val_gen_loss, _ = report_generator(val_projected_image, val_target_ids)
-                val_gen_losses.append(val_gen_loss.item())
-
-                # Generate predictions for metrics
-                batch_predictions = report_generator.generate_report(val_projected_image)
-                val_predictions.extend(batch_predictions)
-                val_references.extend(val_impressions)
-
-        # Calculate average validation losses
-        avg_val_align_loss = sum(val_align_losses) / len(val_align_losses)
-        avg_val_gen_loss = sum(val_gen_losses) / len(val_gen_losses)
-
-        # Compute metrics
-        rouge_l, bleu_1, meteor = compute_metrics(val_references, val_predictions)
-
-        # Current metrics
-        current_metrics = {
-            'epoch': epoch + 1,
-            'train_align_loss': avg_train_align_loss,
-            'train_gen_loss': avg_train_gen_loss,
-            'val_align_loss': avg_val_align_loss,
-            'val_gen_loss': avg_val_gen_loss,
-            'rouge_l': rouge_l,
-            'bleu_1': bleu_1,
-            'meteor': meteor
-        }
-
-        # Print epoch summary
-        print(f"\nEpoch {epoch + 1} Summary:")
-        print(json.dumps(current_metrics, indent=4))
-
-        # Save checkpoint for each epoch
-        checkpoint_path = checkpoints_dir / f"checkpoint_{epoch}.pt"
-        save_checkpoint(
-            epoch=epoch,
+        # Training phase
+        train_metrics = train_epoch(
+            image_encoder=image_encoder,
             alignment_model=alignment_model,
             report_generator=report_generator,
+            train_loader=train_loader,
+            contrastive_loss=contrastive_loss,
             alignment_optimizer=alignment_optimizer,
             generator_optimizer=generator_optimizer,
-            metrics=current_metrics,
-            save_path=checkpoint_path
+            alignment_scheduler=alignment_scheduler,
+            generator_scheduler=generator_scheduler,
+            scaler=scaler,
+            device=device,
+            gradient_accumulation_steps=gradient_accumulation_steps,
+            max_grad_norm=max_grad_norm,
+            epoch=epoch + 1
         )
-        print(f"\nSaved checkpoint to {checkpoint_path}")
 
-        # Save best model if validation loss improved
-        val_loss = avg_val_align_loss + avg_val_gen_loss
-        if val_loss < best_val_loss:
-            best_val_loss = val_loss
-            best_metrics = current_metrics
-            print("\nSaving best model...")
-            save_best_model(alignment_model, report_generator, current_metrics, best_model_dir)
+        # Validation phase
+        val_metrics = validate_epoch(
+            image_encoder=image_encoder,
+            alignment_model=alignment_model,
+            report_generator=report_generator,
+            val_loader=val_loader,
+            contrastive_loss=contrastive_loss,
+            device=device,
+            epoch=epoch + 1
+        )
 
-            # Save pointer to best checkpoint
-            with open(save_dir / "best_checkpoint.txt", "w") as f:
-                f.write(f"checkpoint_{epoch}.pt")
+        # Display training and validation losses
+        print(f"\nEpoch {epoch + 1} Training Loss: {train_metrics['train_loss']:.4f}")
+        print(f"Epoch {epoch + 1} Validation Loss: {val_metrics['val_loss']:.4f}")
+        print(f"Alignment Loss - Train: {train_metrics['train_align_loss']:.4f}, Val: {val_metrics['val_align_loss']:.4f}")
+        print(f"Generation Loss - Train: {train_metrics['train_gen_loss']:.4f}, Val: {val_metrics['val_gen_loss']:.4f}")
+        print(f"ROUGE-L (Val): {val_metrics['val_rouge_l']:.4f}")
 
-    print("\nTraining completed!")
-    if best_metrics:
-        print("\nBest model metrics:")
-        print(json.dumps(best_metrics, indent=4))
+        # Log metrics to wandb
+        if use_wandb:
+            wandb.log({**train_metrics, **val_metrics})
 
-    return alignment_model, report_generator
+        # Save model checkpoint after each epoch
+        checkpoint_save_path = checkpoint_dir / f"model_epoch_{epoch+1}.pt"
+        torch.save({
+            'epoch': epoch + 1,
+            'image_encoder_state_dict': image_encoder.state_dict(),
+            'alignment_model_state_dict': alignment_model.state_dict(),
+            'report_generator_state_dict': report_generator.state_dict(),
+            'alignment_optimizer_state_dict': alignment_optimizer.state_dict(),
+            'generator_optimizer_state_dict': generator_optimizer.state_dict(),
+            'alignment_scheduler_state_dict': alignment_scheduler.state_dict(),
+            'generator_scheduler_state_dict': generator_scheduler.state_dict(),
+            'scaler_state_dict': scaler.state_dict(),
+            'config': {
+                'learning_rate': learning_rate,
+                'batch_size': batch_size,
+                'gradient_accumulation_steps': gradient_accumulation_steps,
+                'max_grad_norm': max_grad_norm,
+            }
+        }, checkpoint_save_path)
+        logging.info(f"Saved checkpoint: {checkpoint_save_path}")
+
+    if use_wandb:
+        wandb.finish()
 
 
 if __name__ == "__main__":
-    # Set paths
-    csv_path = "Data/new_csv_17k_rows.csv"  # Update this to your CSV path
-    save_dir = "checkpoints"  # Directory where models will be saved
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s'
+    )
 
-    # Call training function
-    print("Starting training...")
-    alignment_model, report_generator = train_model(csv_path=csv_path,
-                                                    save_dir=save_dir,
-                                                    num_epochs=30)
-    print("Training completed!")
+    # Path to your CSV files
+    csv_with_image_paths = "/home/ubuntu/NLP/NLP_Project/Temp_3_NLP/Data/final.csv"
+    csv_with_labels = "/home/ubuntu/NLP/NLP_Project/Temp_3_NLP/Data/labeled_reports_with_images.csv"
+
+    # Training configuration
+    config = {
+        'num_epochs': 30,
+        'batch_size': 8,
+        'learning_rate': 1e-4,
+        'warmup_steps': 1000,
+        'gradient_accumulation_steps': 4,
+        'use_wandb': True,
+        'checkpoint_dir': 'checkpoints',
+        'seed': 42
+    }
+
+    # Start training
+    train_model(
+        csv_with_image_paths=csv_with_image_paths,
+        csv_with_labels=csv_with_labels,
+        **config
+    )
