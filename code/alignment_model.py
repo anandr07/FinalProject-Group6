@@ -1,44 +1,72 @@
+# alignment_model.py
+
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from transformers import AutoModel, AutoTokenizer, AutoConfig
-from typing import List, Tuple, Dict, Optional
-import numpy as np
-from tqdm import tqdm
+from transformers import AutoModel, AutoTokenizer
+from typing import List, Tuple, Optional
 
 class ImageTextAlignmentModel(nn.Module):
-  def __init__(self, image_embedding_dim: int = 512):  # Changed from 2048 to 512
-      super().__init__()
+    def __init__(self, image_embedding_dim: int = 512, text_embedding_dim: Optional[int] = None):
+        super().__init__()
 
-      # Load Bio-BERT with trust_remote_code=True
-      self.text_encoder = AutoModel.from_pretrained(
-          'microsoft/BiomedVLP-CXR-BERT-specialized',
-          trust_remote_code=True
-      )
-      self.tokenizer = AutoTokenizer.from_pretrained(
-          'microsoft/BiomedVLP-CXR-BERT-specialized',
-          trust_remote_code=True
-      )
+        # Initialize BioGPT encoder and tokenizer
+        self.text_encoder = AutoModel.from_pretrained('microsoft/biogpt')
+        self.tokenizer = AutoTokenizer.from_pretrained('microsoft/biogpt')
 
-      # Projection layers
-      self.image_projection = nn.Linear(image_embedding_dim, 768)  # Project from 512 to 768
-      self.text_projection = nn.Linear(768, 768)
+        if text_embedding_dim is None:
+            text_embedding_dim = self.text_encoder.config.hidden_size
 
-  def forward(self, image_embeddings: torch.Tensor, text: List[str]) -> Tuple[torch.Tensor, torch.Tensor]:
-      # Project image embeddings
-      projected_image = self.image_projection(image_embeddings)
+        # Projection networks with layer normalization
+        self.image_projection = nn.Sequential(
+            nn.Linear(image_embedding_dim, text_embedding_dim),
+            nn.LayerNorm(text_embedding_dim),
+            nn.GELU(),
+        )
 
-      # Encode text
-      text_encoding = self.tokenizer(
-          text, 
-          padding=True, 
-          truncation=True, 
-          return_tensors="pt",
-          max_length=512
-      )
-      text_encoding = {k: v.to(image_embeddings.device) for k, v in text_encoding.items()}
+        self.text_projection = nn.Sequential(
+            nn.Linear(text_embedding_dim, text_embedding_dim),
+            nn.LayerNorm(text_embedding_dim),
+            nn.GELU(),
+        )
 
-      text_features = self.text_encoder(**text_encoding).last_hidden_state[:, 0, :]  # Use [CLS] token
-      projected_text = self.text_projection(text_features)
+        # Initialize weights
+        self._init_weights()
 
-      return projected_image, projected_text
+    def _init_weights(self):
+        """Initialize weights with Xavier uniform distribution"""
+        for module in self.modules():
+            if isinstance(module, nn.Linear):
+                nn.init.xavier_uniform_(module.weight)
+                if module.bias is not None:
+                    nn.init.zeros_(module.bias)
+
+    def encode_text(self, text: List[str], device: torch.device) -> torch.Tensor:
+        """Encode text using BioGPT"""
+        # Tokenize and encode text
+        text_encoding = self.tokenizer(
+            text,
+            padding=True,
+            truncation=True,
+            return_tensors="pt",
+            max_length=512
+        ).to(device)
+
+        # Get text features
+        with torch.no_grad():
+            text_outputs = self.text_encoder(**text_encoding)
+            text_features = text_outputs.last_hidden_state[:, 0, :]  # Take [CLS] token
+
+        return text_features
+
+    def forward(self, image_embeddings: torch.Tensor, text: List[str]) -> Tuple[torch.Tensor, torch.Tensor]:
+        # Get device
+        device = image_embeddings.device
+
+        # Encode text
+        text_features = self.encode_text(text, device)
+
+        # Project features
+        projected_image = self.image_projection(image_embeddings)
+        projected_text = self.text_projection(text_features)
+
+        return projected_image, projected_text
