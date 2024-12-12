@@ -47,7 +47,7 @@ The manual generation of chest X-ray reports by radiologists is time-consuming a
 # Key Findings
 
 * ChexNet label integration improved overall performance
-* BioVilt + ChexNet + BioGPT and un trained BLIP +  + ChexNet + BioGPT  models have equivalent performance.
+* BioVilt + ChexNet + BioGPT and pretrained BLIP +  ChexNet + BioGPT  models have equivalent performance.
 * ROUGE-L metric used for evaluating report quality
 
 # Technical Optimizations
