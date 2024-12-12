@@ -12,7 +12,9 @@ The manual generation of chest X-ray reports by radiologists is time-consuming a
 
 ## Image Processing
 
+* Download Data(code/download_folder.sh)
 * DICOM to PNG conversion
+* PNG Compression(code/CheXbert/src/split_data/compress_png.py)
 * Created structured CSV with image metadata
 * Applied data augmentation techniques
 
